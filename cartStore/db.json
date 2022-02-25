@@ -1,0 +1,112 @@
+{
+  "member": [
+    "GetAuthRes"
+  ],
+  "orderList": [
+    {
+      "id": 1,
+      "cartList": [],
+      "sdate": "",
+      "buyerName": "",
+      "phone": "",
+      "sendType": ""
+    }
+  ],
+  "booklist": [
+    {
+      "id": 1,
+      "name": "Learning Php, MySQL & JavaScript: A Step-By-Step Guide to Creating Dynamic Websites 6/e",
+      "price": 1800,
+      "thumb": "https://cf-assets2.tenlong.com.tw/ig/024/528/672/9781492093824.jpg?1624326835"
+    },
+    {
+      "id": 2,
+      "name": "Oracle 資料庫 SQL 學習經典 -- 融入 OCA DBA 國際認證",
+      "price": 427,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/167/436/medium/AED004000.jpg?1631875259"
+    },
+    {
+      "id": 3,
+      "name": "物聯網實戰(ESP32篇)： 使用樹莓派/NodeMCU-32S/Python/MicroPython/Node-RED",
+      "price": 468,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/167/435/medium/9789864348947_bc.jpg?1631875076"
+    },
+    {
+      "id": 4,
+      "name": "設計重構：25個管理技術債的技巧消除軟體設計臭味 (Refactoring for Software Design Smells: Managing Technical Debt)",
+      "price": 406,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/167/432/medium/9789864345229.jpg?1631873400"
+    },
+    {
+      "id": 5,
+      "name": "AI 源碼解讀：機器學習案例 (Python版)",
+      "price": 556,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/166/011/medium/090183-01.jpg?1630064725"
+    },
+    {
+      "id": 6,
+      "name": "行銷人員的AI百寶盒",
+      "price": 507,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/166/341/medium/9789864348466_bc.jpg?1629957633"
+    },
+    {
+      "id": 7,
+      "name": "金融科技實務與應用：360度顧客視圖 + 場景金融",
+      "price": 332,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/166/294/medium/9789865028800.jpg?1629792307"
+    },
+    {
+      "id": 8,
+      "name": "GA 到 GA4: 掌握網站數據分析新工具的技術原理與商業思維",
+      "price": 395,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/166/345/medium/GA-GA4-1000x1350.jpg?1629964807"
+    },
+    {
+      "id": 9,
+      "name": "生成對抗網路最精解：用 TensorFlow 實作最棒的 GAN 應用",
+      "price": 774,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/166/425/medium/DM2147_3D-750x933_0.jpg?1630130868"
+    },
+    {
+      "id": 10,
+      "name": "30天與 Docker 做好朋友：跟鯨魚先生一同探索開發者的大平台",
+      "price": 468,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/167/059/medium/9789864348770_bc.jpg?1630985935"
+    },
+    {
+      "id": 11,
+      "name": "圖解資料結構 -- 使用 JavaScript",
+      "price": 452,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/167/112/medium/9789864348930_bc.jpg?1631177090"
+    },
+    {
+      "id": 12,
+      "name": "AIoT 人工智慧在物聯網的應用與商機, 3/e",
+      "price": 316,
+      "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/165/811/medium/AEN005300.jpg?1628589936"
+    }
+  ],
+  "cart": [
+    {
+      "id": 4,
+      "origin": {
+        "id": 4,
+        "name": "設計重構：25個管理技術債的技巧消除軟體設計臭味 (Refactoring for Software Design Smells: Managing Technical Debt)",
+        "price": 406,
+        "thumb": "https://cf-assets2.tenlong.com.tw/products/images/000/167/432/medium/9789864345229.jpg?1631873400"
+      },
+      "amount": 1
+    },
+    {
+      "id": 1,
+      "origin": {
+        "id": 1,
+        "name": "Learning Php, MySQL & JavaScript: A Step-By-Step Guide to Creating Dynamic Websites 6/e",
+        "price": 1800,
+        "thumb": "https://cf-assets2.tenlong.com.tw/ig/024/528/672/9781492093824.jpg?1624326835"
+      },
+      "amount": 2
+    }
+  ],
+  "notice": []
+}
