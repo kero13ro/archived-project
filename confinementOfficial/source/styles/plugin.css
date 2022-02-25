@@ -1,0 +1,83 @@
+
+
+/* ==========================================================================
+    lity
+ ==========================================================================*/
+
+
+	
+/* ==========================================================================
+    slick 
+ ==========================================================================*/
+
+ /* //index  application location join 共四頁
+ =arrow            
+   .slick-prev, .slick-next    
+     // +size(53px)
+     +size(45px)
+     border-radius: 50%
+     border: 1px solid rgba(110,110,110, 0.7)
+     &:before
+       color: rgba(110,110,110, 0.7)
+       opacity: 1
+       font-size: 0.8rem
+       font-weight: 800
+       content: "\e804"
+       font-family: "fontello"
+ 
+     +trans
+     &:hover
+       background-color: $blue
+       &:before
+         color: #ffffff
+ 
+   .slick-prev
+     left: 4%
+     z-index: 1
+     transform: translate(0, -50%) rotate(180deg)
+             
+   .slick-next
+     right: 4%
+ 
+   
+   +max(1860px)
+     .slick-prev
+       left: 2%  
+     .slick-next
+       right: 2%
+ 
+   +max(1200px)
+     .slick-prev,.slick-next
+       +size(42px)
+ 
+       border: 1px solid white
+       background-color: rgba(0,0,0,0.05)
+       &:before
+         color: #ffffff
+ 
+ 
+ =dots
+   // bottom: 45px
+   bottom: 35px
+   li
+     margin: 0 3px
+     button:before
+       // +size(14px)
+       +size(10px)
+       content: ''
+       background-color: rgba(255, 255, 255, 0) //透明中空
+       border: 1px solid #FFFFFF
+       border-radius: 50%
+       opacity: 0.9
+ 
+     &.slick-active button:before
+       background-color: #FFFFFF
+ 
+ 
+ 
+   +max(480px)
+     bottom: 20px
+     li
+       margin: 0 1px
+       button:before
+         +size(10px) */

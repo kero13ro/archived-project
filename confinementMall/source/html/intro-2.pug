@@ -1,0 +1,140 @@
+
+extends ./include/layout.pug
+
+block content
+
+  include ./include/index_block.pug
+  include ./include/component.pug
+
+  #info
+
+    .container
+      .breadcrumb
+        ul.nostyle
+          li 首頁
+          h2.sr-only 商品專區
+          li.icon-right-thin 月子餐組合選
+          li.icon-right-thin 月子補養兩日餐(10日)
+
+      +topLanding
+
+      
+        
+
+      .tri-columns.mb56
+        .catalog.leftBlock
+          +catalog
+
+
+        .items.midBlock.form-type-2
+
+          .block__title 月子餐組合選
+
+          .intro__head
+            .head__left
+              .show(style="background-image: url(styles/images/02-01-01.jpg);")#js-show
+
+              .slick-intro
+                .unit(style="background-image: url(styles/images/02-01-01.jpg);")
+                .unit(style="background-image: url(styles/images/02-01-05.jpg);")
+                .unit(style="background-image: url(styles/images/02-01-06.jpg);")
+                .unit(style="background-image: url(styles/images/02-01-07.jpg);")
+                .unit(style="background-image: url(styles/images/02-01-08.jpg);")
+                .unit(style="background-image: url(styles/images/02-01-09.jpg);")
+
+            .head__right
+
+              h4.f24.wide5 月子補養兩日餐(10日)
+              .f16.lh20
+                div 素燉富含膳食纖維是坐月子混搭的好選擇
+                .vege.border-1 奶蛋素
+
+                .group #[span 付款方式] 信用卡付款  \  超商代碼繳費  \  虛擬帳號轉帳
+
+                
+                .group.border-2 #[span 配送方式] 低溫宅配
+                .group #[span 配送方式] 低溫宅配
+                
+                .group.border-2.radio
+                  //- ===== 種類 2 ======
+                  .scrollbarX
+                    table
+                      tr
+                        th
+                        th 產後第一週
+                        th 產後第二週
+                        th 產後第三週
+                        th 產後第四週
+                      tr
+                        td 哺乳
+                        td.radio_unit
+                          input(type="radio", name="intro-1" id="intro-1-1") 
+                          label(for="intro-1-1")
+                        td.radio_unit
+                          input(type="radio", name="intro-1" id="intro-1-2")
+                          label(for="intro-1-2")
+                        td.radio_unit
+                          input(type="radio", name="intro-1" id="intro-1-3")
+                          label(for="intro-1-3")
+                        td.radio_unit
+                          input(type="radio", name="intro-1" id="intro-1-4")
+                          label(for="intro-1-4")
+                      tr
+                        td 不哺乳
+                        td.radio_unit
+                          input(type="radio", name="intro-1" id="intro-1-1-1") 
+                          label(for="intro-1-1-1")
+                        td.radio_unit
+                          input(type="radio", name="intro-1" id="intro-1-1-2")
+                          label(for="intro-1-1-2")
+                        td.radio_unit
+                          input(type="radio", name="intro-1" id="intro-1-1-3")
+                          label(for="intro-1-1-3")
+                        td.radio_unit
+                          input(type="radio", name="intro-1" id="intro-1-1-4")
+                          label(for="intro-1-1-4")
+
+
+
+                .group.mb8
+                  span 數量
+                  .control
+                    a.icon-plus
+                    .mount 1
+                    a.icon-minus
+                .group.mb8
+                  span 定價
+                  .through $14,000
+                .group.border-3.sale
+                  span 特惠價
+                  .f28 $11,888
+
+                .group.links.mb32
+                  a.btn 立即購買
+                  a.btn.icon-cart 加入購物車
+
+                .group
+                  .mr40.share
+                    span 分享：
+                    a: img(src="./styles/images/02-01-20.png" alt="紫金堂")
+                    a: img(src="./styles/images/02-01-21.png" alt="紫金堂")
+
+                  .trace
+                    span 加入追蹤清單：
+                    span.icon-heart(data-lity href="#modal-trace")
+
+
+          +page-main
+
+                
+        .rightBlock
+
+          +cart
+          +record
+
+
+    #modal-trace.lity-hide
+      .wrapper
+        .icon-heart
+        .lh18 已加入追蹤清單 #[br] 前往
+          a(href="trace.html") 我的追蹤清單

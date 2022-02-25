@@ -1,0 +1,887 @@
+
+// tmp 防止一開始的破圖
+// .slider-show
+//   opacity: 0
+//   visibility: hidden
+//   transition: opacity 0.6s ease
+// .slider-show.slick-initialized
+//   visibility: visible
+//   opacity: 1  
++min(992)
+  .landing
+    background-color: #fff
+    #dashboard,
+    #nav,
+    #index
+      opacity: 0
+      .logo 
+        position: relative
+        overflow: hidden
+        &:before
+          display: block
+          content: ""
+          position: absolute
+          +size(200%, 100%)
+          right: 0
+          background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 49%,rgba(255,255,255,1) 100%)        // transform: translateX(50px)
+
+      .logo.animate
+        &:before
+          right: -200%
+          transition: 3s right
+
+  main:not(.landing)
+    > .container + *
+      opacity: 0
+  
+
+
+$bgco: rgb(245, 241, 240)
+
+
+
+.slider-show  
+  border-bottom: 1px solid rgb(181,137,89)
+  width: 100%
+  .pic
+    background-size: cover
+    background-position: center
+    position: relative
+
+    &:after
+      display: block
+      content: ""
+      padding-top: 33.57%  //470px
+
+    &:before
+      +size(100%)
+      +position(absolute, 0 null null 0)
+      z-index: 1
+      content: ""
+      display: block
+      background-color: rgba(black, 0.3)
+      opacity: 0
+      transition: opacity 0.3s
+      
+  .pic:not(.slick-current)
+    &:before
+      opacity: 1
+      transition: opacity 0.3s
+
+  .slick-list
+    +padding(null 13.5vw)
+
+  .slick-arrow
+    +position(absolute, 0 null null null )
+    +size(13.5vw, 100%)
+    color: white
+    z-index: 1
+
+    &:before
+      font-size: 1.2rem
+      margin: 0 20px
+      transition: transform 0.3s
+
+    &:hover
+      &:before
+        transform: scale(1.3)
+        transition: transform 0.3s
+
+    &.slick-disabled
+      background-color: rgba(200,200,200,0.5)
+      
+  .icon-prev
+    left: 0
+    +f(flex-end, center)
+  .icon-next
+    right: 0
+    +f(flex-start, center)
+    
+
+
+.slider-nav
+  height: 50px
+  +fc
+
+  >li
+    width: 200px
+    text-align: center
+    cursor: pointer
+    color: rgb(102, 102, 102)
+    line-height: 50px
+    +hoverText($brown-dark)
+
+    position: relative
+    &:after
+      content: ""
+      display: block
+      border-right: 1px solid rgb(181,137,89)
+      height: 16px
+      +position(absolute, 17px 0 null null )
+
+  .active
+    color: $brown-dark
+    &::before
+      border-left: 1px solid rgb(181,137,89)
+      border-top: 1px solid rgb(181,137,89)
+      content: ""
+      display: block
+      +size(12px)
+      +position(absolute, -7px null null 50%)
+      background-color: $bgco
+      transform: translateX(-50%) rotate(45deg)
+
+
+.slider-show
+  +max(1366)
+    .slick-list
+      +padding(null 8vw)
+
+    .slick-arrow
+      +size(8vw, 100%)
+
+  +max(767)
+    .slick-list
+      +padding(null 0)
+    .slick-arrow
+      display: none
+
+
+.slider-nav
+  +max(990)
+    display: none
+
+
+
+.submenu
+  +f(flex-start, flex-end)
+  margin-bottom: 20px
+  a
+    +fc
+    font-weight: bold
+    color: rgb(162, 134, 104)
+    +margin(null 1px null null )
+    +size(200px, 50px)
+    border: 1px solid rgb(217,194,170)
+    border-radius: 8px 8px 0 0
+    background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
+    margin-bottom: 10px
+
+    position: relative
+    &::before
+      content: ""
+      display: block
+      background: rgb(104,55,0)
+      +size(16px)
+      +position(absolute, null null 0px 50%)
+      transform: translate(-50%,50%) rotate(45deg)
+      opacity: 0
+      
+
+
+  a.active
+    background: rgb(104,55,0)
+    color: white !important
+    height: 60px
+    &::before
+      opacity: 1
+
+
+.submenu
+  .slick-track
+    +f(flex-start, flex-end)
+  a
+    display: flex !important
+    +hoverText(rgb(104,55,0))
+
+  .slick-list
+    +margin(null 36px)
+
+  .slick-arrow
+    background-color: rgb(216, 194, 170)
+    border-radius: 50%
+    color: white
+    +size(26px)
+    position: absolute
+    top: 20px
+    +fc
+    &:before
+      font-size: 12px
+      
+  .slick-arrow.slick-disabled
+    background-color: rgba(200,200,200,0.5)
+
+  .icon-next
+    right: 0
+
+  +max(767)
+    .slick-list
+      +margin(null 36px)
+      font-size: 12px
+
+  +max(430)
+    .slick-list
+      +margin(null 30px)
+
+    a
+      height: 38px
+    a.active
+      height: 42px
+
+  .slick-arrow
+    +size(24px)
+    top: 10px
+    &:before
+      font-size: 12px
+
+  .icon-prev
+    left: -5px
+  .icon-next
+    right: -5px
+
+
+
+.block__title
+  height: 50px
+  +f(null, center)    
+  background: linear-gradient(to bottom, rgb(255,255,255), rgb(251,247,243))
+  border-top: 1px solid rgb(222, 207, 186)
+  +padding(null 25px)
+  border-bottom: 1px solid rgb(239,239,239)  
+  color: rgb(104,55,0)
+  font-weight: bold
+
+  & + *
+    background-color: rgb(255,255,255)
+
+
+
+
+
+.tri-columns
+  position: relative
+  width: 100%
+  display: flex
+
+.midBlock
+  +margin(null 24px)
+  width: calc(100% - 478px)
+  margin-bottom: 15px
+
+.leftBlock, .rightBlock
+  width: 215px
+  flex-shrink: 0
+
+.rightBlock
+  position: absolute
+  right: 0
+  top: 0
+
+
++max(1300)
+  .tri-columns
+    flex-direction: column
+    // flex-wrap: wrap
+
+
+  .midBlock
+    +margin(null 0px null 20px)
+    width: calc(100% - 236px)
+    +position(absolute, 0 0 null null )
+
+  .rightBlock
+    position: static
+
++max(991)
+  .leftBlock, .rightBlock
+    width: 200px
+    .cart__content,
+    .record__content
+      font-size: 15px
+      
+  .midBlock
+    +margin(null 0px null 20px)
+    width: calc(100% - 221px)
+  
+
++max(767)
+  .leftBlock, .midBlock, .rightBlock
+    width: 100%
+    +margin(null 0px null 0)
+  
+  .rightBlock
+    +f(space-between, flex-start, row, wrap)
+    .cart-list, .record
+      width: calc(50% - 5px)
+      
+  .midBlock
+    position: relative
+    
+
+
++max(450)
+  .rightBlock
+    .cart-list, .record
+      width: 100%
+
+
+
+
+
+.catalog
+  margin-bottom: 15px
+  .block__title
+    z-index: 11
+    position: relative
+  #dorpdown-js
+    background-color: transparent
+
+  ul
+    background-color: rgb(255,255,255)
+    +padding(null 25px)
+    margin-bottom: 8px
+    +padding(10px null)
+    font-weight: bold
+
+  .subtitle
+    font-weight: bold
+    line-height: 2.25
+    color: #a57b4b  
+    a
+      color: #a57b4b
+    &:before
+      +margin(null 10px null -3px)
+
+  li:not(.subtitle)
+    line-height: 2
+    +f(null , center)
+    +circle( 5px, 10px, #c8ab81)
+    a
+      +hoverText(rgb(104,55,0))
+
+
+  ul.purple
+    .subtitle
+      &::before, a
+        color: #8c1e5b
+    .active
+      &::before
+        background-color: #8c1e5b
+      a
+        color: #8c1e5b
+
+  ul.orange
+    .subtitle
+      &::before, a
+        color: #fd5f27
+    .active
+      &::before
+        background-color: #fd5f27
+      a
+        color: #fd5f27
+
+  +max(991)
+    font-size: 15px
+    li:not(.subtitle):before
+      background-color: #fff !important
+
+    ul
+      +padding(null 20px)
+
+    .subtitle:before
+      margin-right: 5px
+
+
+    // +max(991)
+    .block__title
+      width: 100%
+      border-bottom: 1px solid #decfba
+  
+    #dorpdown-js
+      +f(flex-start, stretch, row, wrap)
+      width: 100%
+      max-width: 400px
+
+    ul
+      width: 50%
+
+    #dorpdown-js
+      position: absolute
+      z-index: 11
+      background-color: #efefef
+      display: none
+
+  +max(991)
+    ul
+      font-weight: normal      
+      margin-bottom: 2px
+    li:not(.subtitle)
+      line-height: 1.8
+  +max(768)
+    #dorpdown-js
+      max-width: 100%
+
+  +max(450)
+
+    ul
+      width: 100%
+    .subtitle + div
+      display: none
+    
+
+#close-bgc
+  +size(100vw, 100vh)
+  +position(fixed, 0 0 null null )
+  z-index: 10
+  pointer-events: none
+  transition: 0.3s background-color
+  &.active
+    transition: 0.3s background-color
+    pointer-events: auto
+    background-color: rgba(black, 0.1)
+
+
+
+
+
+
+
+
+
+
+//問題在於 順序無法以 小大小小 排列
+//應該要用js方式變更DOM 或是放入dashboard的方式
+  
+  
+.items__content
+  
+  +f(space-around, flex-start, row, wrap)
+  +padding(5px 18px)
+
+  .card
+    // +size(220px, auto)
+    width: calc(100% / 4)
+    white-space: normal
+    +padding(15px)
+    +margin(18px null 18px null )
+
+  .card__pic
+    margin-bottom: 10px
+    position: relative
+    img
+      width: 100%
+
+  .card__pic[data-tri]:before
+    content: attr(data-tri)
+    +position(absolute, 0 null null 0)
+    color: white
+    +triangle("up", 74px, 37px, red)
+    font-size: 14px
+    line-height: 45px
+    z-index: 1
+    text-indent: -14px
+    white-space: nowrap
+    transform:  translateY(15px) rotate(-45deg)
+    transform-origin: 0 100%
+
+  .card__pic[data-corner]:after
+    content: attr(data-corner)
+    +position(absolute, null 0 0  null)
+    +size(55px, 25px)
+    +fc
+    background-color: rgb(255, 156, 1)
+    border-radius: 6px 0 0 0 
+    color: white
+    font-size: 14px
+    z-index: 1
+
+  .cover
+    +position(absolute, 0 0 0 0)
+    +size(100%)
+    +fc
+    background-color: rgba(black, 0.3)
+    opacity: 0
+    pointer-events: none
+    +hover(opacity)
+
+    [class^="icon-"]
+      +size(50px)
+      +margin(null 10px)
+      border-radius: 50%
+      +fc
+      cursor: pointer
+      flex-shrink: 0
+
+    .icon-heart
+      color: rgb(189, 160, 120)
+      background-color: #fff
+      +padding(3px 2px null null )
+
+      &:before
+        +hover(color)
+      &:hover:before
+        color: #d2655c
+        
+    .icon-cart
+      color: #fff
+      background-color: rgb(189, 160, 120)
+      transition: 0.3s all
+
+      +hover(background-color)
+      &:hover
+        background-color: $brown-dark
+    
+    +max(768)
+      display: none
+
+  .card:hover
+    box-shadow: 0 0 1px #b47832
+    .cover
+      opacity: 1
+      // transition: 0.3s opacity
+      pointer-events: auto
+
+
+  .card__name
+    line-height: 1.625
+    +padding(3px null)
+
+  .card__price
+    margin-bottom: 5px
+    span:first-child
+      font-size: 15px
+      white-space: nowrap
+      display: inline-block
+      color: #8b8b8b
+      margin-right: 5px
+    .num
+      font-size: 18px
+      white-space: nowrap
+      color: #b47832
+      
+
+  .card__ps
+    +size(38px , 20px)
+    background-color: #d2655c
+    border-radius: 3px
+    color: white
+    +fc
+    font-size: 14px
+
+
+  .border
+    width: calc(100% + 36px)
+    +margin(null -18px)
+    border-bottom: 1px solid #e5e5e5
+    +max(1450)
+      display: none
+
+
+
+  +max(990)
+    align-items: stretch
+    .card
+      font-size: 15px
+      width: calc(100% / 3)
+      +padding(8px)
+      +margin(8px null)
+      +f(flex-start, flex-start, column)
+    .card__name
+      margin-bottom: auto
+
+  +max(768)
+    .cover
+      [class^="icon-"]
+        +size(45px)
+        +margin(null 6px)
+
+
+
+  +max(530)
+    +padding(null 6px)
+    font-size: 14px
+    .card__price span:first-child
+      font-size: 14px
+
+    .card
+      width: calc(50%)
+      +padding(null 6px)
+      +margin(0 null 10px)
+
+    .card__pic
+      margin-bottom: 3px
+  
+    .card__price
+      margin-top: 5px
+
+
+
+
+
+  
+#mCSB_1_scrollbar_vertical
+  right: -6px
+
+
+.cart-list
+  margin-bottom: 20px
+
+  .cart__content
+    +padding(null 20px)
+    padding-bottom: 30px
+    +f(flex-start,center,  column)
+
+  // ul
+  .cart__list
+    overflow: y-scroll
+    width: 100%
+    max-height: 450px 
+
+  .unit
+    +padding(20px null)
+    border-bottom: 1px solid rgb(240, 240, 240)
+    +hoverText($brown-dark)
+
+    
+  .unit__content
+    +f(flex-start, flex-end)
+    margin-bottom: 10px
+
+    img
+      +size(58px)
+      margin-right: 10px
+    .info
+      +f(center, flx-start, column)
+    .calc
+      margin-bottom: 5px
+      font-size: 15px
+    .delete
+      +size(60px, 25px)
+      font-size: 14px
+      color: #666
+      background-color: rgb(237, 237, 237)
+      +fc
+      cursor: pointer
+      +hoverText(rgb(210,101,92))
+
+  .cart__total
+    width: 100%
+    border-top: 1px solid black
+    height: 60px
+    text-align: center
+    margin-bottom: 8px
+    span
+      line-height: 60px
+      align-self: baseline
+    .num
+      font-size: 25px
+
+
+
+  .cart_tips
+    margin-bottom: 25px
+    width: 100%
+    max-width: 200px
+
+    border: 1px solid rgb(222, 207, 186)
+    border-radius: 10px
+    white-space: normal
+    +padding(12px)
+    text-align: center
+    background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
+    color: rgb(210,101,92)
+    
+    .f18
+      font-weight: bold
+      margin-bottom: 5px
+    
+    .brown
+      color: rgb(162,134,104)
+      line-height: 1.3
+      border-bottom: 1px solid rgb(222, 207, 186)
+      padding-bottom: 10px
+      margin-bottom: 10px
+
+    +hover(border-color, 0.2s)
+    &:hover
+      border-color: rgb(210,101,92)
+
+  .cart__btn
+    +f(center)
+    a
+      +size(80px)
+      color: white
+      border-radius: 50%
+      +margin(null 4px)
+      +fc
+      text-align: center
+    a:first-child
+      background-color: rgb(189, 160, 120)
+      +hoverBgc(#b27f3c)
+    a:last-child
+      background-color: rgb(210,101,92)
+      +hoverBgc(#cc3d33)
+
+  +max(991)
+    .cart__btn
+      a
+        +size(70px)
+        font-size: 15px
+        flex-shrink: 0
+
+
+
+
+#modal-tips
+  background-color: #fff
+  max-width: 1000px
+  +padding( 22px 30px)
+  border-radius: 10px
+  color: #7C7C7C
+
+  .tips__content >
+    p, span
+      +padding(null 6px)
+      display: inline-block
+      margin-bottom: 12px
+
+  .tips__title
+    +padding(null 6px)
+    border-bottom: 1px solid #eee
+    color: #A5514B
+    line-height: 2.2
+    margin-bottom: 18px
+    
+  .card-wrap
+    +f(flex-start, stretch, row ,wrap)
+    +margin(null -13px)
+    color: #333
+
+  .card
+    +margin(null 13px 25px 13px)
+    width: calc(25% - 26px)
+    +padding(18px)
+    border: 1px solid #eee
+    +f(flex-start, flex-start, column)
+    font-size: 15px
+
+  .card__name
+    +padding(15px null)
+
+  .card__price
+    margin-top: auto
+    +f(space-between)
+    width: 100%
+
+    span:not(.num)
+      color: $brown-dark
+    .num
+      text-decoration: line-through
+
+  .shop
+    display: inline-block
+    float: right
+    +size(110px, 40px)
+    line-height: 40px
+    border-radius: 20px
+    color: #ffffff
+    background-color: rgb(188, 74, 74)
+    text-align: center
+    cursor: pointer
+    +hoverBgc(rgb(204, 38, 38))
+  .clear
+    clear: both
+
+  +max(990)
+    .card__name
+      +padding(10px null)
+    .card
+      +margin(null 6px 20px 6px)
+      width: calc(33% - 12px)
+      +padding(15px)
+
+  +max(600)
+    +padding( 22px 20px)
+    font-size: 13px
+    .card
+      +padding(6px)
+      font-size: 12px
+      width: calc(33% - 6px)
+      +margin(null 3px 15px 3px)
+
+    .card__pic
+      +margin(-6px -6px null)
+    .card__price
+      flex-wrap: wrap
+
+      
+
+
+
+//讓lity內容過長時，可以上下捲動
+
+html.lity-active.tips-mode body 
+  overflow: hidden
+
+  .lity-inline 
+    .lity-content > * 
+      max-height: none !important
+
+    .lity-wrap 
+      overflow: auto
+
+    .lity-container 
+      max-height: none !important
+      margin: 30px 0
+
+
+#modal-trace
+  .wrapper
+    background-color: #fff
+    +fc
+    +padding(20px 22px)
+    border-radius: 5px
+
+  .icon-heart
+    +size(50px)
+    +margin(null 15px null null)
+    border-radius: 50%
+    +fc
+    color: #fff
+    background-color: rgb(189, 160, 120)
+    +padding(3px 2px null null )
+  a
+    text-decoration: underline
+    color: rgb(181, 130, 63)
+    +hoverText(rgb(234, 132, 0))
+    letter-spacing: 0.5px
+
+
+
+.record__content
+  background-color: rgb(255,255,255)
+  +padding(5px 30px 20px 20px)
+  height: 450px
+  overflow: auto
+
+  #mCSB_2_scrollbar_vertical
+    right: 5px
+  
+  .record__unit
+    padding-right: 10px
+    font-size: 15px
+    +f(flex-start, center)
+    +padding(15px null)
+    white-space: normal
+    +hoverText($red)
+    &:not(:last-child)
+      border-bottom: 1px solid #e5e5e5
+
+  img
+    +size(60px)
+    margin-right: 12px
+    flex-shrink: 0
+
+.search >.container
+  max-width: 980px
+

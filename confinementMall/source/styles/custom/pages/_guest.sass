@@ -1,0 +1,139 @@
+
+  
+// #guest
+//   background-color: #fff
+  
+.login-non
+  width: 100%
+  max-width: 530px
+  border-radius: 10px
+  border: 1px solid #D1AF81
+  +padding(64px 80px)
+  box-shadow: 3px 3px 15px rgba(black,0.2)
+  background-color: #fff
+  text-align: center
+
+  // .f24
+  //   font-weight: bold
+    
+  .f24 + *
+    white-space: nowrap
+    text-indent: -20px
+    color: rgb(131, 97, 72)
+
+  
+  input
+    +size(100%, 40px)
+    border: 1px solid $brown
+    +padding(null 15px)
+    color: $brown
+    +trans
+    &::placeholder
+      color: #A57B4B
+    &:hover
+      background-color: $brown-light
+    &:focus
+      color: #A57B4B
+      border-color: #A57B4B
+
+  .verify
+    +f(flex-start, center)
+    img
+      cursor: pointer
+
+  .login_btn
+    +fc
+    > a
+      color: $white
+      +size(170px, 40px)
+      +fc
+      background-color: rgb(99, 99, 99)
+      border-radius: 3px
+      +hoverBgc(rgb(63, 63, 63))
+
+    .mr
+      margin-right: 22px
+      background-color: #A57B4B
+      +hoverBgc(#d37d1b)
+
+  +max(767)
+    +padding(50px 40px)
+    .f24 + *
+      white-space: normal
+      text-indent: 0px
+
+  +max(374)
+    +padding(40px 30px)
+    .login_btn .mr
+      margin-right: 8px
+
+
+#guest-orders
+  .table 
+    background-color: #fff
+    +max(990)
+      max-width: 768px
+      margin-bottom: 40px
+      +margin(null auto)
+      th
+        display: none
+      td
+        +f
+        padding: 0
+        height: 40px
+        &:before
+          +fc
+          content: attr(data-title)
+          width: 40%
+          max-width: 200px
+          height: 100%
+          color: white
+          background-color: rgb(213, 178, 136)
+
+        .fc
+          +fc
+          flex: 1 0 60%
+          height: 100%
+      td:nth-child(odd)
+        &:before
+          background-color: #cea579
+        .fc
+          background-color: rgb(249, 249, 249)
+
+
+  .ps
+    background-color: #fff
+    +padding(null 33px )
+
+  .ps__title
+    +padding(13px null )
+    border-bottom: 1px solid #eee
+    
+  .ps__content
+    +padding(22px null )
+    color: #777777
+
+    .register
+      color: #777777
+      text-decoration: underline
+      +hoverText(#000)
+
+
+
+  .bottom-btn
+    +fc
+    .btn
+      background-color: rgb(165, 123, 75)
+      color: white
+      +size(200px, 40px)
+      +fc
+      +hoverBgc(#b77f3e)
+    .addin
+      margin-left: 25px
+      background-color: rgb(235, 122, 28)
+      +hoverBgc(#e56e0d)
+
+    +max(500)
+      +f(center, center, column, wrap)
+      .addin
+        +margin(15px null null 0)

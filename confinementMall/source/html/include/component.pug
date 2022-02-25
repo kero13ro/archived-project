@@ -1,0 +1,222 @@
+
+
+//- mixin breadcrumb
+//-   .breadcrumb
+//-     ul.nostyle
+//-       li 首頁
+//-       li.icon-right-thin 月子餐組合選
+
+
+mixin topLanding
+
+  .landing(style="background-image: url(styles/images/02-00-banner.jpg);")
+    .slogan
+      .f24 健康做月子
+      h3.f56 月子膳食組合
+      .f24.bd 安心‧感動‧幸福
+      .f15 嚴選優良食材，紫金時尚膳食服務，讓您安心 #[br] 優惠的好選擇
+
+mixin inquire
+  .container.sm.pt56
+    span.f24.mb16 客服詢問
+    span.f16.lh18 ※ 標示 #[span.star.mid &nbsp;] 符號的欄位為必填。
+    p.mb32.wide10.spe2 感謝您使用紫金堂購物商城，您提出的問題我們將盡快回覆。訂單相關、退換貨及購買流程等問題可先至 #[a(href="qa.html") 《常見問題》] 查閱。
+
+
+    .box.mb48
+      .box__title 詢問內容
+      .box__content
+        .line.mb16
+          span 訂單編號
+          span A2017120701
+        .line.mb16
+          span.star 詢問主題
+          .select_unit
+            select(required)
+              option(selected disabled hidden) 請選擇
+              option(value="1") 主題1
+        .line.mb16
+          span.star 詢問內容
+          textarea(rows="3" required)
+
+  .submit.mb56.noBorder
+    a.btn 送出
+    a(href="index.html").btn.cancel 取消
+
+  .inquiryWrap.pt56.pb88
+    .inquiryLog.container
+      .log__title 客服問答紀錄
+
+      .log__content.quest
+        .sub
+          img(src="./styles/images/order-03-01.png", alt="紫金堂")
+          span 您的提問
+        .lh20
+          ul.nostyle
+            li 訂單編號：
+              span.underline A2017120701
+            li 詢問主題：退貨配送問題
+            li 發問時間：2017-12-05  12：00：12
+          div 請問商品退貨還需多少工作天才會進行？
+      .log__content.answer
+        .sub
+          img(src="./styles/images/order-03-02.png", alt="紫金堂")
+          span 客服回覆
+        .lh20
+          ul.nostyle
+            li 回覆時間：2017-12-05  13：00：01
+          div 您好，已為您處理退貨，將有宅配人員前往跟您收件，欲退商品單件退回交宅配人員即可，後續黑橋牌會為您處理退款事宜，造成不便非常抱歉，謝謝您。
+
+
+mixin cancel(member)
+  .container.sm.pt56
+    span.f24.mb16 取消訂單
+    span.f16.lh18 ※ 標示 #[span.star.mid &nbsp;] 符號的欄位為必填。
+    p.mb40.wide10 訂單取消後，系統無法為您保留取消的商品庫存；重新下單可能會遇到商品庫存被其他會員購買，建議您取消後立即重新下單。
+
+
+    .box.mb56
+      .box__title 取消訂單
+      .box__content
+        .line.mb16
+          span 訂單編號
+          span A2017120701
+        .line.mb24
+          span.star 取消原因
+          .select_unit
+            select(required)
+              option(selected disabled hidden) 請選擇
+              option(value="1") 原因1
+        .line.mb24
+          span.star 詳細描述
+          textarea(rows="3" required)
+
+
+  .submit.pt40.pb88
+    if member == "guest"
+      a(href="guest-canceled.html").btn 送出
+    else
+      a(href="canceled.html").btn 送出
+
+    .btn.cancel 取消
+
+mixin canceled(member)
+  .bgc(style="background-image: url(styles/images/login-0-bgc2.jpg)")
+    .container.fc.pt72.pb88
+      .modal.f16
+        .modal__main
+          img(src="./styles/images/login-00-01.png" alt="紫金堂")
+          .f24.lh20.mb24 訂單已取消
+          div 您的訂單已取消，您毋須支付此訂單費用。
+        .modal-bottom
+          if member == "guest"
+            a(href="guest-order.html")
+              .icon-back
+              span 返回訂單紀錄
+          else
+            a(href="order.html")
+              .icon-back
+              span 返回訂單紀錄
+
+
+
+
+mixin page-main
+  .intro__main#js-page.editor
+    .page
+      a(data-page="page1").active 商品說明
+      a(data-page="page2") 購物說明
+
+    .main_content.js-page1(style="color: #7c7c7c; line-height: 2;")
+      div(style="color: #1e1e1e; font-size: 1.5rem;") 月子補養兩日餐 (10天)
+        span(style="color: #59a467;") &emsp;(蛋奶素)
+
+      div(style="padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid #efefef;")
+
+      p 爲滿足現代女性必須於短短三十天內做好產後調養、哺育母乳以及快速回復體態的需求；紫金堂秉持中醫漸進式調理觀點，結合現代營養學，研發代謝、修復、滋補、回春四階段月子養生素燉膳食。
+      p 為了讓消費者更能輕易體驗「月子餐組合選」的獨特之處與方便性，特地開發全新的素燉組合餐，另外為了媽媽們產後想親自哺乳新生兒，餐點另有一般組合餐與哺乳組合餐，請先了解個人需求後下單。
+
+      div(style="color: #1e1e1e;") 【月子餐組合選內容】
+      p 補氣主食6碗、調養燉品6碗、養生飲品10包。
+      div(style="color: #1e1e1e;") 【配送方式】
+      p 兩日1配。
+      div(style="color: #1e1e1e;") 【每日用餐建議】
+      p 早餐-補氣主食1碗、調養燉品1碗、養生飲品1包。#[br]
+        | 午餐-補氣主食1碗、調養燉品1碗、養生飲品1包。#[br]
+        | 下午茶-養生飲品1包。#[br]
+        | 晚餐-補氣主食1碗、調養燉品1碗、養生飲品1包。#[br]
+        | 晚安飲-養生飲品1包。
+        | 備有一般組合餐與哺乳組合餐可任選。
+
+      
+      div(style="margin-bottom: 16px; margin-top: 16px;").tri-column
+        img(src="./styles/images/02-01-11.jpg" alt="紫金堂")
+        img(src="./styles/images/02-01-12.jpg" alt="紫金堂")
+        img(src="./styles/images/02-01-07.jpg" alt="紫金堂")
+        img(src="./styles/images/02-01-08.jpg" alt="紫金堂")
+        img(src="./styles/images/02-01-09.jpg" alt="紫金堂")
+        
+
+      div(style="color: #1e1e1e;") 【調養燉品】
+      div(style="margin-bottom: 15px;")
+
+        .group
+          div 第一週：
+          div 丹蔘素魚湯、海苔米糕湯、枸杞豆包湯、四神豆腸湯、黑豆薏米素羊肉、忘憂腰果菜捲湯、山藥麥條湯、牛蒡福袋湯、藕節銀耳湯、百菇素雞湯、耆瓜素魚湯(哺)、木瓜白豆八珍湯(哺)、花生黃金鴨(哺)等輪替。
+          
+        div(style="padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid #efefef;")          
+        .group
+          div 第二週：
+          div 杜仲固本湯、巴戟天固本湯、牛蒡福袋湯、海苔米糕湯、四神豆腸湯、忘憂腰果菜捲湯、藕節銀耳湯、枸杞豆包湯、百頁羅宋湯、牛蒡福袋湯、麻薑珍菇湯、紅麴素鰻湯、耆瓜素魚湯(哺)、木瓜白豆八珍湯(哺)、花生黃金鴨(哺)等輪替。
+        div(style="padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid #efefef;")
+        .group
+          div 第三週：
+          div 百菇素雞湯、麻薑珍菇湯、帝王素雞、紅麴素鰻湯、黑豆薏米素羊肉、牛蒡福袋湯、藥燉獅子頭、藕節銀耳湯、百頁羅宋湯、山藥麥條湯、枸杞豆包湯、忘憂腰果菜捲湯、杜仲固本湯、耆瓜素魚湯(哺)、木瓜白豆八珍湯(哺)、花生黃金鴨(哺)等輪替。
+        div(style="padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid #efefef;")
+        .group
+          div 第四週：
+          div 百菇素雞湯、帝王素雞、麻薑珍菇湯、紅麴素鰻湯、黑豆薏米素羊肉、藥燉獅子頭、藕節銀耳湯、牛蒡福袋湯、海苔米糕湯、藕節銀耳湯、山藥麥條湯、百頁羅宋湯、耆瓜素魚湯(哺)、木瓜白豆八珍湯(哺)、花生黃金鴨(哺)等輪替。
+
+        //- div(style="display: flex;")
+        //-   div(style="flex: 0 0 85px;") 第二週：
+        
+
+
+      span(style="color: #1e1e1e;") 【補氣主食】
+      p 晶玉薏仁、油飯、地瓜糙米飯、十穀飯、玉米雜糧飯、紅豆薏仁、紫米棗香飯等輪替
+
+      span(style="color: #1e1e1e;") 【養生飲品】
+      p 觀音串、仙楂、黃耆、清熱飲、草本止渴飲等輪替。
+
+
+
+    
+    .main_content.js-page2(style="color: #7c7c7c; line-height: 2; padding: 32px;")
+      div(style="color: #1e1e1e; font-size: 1.5rem;") 月子餐組合選訂購相關
+      div(style="padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid #efefef;")
+      div(style="color: #D2655C;") 出貨方式
+
+      p 中午12：00前完成付款，三個工作日到貨(不包含下單日)。（可以預購及指定到貨日）#[br]
+        | 中午12：00前未完成付款，視為隔日訂單。#[br]
+        | 紫金堂專屬車隊全台低溫冷藏二日一配送，每日上午10：00前新鮮宅配到府。(每次送餐均為兩天份)#[br]
+        | 本島偏遠地區、宜花東委由冷藏宅急便配送。#[br]
+        | 外島澎湖地區、金門地區、金門烈嶼鄉、小琉球、綠島、馬祖，以上區域均可配送。#[br]
+        | 均委由飛機運送，每日加收200元運費。
+        span(style="color: #FF8C00;") (偏遠地區與特殊地區運費另計)
+
+      div(style="color: #D2655C;").bus 線上訂購
+        img(src="./styles/images/02-01-22.png" alt="紫金堂" style="float: right; max-width: 30vw;")
+      p 付款方式：線上刷卡、ATM轉帳、超商付款(金額須低於兩萬)、銀行匯款。
+      div(style="color: #D2655C;").mb24 本網站商品售價，僅限於臺灣地區。
+
+      //- .scrollbarX.mb32
+      div(style="overflow-x: auto; margin-bottom: 32px;")
+        img(src="./styles/images/02-01-30.jpg" alt="紫金堂" style="min-width: 430px")
+
+      div(style="color: #D2655C;") 退餐注意事項
+      p 1. 到貨日前一天恕無法要求延後到貨日、異動訂購內容或取消訂單，本餐點食材皆下單後進行採購，退餐請於出貨日前二日來電告知。
+      p 2. 本商品為低溫保鮮食品保存條件嚴謹，故不適用於消保法規之七日鑑賞期，收到商品二日內如發現產品有瑕疵狀況，請儘速向本公司聯絡，並請低溫保存。
+
+      p(style="color: #1e1e1e;") 月子餐組合選  客服專線 
+        a(href="tel:0800-289-666" style="color: #FF8C00; font-size: 2rem; font-style: italic; margin-right: 5px;") 0800-289-666
+        | (上班時間)

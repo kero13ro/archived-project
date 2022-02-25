@@ -1,0 +1,244 @@
+
+// 進場動畫
+// .wp
+//   opacity: 0
+
+// #gradiant
+//   +position(absolute, null null null 0)
+//   +size(1000px, 200px)
+//   transform: scale(1.6)
+//   transform-origin: 0 0
+//   clip-path: url(#svgPath)
+//   background-size: 2000px 200px
+//   background: linear-gradient(to right, rgba(255,255,255,1) 20%, rgba(255,255,255,0.99) 21%, rgba(242,217,255,0.87) 34%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.82) 60%, rgba(255,255,255,0.65) 69%, rgba(255,255,255,1) 81%)
+//   animation-duration: 10s
+//   animation-fill-mode: forwards
+//   animation-name: SVGgradiant
+//   animation-timing-function: linear
+//   animation-iteration-count: infinite
+
+
+
+//   @keyframes SVGgradiant 
+//     0% 
+//       background-position: 0 0  
+//     100% 
+//       background-position: -2000px 0  
+
+
+  
+
+// #nav_cover
+//   +position(fixed, 0 0 null null )
+//   +size(100vw, 100vh)
+//   background-color: rgba(0, 0, 0, 0.5)
+//   z-index: 10
+//   opacity: 0
+//   transition: 0.3s opacity
+//   pointer-events: none
+
+// #nav.expend
+//   #nav_cover
+//     transition: 0.3s opacity
+//     opacity: 1
+//     pointer-events: auto
+
+.nav-padding
+  height: 100px
+
+
+#nav
+  +position(fixed, 0 null null null )
+  +size(100%, 100px)
+  box-shadow: 0 0 10px rgba(200,200,200,0.95)
+  background-color: rgb(254, 254, 254)
+  z-index: 20
+
+  .container
+    +f(null, center)
+    +size(100%)
+    position: relative
+  
+  .logo
+    margin-right: 55px
+    min-width: 75px
+  
+  .nav_office,
+  .nav_shop
+    +f(null, center)
+      
+    li:first-child a  
+      padding-left: 0
+
+    li:last-child a:after
+      border-right: 0px solid #000
+    
+
+  .nav_office
+    padding-bottom: 15px
+    li a
+      padding: 0 13px
+      font-size: 15px
+      color: #959595
+      +afterline(16px)
+      +hoverText(black)
+
+
+
+  .nav_shop
+    padding-bottom: 5px
+    li a
+      padding: 0 20px
+      font-size: 17px
+      font-weight: bolder
+      line-height: 22px
+      +hoverText($purple)
+      +afterline(22px)
+      
+      &.current
+        color: $purple
+
+
+    
+  .float
+    +position(absolute, 0 0 null null )
+    +f
+    +padding(18px 25px)
+
+  .login
+    padding-right: 12px
+    +afterline(22px)
+    font-weight: bold
+    &:before
+      margin-right: 10px
+      font-size: 1.2rem
+
+    +hoverText($purple)
+      
+
+      
+  .cart
+    +fc
+    padding-left: 12px
+    line-height: 22px
+    position: relative
+    &:before
+      font-size: 1.2rem
+    .bedge
+      +size(19px)
+      background-color: rgb(179, 119, 49)
+      border-radius: 50%
+      color: white
+      +fc
+      font-size: 10px
+      +position(relative, -8px 0 null null )
+      z-index: 1
+      
+    .circle
+      +size(19px)
+      background-color: rgb(179, 119, 49)
+      border-radius: 50%
+      +position(absolute, -8px 0 null null )
+
+
+    
+    +hoverText($purple)
+
+
+  +min(1366)
+    #nav_cover
+      li:last-child
+        display: none
+
+      li:nth-last-child(2) a:after
+        border-right: 0px solid #000
+
+.nav-padding
+  +max(1365)
+    height: 60px
+
+#nav
+  +max(1365)
+    height: 60px
+
+    .logo img
+      height: 40px
+
+    .nav_office
+      display: none
+
+    .nav_shop
+      padding-bottom: 0
+    
+
+  +max(767)
+    .nav_shop
+      li a:hover
+        color: white
+
+    .logo
+      margin-right: 0
+      
+    .float
+      position: relative
+      padding-top: 22px
+      padding-right: 5px
+    
+    .nav__content
+      +f(flex-end)
+      margin-left: auto
+
+
+    .nav__toggle
+      cursor: pointer
+      z-index: 14
+      +padding(20px)
+      position: relative
+      transition: 0.3s transform
+      z-index: 31
+
+
+      .one, .two, .three
+        +size(20px, 2px)
+        background: $purple
+        margin: 4px auto
+        backface-visibility: hidden
+        transition: 0.3s transform
+
+    #nav_cover
+      +position(fixed, 0px 0 null null )
+      background-color: #fff
+      background-color: rgba($purple, 0.9)
+      z-index: 30
+      +f(flex-end, center)
+      width: 100%
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1)
+      
+    .nav_shop
+      margin-top: -30px
+      +padding(20px 30px)
+      align-items: flex-end
+      flex-direction: column
+      width: 100%
+      li
+        width: 100%
+        +f(flex-end)
+      li:not(:last-child)
+        border-bottom: 1px solid rgba(#fff,0.2)
+      li a
+        margin-left: auto
+        +padding(25px 25px)
+        font-size: 18px
+        color: rgba(#fff, 0.9)
+        font-weight: normal
+        letter-spacing: 1px
+        &:after
+          border-right: none
+        &.current
+          font-weight: bold
+          color: #fff
+        
+
+    #nav_cover
+      height: 0
+      overflow: hidden

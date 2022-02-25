@@ -1,0 +1,266 @@
+
+
+#member
+  background-size: cover
+  position: relative
+  
+
+  
+  +m(768,720) 
+    background-position: left center
+    background-size: 200%
+
+  .forget
+    z-index: 2
+    
+  // &.darker
+  //   &::before
+  //     content: ""
+  //     +position(absolute, 0 0 0 0)
+  //     +size(100%)
+  //     background-color: rgba(black,0.2)
+  //     z-index: 1
+
+  .container
+    +size(100%)
+    position: relative
+    +padding(130px null)
+
+  .breadcrumb
+    color: white
+    +position(absolute, 0 null null 12px)
+  
+  .login
+    +size(1000px , 540px)
+    background-color: $white
+    border-radius: 5px
+    +fc
+
+  .login_left,
+  .login_right
+    +size(50%, 100%)
+    +f
+    justify-content: center
+
+
+  .login_left
+    +padding(50px 55px 20px 70px)
+    background-color: $brown-light
+    .f24
+      font-weight: bold
+    .mb16 
+      color: #683700
+    input
+      +size(100%, 60px)
+      border: 1px solid $brown
+      padding: 15px
+      color: $brown
+      +trans
+      &::placeholder
+        color: #A57B4B
+      &:hover
+        background-color: $brown-light
+      &:focus
+        color: #A57B4B
+        border-color: #A57B4B
+
+    .verify
+      +f(flex-start, center)
+      img
+        cursor: pointer
+
+    .login_btn
+      color: $white
+      +size(100%, 60px)
+      background-color: #A57B4B
+      +fc
+      +hoverBgc(#d37d1b)
+
+    .btn-group
+      +f(center, center)
+      line-height: 1
+
+      a:first-child
+        padding-right: 15px
+        margin-right: 15px
+        border-right: 2px solid black
+        font-weight: bold
+      a
+        +hoverText(#A57B4B)
+
+
+  .circle
+    border-radius: 50%
+    position: absolute
+    +size(60px)
+    color: #D5C3C3
+    left: 0
+    top: 50%
+    transform: translate(-50%, -50%)
+    background-color: white
+    +fc
+
+
+  .login_right
+    +padding(50px 70px 20px 50px)
+    position: relative
+    .login_center
+      +f(flex-start, flex-start, column)
+      padding-top: 20px
+
+    // .brown.mb24
+    //   align-self: flex-start
+
+    a:hover img
+      transition: 0.2s box-shadow
+      box-shadow: 0 0 10px rgba(100, 100, 100, 0.5)
+
+    .check_unit
+      align-items: flex-start
+      .box
+        margin-top: 3px
+
+      a
+        text-decoration: underline
+        +margin(null 3px)
+        +hoverText(#A57B4B)
+        font-weight: bold
+
+    // .cover
+    //   text-align: center
+    .cover.ban
+      a
+        // +margin(null auto)
+        // display: block
+        opacity: 0.6
+        pointer-events: none
+
+#member
+  +max(990)      
+    .login_left,
+    .login_right
+      +padding(40px)
+      
+      input, .login_btn
+        height: 50px
+    .container
+      +padding(100px null)
+
+  +max(767)
+    .container
+      +padding(80px null 40px)
+
+    .login
+      display: block
+      height: auto
+    .login_left,
+    .login_right
+      +size(100%, auto)
+      
+    .circle
+      top: 0
+      left: 50%
+
+  +max(500)      
+    .login_left,
+      +padding(30px 30px 45px )
+    .login_right
+      +padding(30px)
+
+    .login
+      // height: 80vh
+      +margin(null 10px)
+
+
+.forget
+
+  width: 100%
+  max-width: 580px
+  border-radius: 8px
+  border: 1px solid #D1AF81
+  +padding(70px 105px)
+  box-shadow: 3px 3px 15px rgba(black,0.2)
+  background-color: rgb(246, 242, 241)
+  text-align: center
+  
+
+  .f24
+    font-weight: bold    
+  .f24 + *
+    +margin(null -25px)
+    color: #683700
+
+  
+  input
+    +size(100%, 60px)
+    border: 1px solid $brown
+    padding: 15px
+    color: $brown
+    +trans
+    &::placeholder
+      color: #A57B4B
+    &:hover
+      background-color: $brown-light
+    &:focus
+      color: #A57B4B
+      border-color: #A57B4B
+
+
+  .verify
+    +f(flex-start, center)
+    img
+      cursor: pointer
+
+  .login_btn
+    +fc
+    > a
+      color: $white
+      +size(50%, 60px)
+      +fc
+      background-color: rgb(99, 99, 99)
+      border-radius: 3px
+      +hoverBgc(rgb(63, 63, 63))
+
+    .mr
+      margin-right: 22px
+      background-color: #A57B4B
+      +hoverBgc(#d37d1b)
+
+  +max(768)
+    +padding(70px 80px)
+    .f24 + *
+      +margin(null 0)
+
+  +max(500)
+    +padding(40px 30px)
+    .login_btn .mr
+      margin-right: 8px
+
+    input,
+    .login_btn > a
+      height: 45px
+
+
+// #member
+.modal.dark
+  display: none
+  
+
+.noMember
+  margin-top: 30px
+  padding-top: 30px
+  border-top: 1px solid #ccc
+  width: 100%
+  a
+    color: #A57B4B
+    +size(100%, 60px)
+    background-color: rgb(245, 241, 240)
+    border: 1px solid #A57B4B
+    +fc
+    +hoverBgc(rgb(234, 230, 229))
+
+  +max(500)
+    margin-top: 0px
+    padding-top: 20px
+    a
+      height: 45px

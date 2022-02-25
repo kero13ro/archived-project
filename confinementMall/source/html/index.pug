@@ -1,0 +1,208 @@
+
+extends ./include/layout-landing.pug
+include ./include/index_block.pug
+
+block content
+  
+  #index
+    //- #close-bgc
+    .slider-show
+      a.pic(style="background-image: url(styles/images/01-banner2.jpg);")
+      a.pic(style="background-image: url(styles/images/01-banner3.jpg);")
+      a.pic(style="background-image: url(styles/images/01-banner1.jpg);")
+      a.pic(style="background-image: url(styles/images/01-banner2.jpg);")
+      a.pic(style="background-image: url(styles/images/01-banner1.jpg);")
+
+    ul.slider-nav.nostyle
+      li.active 消費滿萬送好禮喔！
+      li 複合式月子餐
+      li 高壓萃取的天然湯底
+      li 分享心得送好康
+      li 月子飲品十天份
+
+    .container.mt32
+
+      .submenu
+        a.active 紫金月子
+          h2.sr-only 商品專區
+          h3.sr-only 紫金月子
+        a 生理保養
+          h3.sr-only 生理保養
+        a 小產元氣
+          h3.sr-only 小產元氣
+        a 保健調養
+          h3.sr-only 保健調養
+        a 媽媽寶寶
+          h3.sr-only 媽媽寶寶
+        
+      .tri-columns.mb56
+      
+        .catalog.leftBlock
+          +catalog
+
+
+        .midBlock
+
+          .block__title 產品推薦
+          .items__content
+          
+            a(href="intro.html").card
+              .card__pic(data-tri="新品" data-corner="30日")
+                img(src="./styles/images/01-item01.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                    
+                  .icon-cart
+                    
+              .card__name 月子補養兩日餐(30日)
+              .card__price
+                span 特惠價
+                span.num $ 33,888 
+              .card__ps 套餐
+
+            a(href="intro-2.html").card
+              .card__pic
+                img(src="./styles/images/01-item02.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子補養兩日餐(20日)
+              .card__price
+                span 特惠價
+                span.num $ 22,888 
+              .card__ps 套餐
+
+            a(href="intro-3.html").card
+              .card__pic
+                img(src="./styles/images/01-item03.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子補養兩日餐(10日)
+              .card__price
+                span 特惠價
+                span.num $ 11,888 
+              .card__ps 套餐
+
+            a(href="intro-4.html").card
+              .card__pic
+                img(src="./styles/images/01-item04.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子補養兩日餐(2日)
+              .card__price
+                span 特惠價
+                span.num $ 2,388
+              .card__ps 套餐
+
+            .border
+
+            a(href="intro-5.html").card
+              .card__pic(data-tri="特惠" data-corner="TOP 1")
+                img(src="./styles/images/01-item05.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 生理藥膳調理【5日】
+              .card__price
+                span 特惠價
+                span.num $ 925
+              .card__ps 套餐
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/01-item06.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 香草美人經中餐
+              .card__price
+                span 特惠價
+                span.num $ 938
+              .card__ps 套餐
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/01-item07.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 香草美人經後餐
+              .card__price
+                span 特惠價
+                span.num $ 1,050
+              .card__ps 套餐
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/01-item08.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 香草美人生理餐(六期搭贈一期)
+              .card__price
+                span 特惠價
+                span.num $ 11,928
+              .card__ps 套餐
+
+            .border
+
+            a(href="intro.html").card
+              .card__pic(data-tri="特惠" data-corner="1箱")
+                img(src="./styles/images/01-item09.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 紫金月子水【1箱】
+              .card__price
+                span 特惠價
+                span.num $ 960
+
+            a(href="intro.html").card
+              .card__pic(data-tri="特惠" data-corner="30日")
+                img(src="./styles/images/01-item10.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子藥膳湯底第一階段
+              .card__price
+                span 特惠價
+                span.num $ 3,600
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/01-item11.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子藥膳湯底第二階段
+              .card__price
+                span 特惠價
+                span.num $ 3,600
+
+            a(href="intro.html").card
+              .card__pic
+                img(src="./styles/images/01-item12.jpg")
+                .cover
+                  .icon-heart(href="#modal-trace" data-lity)
+                  .icon-cart
+              .card__name 月子藥膳湯底第三階段
+              .card__price
+                span 特惠價
+                span.num $ 3,600
+
+                
+        .rightBlock
+
+          +cart
+          +record
+
+
+    +modal-trace
+    //- #modal-trace.lity-hide
+    //-   .wrapper
+    //-     .icon-heart
+    //-     .lh18 已加入追蹤清單 #[br] 前往
+    //-       a(href="trace.html") 我的追蹤清單
+

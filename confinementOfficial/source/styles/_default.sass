@@ -1,0 +1,432 @@
+
+
+$breakpoints: (xs: 480px,sm: 768px,md: 992px,lg: 1200px,xl: 1440px)
+
+=m($max, $min) 
+  @media only screen and (max-width: #{$max}px ) and (min-width: #{$min}px)
+    @content
+
+=max($value)
+  @media only screen and ( max-width: #{$value}px )
+    @content
+
+=min($value)
+  @media only screen and ( min-width: #{$value}px )
+    @content
+
+
+
+@function get-vw($max, $min)
+  $change: $max - $min
+  @return calc(#{$min}px + (((100vw - 480px)/511))*#{$change}  )
+
+=gra( $target, $max, $min: $max/2 )
+  @media only screen and ( min-width: 992px )
+    #{$target}: #{$max}px
+  +mqm(md, xs)
+    #{$target}: get-vw($max, $min)
+  +mq(xs)
+    #{$target}: #{$min}px
+
+
+// advanced gra           
+// Ex.  +agra(font-size, 300 , 1 , 1920 , 1440)
+
+@function get-vw2($max, $min  , $top , $bottom )
+  $change: $max - $min
+  $range: $top - $bottom
+  @return calc(#{$min}px + (((100vw - #{$bottom}px)/#{$range}))*#{$change}  )
+
+=agra( $target, $max, $min , $top , $bottom )
+  @media only screen and ( min-width: #{$top}px )
+    #{$target}: #{$max}px
+  @media only screen and ( max-width: #{$top}px ) and ( min-width: #{$bottom}px )
+    #{$target}: get-vw2($max, $min  , $top , $bottom )
+  @media only screen and ( max-width: #{$bottom}px )
+    #{$target}: #{$min}px
+
+
+=f($justify: flex-start, $align: flex-start, $direction: row, $wrap: nowrap)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+  flex-wrap: $wrap
+  
+=fc
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+
+
+
+$defaultcolor: rgb(22, 24, 23) !default  
+
+$purple: rgb(139, 29, 90)
+$purple-light: rgb(154, 38, 102)
+
+$white: rgb(254, 254, 254)  
+
+$brown: rgb(188, 159, 119)
+$brown-light: rgb(247,245,235)
+
+// $brown-light: rgb(243, 241, 229)
+
+$red: rgb(166, 42, 6)
+
+        
+
+
+
+// +min(1440px)
+//   $rpx: 1px
+// +m(1439px, 0)
+//   $rpx: 0.5px
+
+
+
+=container
+  width: 100%
+  margin: auto
+  padding: 0 25px
+  +mq(xs)
+    padding: 0 18px
+
+=trans
+  transition: color 0.3s, background-color 0.3s
+  &:hover
+    transition: color 0.3s, background-color 0.3s
+
+// =title
+//   font-size: $f24
+//   font-weight: bold
+//   color: #000000
+//   font-family: 'Open Sans', sans-serif  
+//   display: block
+//   text-align: center
+//   +max(480px)
+//     font-size: $f20
+
+
+html
+  font-size: 16px
+  +max(991)
+    font-size: 15.5px
+  +max(480)
+    font-size: 15px
+
+.en
+  font-family: 'Philosopher'
+
+.f40  
+  font-size: 2.5rem
+  +max(991)
+    font-size: 2rem
+  +max(480)
+    font-size: 1.6rem
+
+.f36
+  font-size: 2.25rem
+  +max(991)
+    font-size: 1.8rem
+  +max(480)
+    font-size: 1.5rem
+
+.f30
+  font-size: 1.875rem
+  +max(991)
+    font-size: 1.6rem
+  +max(480)
+    font-size: 1.4rem
+
+.f20  
+  font-size: 1.25rem
+  // +max(991)
+  //   font-size: 1.1rem
+  +max(480)
+    font-size: 1.1rem
+
+.f18  
+  font-size: 1.125rem
+  // +max(991)
+  //   font-size: 1.1rem
+  +max(480)
+    font-size: 1.1rem
+
+
+
+/* ==========================================================================
+    test
+ ========================================================================== */
+h1, h2, h3, h4
+  margin: 0   //index 客戶迴響
+
+
+=trans
+  transition: color 0.3s ,background-color 0.3s
+  &:hover
+    transition: color 0.3s ,background-color 0.3s
+
+=trans2
+  transition: transform 0.3s
+  &:hover
+    transition: transform 0.3s
+=trans2-slow
+  transition: transform 0.6s
+  &:hover
+    transition: transform 0.6s
+
+// $r(#value)
+//   RWD padding
+
+// html
+//   +mq(md, min-width)
+//     line-height: 1.35
+//     letter-spacing: 0px
+//     // font-size: 16px       //中文版原先18px，英文用16px
+    
+//   +mqm(md, sm)
+//     line-height: 1.3
+//     letter-spacing: 0px
+//     font-size: 15px
+//   +mqm(sm, xs)
+//     // line-height: 1.35
+//     letter-spacing: 0px
+//     font-size: 14.5px
+//   +mq(xs)
+//     line-height: 1.3      //line-height: 1.5rem 會吃到16px 的 1.5  = 24px  但找不到是以誰為基準
+//     // letter-spacing: 0px
+//     // font-size: 14.5px
+    
+
+
+a
+  color: $defaultcolor
+  display: inline-block
+  white-space: nowrap
+  outline: none !important
+  cursor: pointer
+  text-decoration: none
+  behavior: expression(this.onFocus=this.blur())
+  &:active
+    cursor: pointer
+    text-decoration: none
+    behavior: expression(this.onFocus=this.blur())
+  -o-transition: color .30s ease-in-out
+  -webkit-transition: color .30s ease-in-out
+  -moz-transition: color .30s ease-in-out
+  transition: color .30s ease-in-out
+  transition: color .30s ease-in-out
+
+//  a.trans1
+// 要用 a 去區分或是用 btn 區分?
+
+
+/* ==========================================================================
+    default component
+ ==========================================================================*/
+
+.hidden
+  display: none
+
+.scrollbarX
+  overflow-x: auto
+
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  border: 0
+
+.btn
+  display: inline-block
+  text-align: center
+
+.table
+  width: 100%
+  border-collapse: collapse
+
+
+.scrollbar
+  -webkit-overflow-scrolling: touch
+
+.scrollbarX
+  -webkit-overflow-scrolling: touch
+  overflow-x: auto
+
+.scrollbarY
+  -webkit-overflow-scrolling: touch
+  overflow-x: auto
+
+.clearfix:after
+  display: block
+  content: ''
+  clear: both
+
+.hidden
+  display: none
+
+ul.nostyle
+  margin: 0
+  padding: 0
+  > li
+    list-style: none
+
+// .form
+//   display: block
+//   .group
+//     margin-bottom: 20px
+//     &:after
+//       content: ''
+//       display: block
+//       clear: both
+
+
+
+/* ==========================================================================
+    default element & clear
+ ==========================================================================*/
+
+*
+  outline: 0
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+
+html, body
+  -webkit-overflow-scrolling: touch
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.wp
+  min-width: 320px
+  overflow: hidden
+  // background-color: #fff
+  background-color: rgb(254, 254, 254)   //本案預設背景
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
+
+
+body
+  margin: 0
+  padding: 0
+  height: 100.1% !important
+  overflow-x: hidden
+  font-family: 'Lato',"Open Sans", Verdana, Heiti TC, Microsoft JhengHei, "微軟正黑體"
+  // font-family: 'Noto Sans TC'
+  color: $defaultcolor 
+  -webkit-font-smoothing: antialiased
+  -webkit-backface-visibility: hidden
+
+
+body:after
+  display: block
+  content: "We're sorry! this website does not support your browser, please upgrade your browser, thank you."
+  position: fixed
+  z-index: 100000000000000
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  width: auto
+  height: auto
+  padding: 50px
+  background-color: #fff
+  text-align: center
+  font-size: 20px
+  color: #3f3f3f
+
+\:root body:after
+  display: none
+  
+
+@media all and (max-width: 320px)
+  body, html, header
+    width: 320px !important
+
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4
+  line-height: normal
+
+img
+  max-width: 100%
+  height: auto
+  border: none
+  -khtml-user-select: none
+  -o-user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+  user-select: none
+
+
+
+//應該會由body繼承
+// button, input, select, textarea
+  // font-family: "Open Sans", Verdana, Heiti TC, Microsoft JhengHei, "微軟正黑體"
+  // margin: 0
+
+textarea
+  resize: none
+
+\::-webkit-input-placeholder, ::-moz-placeholder, ::-o-placeholder, ::-ms-placeholder, ::-ms-input-placeholder
+  color: #888888
+
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+  text-transform: none
+
+table
+  -webkit-backface-visibility: visible
+
+button
+  text-transform: none
+  outline: none !important
+  border: none
+  background: none
+  padding: 0
+  margin: 0
+  display: inline-block
+
+button::-moz-focus-inner, input::-moz-focus-inner
+  border: 0
+  padding: 0
+
+button, input
+  line-height: normal
+
+button, html input[type="button"]
+  -webkit-appearance: button
+  cursor: pointer
+  // -webkit-appearance: none
+
+figure, address
+  padding: 0
+  margin: 0
+
+input
+  &[type="reset"], &[type="submit"]
+    -webkit-appearance: button
+    cursor: pointer
+
+input[type="search"]
+  -webkit-appearance: textfield
+  -moz-box-sizing: content-box
+  nowhitespace: afterproperty
+  -webkit-box-sizing: content-box
+  box-sizing: content-box
+  &::-webkit-search-cancel-button, &::-webkit-search-decoration
+  
+button[disabled], html input[disabled]
+  cursor: default

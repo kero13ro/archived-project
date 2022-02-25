@@ -1,0 +1,92 @@
+
+/* ==========================================================================
+    animation
+ ==========================================================================*/
+
+
+
+@keyframes fade-in-bottom 
+  0% 
+    transform: translateY(10%)
+    opacity: 0
+  40%
+    opacity: 0.7
+  100% 
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes fade-in-top 
+  0% 
+    transform: translateY(-10%)
+    opacity: 0
+  40%
+    opacity: 0.7
+  100% 
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes fade-in
+  0% 
+    opacity: 0
+  50%
+    opacity: 0.7
+  100% 
+    opacity: 1
+
+
+// main,
+// .animate
+//   opacity: 0
+
+
+// main.in-view
+//   animation: fade-in 1.5s forwards
+
+// #index
+//   .container
+//     a.in-view
+//       animation: fade-in-bottom 2s forwards
+//     +min(991px)
+//       @for $var from 1 through 10
+//         a:nth-child(#{$var}).in-view
+//           animation: fade-in-bottom 2s forwards #{$var * 0.2}s
+
+// #about
+//   .wrap.in-view
+//     animation: fade-in-bottom 2s forwards
+
+// #history
+//   .block.in-view
+//     animation: fade-in 2s forwards
+
+// #products
+//   img.in-view
+//     animation: fade-in-bottom 2s forwards
+
+// #application
+//   .text.in-view
+//     animation: fade-in-bottom 2s forwards
+
+// #join
+//   .column.in-view
+//     opacity: 1
+//     @for $var from 1 through 10  
+//       > *:nth-child(#{$var})
+//         opacity: 0
+//         animation: fade-in 2s forwards #{$var * 0.2}s
+
+//   .container.in-view
+//     opacity: 1
+//     @for $var from 1 through 10  
+//       > *:nth-child(#{$var})
+//         opacity: 0
+//         animation: fade-in 2s forwards #{$var * 0.2}s
+        
+//   .section.in-view
+//     animation: fade-in 2s forwards
+
+
+
+/* ==========================================================================
+    Animation End
+ ==========================================================================*/

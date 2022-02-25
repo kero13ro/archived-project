@@ -1,0 +1,158 @@
+
+extends ./include/layout.pug
+
+block content
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li.icon-right-thin 會員專區
+          h2.sr-only 會員專區
+        li.icon-right-thin 退貨查詢
+
+  #returned.bgcWhite
+    
+    .slcik-menu.eq9
+      ul.nostyle(data-menu="2")
+        li
+          a(data-abbr="訂單紀錄" href="order.html") 訂單紀錄
+        li.active 
+          a(data-abbr="退貨查詢" href="returned.html") 退貨查詢
+        li 
+          a(data-abbr="追蹤清單" href="trace.html") 我的追蹤清單
+        li 
+          a(data-abbr="紅利點數" href="bonus.html") 紅利點數
+        li 
+          a(data-abbr="資料維護" href="profile.html") 會員資料維護
+        //- li
+        //-   a(data-abbr="媽媽教室" href="course.html") 媽媽教室
+        //- li 
+        //-   a(data-abbr="預約試吃" href="taste.html") 預約試吃
+        li 
+          a(data-abbr="訂閱電子報" href="subscribe.html") 訂閱電子報
+
+    .container.pt40
+
+      .control-row
+
+        h3.brown.f24 退貨查詢
+
+        label.select_unit.mr24
+          span 篩選：
+          select(required)
+            option(value="1" selected) 最近三個月訂單
+            option(value="2") 篩選2
+            option(value="3") 篩選3
+
+        label.select_unit.mr24.md
+          span 排序依據：
+          select(required)
+            option(value="1" selected) 申請日期
+            option(value="2") 排序依據2
+            option(value="3") 排序依據3
+
+        form.search_unit.icon-scan
+          input(type="search", placeholder="搜尋") 
+          input(type="submit",  value="搜尋") 
+
+      .scrollbarX.plain
+        table.mt32.table
+          tr 
+            th 退貨單號
+            th 退訂日期
+            th 退貨狀態
+            th 退款金額
+            th 退款方式
+            th 退款狀態
+            th 商品狀態
+            th 收貨狀態
+            th 客服問答
+          tr
+            //- td.brown R2017123001
+            td: a(href="detail-return.html") R2017123001
+            td 2017/12/30
+            td 退貨成立
+            td NT $ 34,776
+            td 銀行匯款
+            td 待處理
+            td.red 退貨處理中
+            td -
+            td: a(href="inquire.html") 詢問
+          tr
+            td: a(href="detail-return.html") R2017123001
+            td 2017/12/10
+            td 退貨中
+            td NT $ 12,848
+            td 銀行匯款
+            td 處理中
+            td 已送達
+            td.red 未取貨
+            td: a(href="inquire.html") 詢問
+
+          tr
+            td: a(href="detail-return.html") R2017123001
+            td 2017/08/01
+            td 退貨取消
+            td NT $ 2,388
+            td -
+            td -
+            td -
+            td 取消
+            td: a(href="inquire.html") 詢問
+
+          tr
+            td: a(href="detail-return.html") R2017123001
+            td 2017/07/28
+            td 退貨成立
+            td NT $ 22,888
+            td 銀行匯款
+            td 已退款
+            td 退貨完成
+            td 已收貨
+            td: a(href="inquire.html") 詢問
+
+          tr
+            td: a(href="detail-return.html") R2017123001
+            td 2017/05/22
+            td 退貨完成
+            td NT $ 1,050
+            td 銀行匯款
+            td 退款完成
+            td 退貨完成
+            td 已收貨
+            td: a(href="inquire.html") 詢問
+
+          tr
+            td: a(href="detail-return.html") R2017123001
+            td 2017/03/14
+            td 退貨完成
+            td NT $ 938
+            td 銀行匯款
+            td 退款完成
+            td 退貨完成
+            td 已收貨
+            td: a(href="inquire.html") 詢問
+
+          tr
+            td: a(href="detail-return.html") R2017123001
+            td 2017/06/11
+            td 退貨完成
+            td NT $ 3,600
+            td 銀行匯款
+            td 退款完成
+            td 退貨完成
+            td 已收貨
+            td: a(href="inquire.html") 詢問
+
+
+
+      .pages.pt40.pb56
+        a(href="#").icon-first
+        a(href="#").icon-prev
+        a(href="#").active 1
+        a(href="#") 2
+        a(href="#") 3 
+        a(href="#") 4
+        a(href="#") 5
+        a(href="#").icon-next
+        a(href="#").icon-last

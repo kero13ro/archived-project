@@ -1,0 +1,378 @@
+
+@import url('https://fonts.googleapis.com/css?family=Philosopher:400i,700i')
+@import "bourbon"
+@import "slick.css"
+@import "slick-theme.css"
+@import 'font_css/fontello.css'
+@import "animista.css"
+// @import 'default.css'
+@import "lity.min.css"
+@import 'normalize.css'
+@import "plugin.css"
+
+@import '_default.sass'
+@import '_component.sass'
+@import '_animation.sass'
+
+ttesr
+
+// public
+// ==========================================================================
+
+// index
+// ==========================================================================
+
+#index //public component
+
+  .en.f40 
+    font-weight: bold
+
+  p.lh2
+    line-height: 2
+    
+  .title
+    text-align: center
+    .f40
+      line-height: 1.3
+      margin-bottom: 20px
+      letter-spacing: 1px
+    .f36
+      letter-spacing: 4px
+      margin-bottom: 12px
+      font-weight: bolder
+    .f20
+      margin-bottom: 10px
+      letter-spacing: 1px
+    p
+      letter-spacing: 0.5px
+      
+
+
+  .btn.plus
+    +f(center,center,column)
+    color: white
+    .circle
+      +size(50px)
+      +fc
+      margin-bottom: 20px
+      background-color: #ffffff
+      border-radius: 50%
+      position: relative
+      +trans
+      .one, .two
+        margin: 0 auto
+        +size(20px, 3px)
+        +position(absolute, null 0 null 0)
+        background-color: $brown
+        +trans2
+      .two
+        transform: rotate(90deg)  
+    span
+      letter-spacing: 1px
+      font-weight: bolder
+    
+    +trans
+    &:hover
+      color: $purple
+      .circle
+        background-color: $purple
+      .one
+        transform: rotate(90deg)
+      .two
+        transform: rotate(180deg)
+
+
+
+
+  
+#index .landing-wrap
+  position: relative
+  +f(flex-end,center, column)
+
+  .slogan
+    margin: 0 auto
+    +position(absolute, null 0 0 0 )
+    +f(center,center, column)
+    color: white
+    z-index: 1
+    pointer-events: none
+
+    .row
+      margin-bottom: 140px
+      .logo + img
+        margin-left: 60px
+    .scroll
+      margin-bottom: 40px
+      pointer-events: auto
+      cursor: pointer
+      position: relative
+      img
+        animation: heartbeat 3s ease-in-out infinite both
+      .f18
+        margin: 0 auto
+        +fc
+        +position(absolute, 0 0 0 0)
+        transform: translateY(16px)
+
+      +trans2
+      &:hover
+        transform: scale(1.05)
+
+
+  .slick.landing 
+    width: 100%
+    height: 900px
+
+  .imgLiquidFill
+    height: 900px  //有間隔無法取消?
+
+  +max(991)        
+    .slogan
+      .row
+        margin-bottom: 15vh
+      .scroll, .logo + img        
+        display: none
+      .logo
+        max-width: 50vw
+        
+    .slick.landing , .imgLiquidFill
+      height: 80vh    //會影響navbar的top距離
+
+    
+#index .feature
+  margin-top: 80px //scroll bar height
+  +f(center,center,row)
+  color: white
+
+  .card
+    position: relative
+    height: 800px
+    flex: 1 1 auto
+    width: 100%
+    overflow: hidden
+
+    .imgLiquidFill
+      +size(100%)
+      position: absolute
+      +trans2-slow
+      
+
+    .wrap
+      position: relative
+      padding: 90px 20px
+      +f(flex-start,center,column)
+      margin: 0 auto
+      +size(100%)
+      max-width: 385px
+      >*
+        width: 100%
+      p
+        margin-bottom: auto
+    
+  .card:hover
+    .imgLiquidFill
+      transform: scale(1.04)
+
+  +max(1300)
+    margin-top: 60px //scroll bar height
+
+  +max(991)
+    flex-direction: column
+    
+
+    .card
+      height: 65vw
+      min-height: 550px
+      
+      .wrap
+        +padding(60px null)
+  +max(480)
+    .card
+      min-height: 500px
+    .btn.plus
+      .circle
+        +size(35px)
+        margin-bottom: 20px
+        .one, .two
+          +size(15px, 2px)
+
+        
+    
+
+
+      
+        
+
+#index .stories
+  position: relative
+  height: 710px
+  width: 100%
+  padding: 100px 60px 70px
+  .title
+    +f(center,center,column)
+    +position(absolute, 0 0 0 0)
+    margin: 0 auto
+    z-index: 1
+      
+  .imgLiquidFill
+    +size(700px, 450px)
+  
+  .group:nth-child(2)
+    .imgLiquidFill
+      order: 1
+      transform: translateX(-75px)
+    
+  .group:nth-child(3)
+    position: absolute
+    right: 50px
+    top: 180px
+    .imgLiquidFill
+      transform: translateX(75px)
+          
+  .group
+    +f(flex-start, center, row)
+
+  .slick
+    z-index: 3
+    +size(300px, 320px)
+    background-color: $brown-light
+    .context
+      padding: 35px
+      width: 100%
+      +f(flex-start, flex-start, column)
+      display: flex !important
+      
+      p
+        margin: 0
+        width: 100%
+      span
+        margin: 20px 0 24px
+      .btn
+        color: $brown
+        margin: 0 auto
+
+    
+    .slick-prev, .slick-next
+      +size(40px)
+      border-radius: 50%
+      background-color: $brown
+      z-index: 4
+
+    .slick-prev:before,
+    .slick-next:before
+      
+      font-size: 1.6rem
+      font-family: "fontello"
+      font-style: normal
+      font-weight: normal
+      speak: none
+      font-weight: lighter
+    .slick-prev
+      left: -20px
+      &:before
+        content: '\e807'
+
+    .slick-next
+      right: -20px
+      &:before
+        content: '\e806'
+
+
+#index .cusine
+  position: relative
+  
+  .center
+    +size(460px)
+    margin: 0 auto
+    +position(absolute, 50% 0 0 0)
+    transform: translateY(-50%)  
+    background-color: white
+    border-radius: 50%
+    +f(center, center, column)
+    .title
+      .f30
+        margin-bottom: 15px
+        font-weight: 600
+        letter-spacing: 1px
+        display: block
+      .f20
+        color: $brown
+        letter-spacing: 2px
+        border-bottom: 1px solid $brown
+        padding-bottom: 30px
+        margin-bottom: 25px
+        display: block
+
+  .row
+    height: 540px
+    +fc
+    > *
+      flex: 1 1 auto
+      width: 50%
+      height: 100%
+  .video
+    +fc
+    .icon-play-1
+      +size(7.5rem)
+      background-color: rgba(256,256,256,0.8)
+      border-radius: 50%
+      +fc
+      font-size: 4.5rem
+      color: $brown
+
+      
+  .intro
+    background-color: $brown-light
+    +fc
+    .wrap
+      max-width: 375px
+      text-align: center
+      .f40
+        display: block
+        font-weight: bold
+        margin-bottom: 38px
+      p
+        margin-bottom: 70px
+      .plus
+        color: $brown
+  .row:nth-child(odd)
+    > a
+      order: 1
+
+    
+#index .news
+  height: 530px
+  +fc
+
+  .text
+    max-width: 430px
+    margin-right: 40px
+    .sub
+      .f30
+        display: inline-block
+        margin-left: 12px
+        font-weight: normal
+        letter-spacing: 2px
+    ul
+      margin: 30px 0
+      li
+        height: 50px
+        border-bottom: 2px dashed rgb(230,230,230)
+      li:first-child
+        border-top: 2px dashed rgb(230,230,230)
+      span
+        font-style: italic
+        color: $brown
+        line-height: 50px
+    .btn
+      color: $brown
+      font-weight: bolder
+
+  .img-group
+    img
+      margin-right: 40px
+
+    
+
+
+

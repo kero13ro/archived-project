@@ -1,0 +1,19 @@
+
+extends ./include/layout.pug
+include ./include/component.pug
+include ./include/public.pug
+
+block content
+  .container
+    .breadcrumb
+      ul.nostyle
+        li 首頁
+        li.icon-right-thin 非會員專區
+          h2.sr-only 非會員專區
+        li.icon-right-thin 客服查詢
+          h3.sr-only 客服查詢
+
+  #guest-inquire.inquireType
+    +guest-menu(1)
+
+    +inquire

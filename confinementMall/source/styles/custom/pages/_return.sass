@@ -1,0 +1,190 @@
+
+.baseline      
+  +f(flex-start, flex-end)
+  > span 
+    margin-left: 35px
+
+#return
+
+  .top_select
+    +size(250px, 70px)
+    +f(space-between,center)
+    .radio_unit input[type="radio"] + label:before
+      margin-right: 15px
+      +size(21px)
+
+    & + .infoCard__content
+      padding-top: 0
+
+
+  .table__title
+  .table__content
+
+  +max(990)
+
+    .table__content
+      min-height: 185px
+      +padding(50px 15px 25px 165px)
+
+      .pic
+        +position(absolute, 25px null null 0)
+        
+      .check 
+        z-index: 1
+        +f(flex-start, center)
+        +position(absolute, 10px null null 10px)
+        .check_unit
+          +size(200px, 30px)
+          justify-content: flex-start
+          
+        &:after
+          +position(absolute, null null null 40px)
+          pointer-events: none
+  
+  +max(500)
+    .table__content
+      +padding(40px 8px 15px 85px)
+      min-height: 0px
+
+      .check 
+        +position(absolute, 5px null null null)
+
+
+  .infoCard--reason
+    textarea
+      // max-width: 500px
+
+    .bgc
+      +padding(22px 30px)
+      +f(flex-start,center)
+      flex-wrap: wrap
+      background-color: #ededed
+      border: 1px solid #E5E5E5
+
+    .select_unit
+      margin-right: 10px
+      width: 250px
+
+    +max(600)
+      .line
+        flex-wrap: wrap
+        padding-left: 0
+        span
+          position: relative
+      .select_unit
+        width: 100%
+        +margin(null 0 0 null)
+      // input
+      //   max-width: 100% 
+
+    +max(340)
+      .bgc
+        +padding(22px 15px)
+
+  .md
+    max-width: 350px
+  
+
+
+  .infoCard--form
+    .radio_unit
+      margin-left: 20px
+      label:before
+        margin-right: 15px
+
+  .addr
+    .select_unit
+      width: 120px
+      margin-right: 15px
+    input
+      width: 120px
+    & + label
+      input
+        max-width: 430px
+
+
+  .select_unit.md
+    width: 100%
+
+  .bank
+    .select_unit
+      width: 100%
+
+    > .line
+      max-width: 230px
+      padding-left: 80px
+      span
+        margin-left: 20px
+        width: 35px
+
+  .info
+    +f(space-between,flex-end)
+    a
+      padding-right: 10px
+      color: $brown
+      +hoverText($brown-dark)
+      
+  .infoCard--note
+    p
+      color: #CC0000
+    .tel
+      line-height: 1.7
+      white-space: normal
+    ol
+      padding-bottom: 20px
+      margin-bottom: 25px
+      border-bottom: 1px solid #ddd
+    a
+      +hoverText($brown)
+
+  .submit
+    width: 100%
+    border-top: 0px solid #000
+    padding-bottom: 110px
+
+
+  +max(1067)
+    .infoCard
+      width: 100%
+
+  +max(550)
+    .line
+      flex-wrap: wrap
+    .addr
+      .select_unit
+        width: 100%
+        +margin(null 0 10px null)
+      input
+        width: 100%
+
+    .bank > .line
+      max-width: 100%
+      margin-top: 10px
+      padding-left: 55px
+      span
+        margin-left: 0px
+
+    .infoCard--form  .radio_unit
+      +margin(null 15px null 0)
+
+#returning
+
+  .top_select
+    +size(250px, 70px)
+    +f(space-between,center)
+    .radio_unit input[type="radio"] + label:before
+      margin-right: 15px
+      +size(21px)
+
+    & + .infoCard__content
+      padding-top: 0
+
+  .baseline      
+    +f(flex-start, flex-end)
+    > span 
+      margin-left: 35px  
+
+  .submit
+    width: 100%
+    border-top: 0px solid #000
+    padding-bottom: 110px

@@ -1,0 +1,544 @@
+.noborder
+  border-width: 0
+
+.progress
+  +f(space-between,center)
+  +margin(null auto)
+  max-width: 910px
+  min-width: 500px
+  +padding(null 10px)
+  a
+    +f(center, center, column)
+    position: relative
+    span
+      padding-top: 10px
+
+
+  [class^="icon"]
+    font-size: 1.9rem
+    color: rgb(149, 149, 149)
+    +padding(null 3px 15px 3px)
+
+  .current + [class^="icon"]:before
+    content: '\f101'
+    color: $brown
+
+
+  +max(768)
+    font-size: 15px
+    margin-bottom: 10px
+    [class^="icon"]
+      +padding(null 0px 10px 0px)
+    a
+      span 
+        display: none
+      &:after
+        content: attr(data-abbr)
+        margin-top: 10px
+
+      &.current
+        color: $brown-dark
+        flex-shrink: 1
+
+      &:not(.current)
+        flex-shrink: 6
+
+  +max(360)
+    
+    a
+      &.current
+        max-width: 70px
+
+      &:not(.current)
+        max-width: 50px
+    
+
+.cart-grid
+  .infoCard-wrap
+    position: relative
+
+  .infoCard,
+  .submit
+    width: calc(100% - 405px)
+
+  +min(501)
+    .infoCard
+      +padding(null 35px)
+
+  .infoCard.right
+    width: 380px
+    +position(absolute, 0 0 null null )
+
+    .infoCard__title span 
+      color: #333
+
+    .border
+      border-top: 1px solid #eee
+      margin-top: 0.5rem
+
+  [class*="sum__"]
+    +padding(0px)
+
+  .submit
+    border-width: 0px
+    .btn
+      max-width: 375px
+      width: 100%
+      height: 50px
+      +fc
+      +margin(null 10px)
+
+  .infoCard__title > span:first-child
+    transform: translateY(3px)
+
+  .ie
+    line-height: 20px
+    color: rgb(191, 166, 139)
+
+  +max(1365)
+    .infoCard,
+    .submit
+      width: 100%
+
+    .infoCard.right
+      width: 100%
+      max-width: 718px
+      +margin(null auto)
+      +position(relative, null 0 null null )
+
+
+
+.infoCard--sm
+  .infoCard__title
+    +padding(12px null )
+  .infoCard__content
+    +padding(8px null )
+
+// ===================================================== 各別頁面
+
+#cart
+  .radio-top
+    .infoCard__content
+      +f
+
+    .radio_unit
+      width: 100px
+
+    label
+      justify-content: flex-start
+      &:before
+        margin-right: 15px
+
+
+  .del
+    min-width: 0px
+    white-space: nowrap
+  
+  .icon-trash
+    color: rgb(189, 160, 120)
+    font-size: 1.3rem
+    +hoverText(#ce7208)
+    cursor: pointer
+
+  .table__title, .table__content
+    +min(991)
+      +padding(null 10px)
+
+  .select_unit
+    width: 80px
+
+  .sub
+    font-size: 15px
+    
+  .num
+    min-width: 120px
+    +min(1600)
+      min-width: 80px
+
+  input
+    +margin(null 8px)
+    width: 65px
+    font-weight: bold
+    font-style: italic
+    text-align: center
+    &::placeholder
+      color: $brown-dark
+
+  +max(990)
+    .select_unit
+      margin-bottom: 5px
+    .icon-trash
+      +position(absolute, calc(50% - 16px) 0 null null )
+      +padding(0 26px)
+      font-size: 1rem
+
+  +max(768)
+    .baseline
+      flex-wrap: wrap
+      span
+        width: 100%
+        margin-left: 0
+        margin-top: 10px
+
+  +max(450)
+    .icon-trash
+      top: auto
+      bottom: 20px
+      +padding(0 15px)
+
+
+
+  .gift__wrap
+    +f(space-between, stretch)
+    max-width: 1000px
+
+  .gift
+    +margin(null 8px)
+    +f(flex-start, flex-start, column)
+    width: 100%
+    +padding(18px 18px)
+    border: 1px solid #ddd
+
+  .gift__title
+    margin-top: 10px
+    margin-bottom: auto
+    width: 100%
+
+  .gift__pic
+    border: 1px solid #eee
+    .fluid
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center center
+    &:before
+      padding-top: 100%
+
+
+  .gift__bottom
+    margin-top: 15px
+    width: 100%
+    +f(space-between,flex-end)
+    .check_unit 
+      span 
+        color: $brown-dark
+      .box
+        margin-right: 10px
+
+  +max(990)
+    .gift
+      font-size: 15px
+    .gift__wrap
+      min-width: 750px
+
+  +max(400)
+    .gift
+      font-size: 14px
+      +padding(10px 10px)
+
+    .gift__wrap
+      min-width: 700px
+
+    .gift__bottom
+      flex-wrap: wrap
+
+    .gift__num,
+    .gift__check
+      width: 100%
+      margin-bottom: 8px
+
+
+
+  .js-soldOut
+    .gift__num
+      span
+        display: none
+      &:before
+        content: "無庫存"
+
+    .gift__check
+      background-color: rgb(154, 154, 154)
+      color: white
+      +size(70px, 30px)
+      border-radius: 15px
+      +fc
+      .check_unit
+        display: none
+      &:before
+        content: "已贈罄"
+
+
+
+#modal-gift
+  max-width: 100%
+  .container
+    +size(650px, auto)
+    +padding(30px)
+    max-width: 100% !important
+    +f
+    text-align: left
+  
+  .pic
+    +size(175px)
+    flex-shrink: 0
+    background-size: cover
+  .wrap
+    margin-left: 25px
+  .f20
+    margin-bottom: 12px
+    padding-bottom: 12px
+    border-bottom: 1px solid #eee
+
+  +max(600)
+    .container
+      +padding(18px)
+      font-size: 14px
+      flex-direction: column
+    .wrap
+      +margin(20px null null 0)
+    .pic
+      max-width: 40vw
+      max-height: 40vw
+
+  
+    
+
+#info
+  .infoCard--form
+    +f
+    flex-wrap: wrap
+    +margin(null -18px)
+
+  .line
+    width: calc(50% - 36px)
+    +margin(null 18px)
+
+  .radio_wrap
+    padding-left: 5px
+    label
+      margin-right: 30px
+      justify-content: flex-start
+      &:before
+        margin-right: 12px
+
+  .addr
+    width: 100%
+    > *:not(.main)
+      margin-right: 12px
+      max-width: 120px
+
+  .select_unit
+    width: 100%
+
+  .eli
+    padding-right: 35px
+
+  .infoCard__title
+    .wrap
+      margin-left: auto
+      +fc
+      >*:not(:first-child)
+        margin-left: 25px
+    .box
+      +size(15px)
+      margin-right: 12px
+
+  .tri-type
+    width: 100%
+    white-space: nowrap
+    .wrap
+      height: 40px
+      +f(flex-start, center)
+    .check_unit
+      margin-right: 30px
+
+  .ps
+    .infoCard__content
+      padding-bottom: 25px
+    .line
+      width: calc(100% - 36px)
+      border-bottom: 1px solid #ddd
+    ul
+      +margin(null 18px)
+
+
+#info
+  +max(990)
+    .addr
+      flex-wrap: wrap
+      
+    .line.lg-break
+      width: 100%
+
+  +max(767)
+    .infoCard__title .wrap
+      margin-top: 10px
+
+  +max(650)
+
+    .addr
+      .select_unit
+        width: calc(50% - 6px)
+        max-width: 100%
+        &.break
+          margin-right: 0
+
+      input.break
+        width: 100%
+        max-width: 100%
+        margin-right: 0
+
+    .line
+      width: 100%
+    .radio_wrap
+      padding-left: 96px
+
+    .tri-type
+      height: 90px
+      .wrap
+        width: 100%
+        height: auto
+        flex-wrap: wrap
+
+      .check_unit
+        width: 100%
+        +margin(null 0px 8px null )
+
+
+  +max(380)
+    font-size: 14px
+    .line
+      padding-left: 76px
+      > span:first-child
+        width: 56px
+    select,
+    input
+      +padding(null 8px)
+
+
+#pay
+  .infoCard__content.pay
+    +padding(0 0 12px 0)
+  .radio_unit
+    height: auto
+    +padding(18px null )
+  .radio_unit:not(:last-child)
+    border-bottom: 1px dashed #ddd
+    
+
+  .radio_unit label
+    justify-content: flex-start
+    align-items: flex-start
+
+    &:before
+      margin-top: 3px
+
+    > span:first-child
+      width: 140px
+      margin-left: 12px
+      flex-shrink: 0
+
+    .gray
+      white-space: normal
+
+    .gray.img
+      +f(flex-start, center)
+
+    +max(600)
+      flex-wrap: wrap
+      .gray
+        margin-top: 10px
+        padding-left: 30px
+        
+      .gray.img
+        flex-wrap: wrap
+        > div
+          width: 100%
+          margin-bottom: 6px
+        img
+          margin: 0
+          
+  .ps2 a
+    color: $brown-dark
+    +hoverText(#d8801c)
+
+
+#confirm
+
+  .spe
+    letter-spacing: 1px
+    color: $brown-dark
+  .infoCard__title
+    a
+      +hoverText(rgb(234, 125, 9))
+
+  +max(500)
+    .baseline 
+      flex-wrap: wrap
+      > span
+        width: 100%
+        +margin(10px null null 0)
+
+
+#confirm,
+#complete
+  .infoCard--list
+    ul
+      +f(space-between, flex-start, row, wrap)
+    li
+      width: calc(50% - 18px)
+    li.w100
+      width: 100%
+
+    ul.bd
+      border-bottom: 1px solid #eee
+
+    ul.red li
+      width: 100%
+      padding: 0
+
+  +max(768)
+    .infoCard
+      font-size: 15px
+      li
+        width: 100%
+        +padding(3px null )
+
+  +max(360)
+    .infoCard,
+    .infoCard .infoCard--list
+      font-size: 14px
+
+#complete
+  a.italicNum
+    &:after
+      display: block
+      content: ""
+      border-bottom: 2px solid #cc0000
+      width: 0%
+      position: relative
+      bottom: 10px
+
+      transition: 0.3s width
+    &:hover
+      &:after
+        width: 100%
+        transition: 0.3s width
+      
+    
+
+
+  .success
+    border-color: rgb(214, 142, 143)
+
+    .f24
+      color: rgb(206, 107, 107)
+      width: 100%
+
+    .infoCard--list
+      span:nth-child(2)
+        color: rgb(206, 107, 107)
+
+
+
+
+
