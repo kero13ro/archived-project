@@ -1,0 +1,466 @@
+
+
+select
+  background-image: url("images/tri.png")
+  background-repeat: no-repeat
+  background-position: center right 15px
+
+
+#dashboard
+  z-index: 3
+  margin-top: 40px
+  position: relative
+
+.dashboard__row
+  +f
+  align-items: center
+
+.dashboard__main
+  background-color: $orange
+  +padding(17px 22px 17px 17px)
+  +position(absolute, 0 50% null null )
+  transform: translateX(50%)
+  width: 100%
+  color: white
+  transition: 0.3s top
+
+  +min(1366)
+    width: calc(100vw - 50px)
+    max-width: 1400px
+
+    border-radius: 999px
+    &:after
+      height: 100%
+      content: ""
+      +position(absolute, 0 390px null null )
+      display: block
+      border-right: 1px solid #fff
+
+      // +max(1366)
+      @media only screen and (width: 1366px)
+        right: 370px
+  
+
+  .icon-1
+    +margin(null 25px null null )
+    &:before
+      font-size: 50px
+
+  .f20
+    margin-right: auto
+    
+  select
+    border-radius: 999px
+    background-color: #fff
+    color: $orange
+    width: 315px
+    +margin(null null null 90px)
+    // +m(1366,1366)
+    @media only screen and (width: 1366px)
+      margin-left: 70px
+
+    border: 0
+    font-size: 18px
+    letter-spacing: 2px
+    // font-weight: bold
+    font-weight: 500
+    +hoverBgc($orange-light)
+    cursor: pointer
+    &:hover
+      
+      transition: 0.3s background-color
+  
+  a,
+  select,
+  option
+    +padding(10px 35px)
+
+.dashboard__btn
+  background-color: #fff
+  border-radius: 999px
+  +f
+  font-weight: 500
+  // font-weight: bold
+  a:not(:last-child)
+    border-right: 1px solid $orange
+  a
+    +hoverText($orange)
+    letter-spacing: 2px
+
+
+
++max(1365)
+  #dashboard
+    margin-top: 0px
+
+  .dashboard__main
+    +padding(16px null) 
+
+    select,
+    .dashboard__btn
+      border-radius: 3px
+  
+    a,
+    select,
+    option
+      +padding(8px 10px) 
+
+    select
+      width: 100%
+      margin-left: 15px
+      max-width: 170px
+      font-size: 15px
+
+    .icon-1
+      display: none
+
+  .dashboard__btn
+    font-size: 15px
+
+
++max(767)
+  .dashboard__row
+    flex-wrap: wrap
+
+  .dashboard__main
+
+    .f20
+      margin-bottom: 12px
+      
+    a,
+    select,
+    option
+      +padding(null 8px) 
+
+    select
+      max-width: 100%
+      margin-bottom: 10px
+      margin-left: auto
+
+  .dashboard__btn
+    max-width: 100%
+    a
+      width: 25%
+      text-align: center
+
+  .dashboard__main .icon-1
+    +margin(null 10px null null )
+    +position(absolute, null 0 -50px null )
+    background-color: $orange
+    height: 50px
+    +fc
+    border-bottom-left-radius: 99px
+    border-bottom-right-radius: 99px
+    cursor: pointer
+    box-shadow: 0 6px 6px 0px rgba(black, 0.1)
+    &:before
+      font-size: 32px
+      padding-bottom: 5px
+
+
+  .dashboard__main .icon-1
+    transform: translateY(-100%)
+    opacity: 0
+    transition: 0.3s transform
+    z-index: -1
+
+  .dashboard__main.fixed .icon-1
+    transform: translateY(0%)
+    opacity: 1
+
++max(350)
+  .dashboard__main
+    +padding(null 10px)
+  .dashboard__main select,
+  .dashboard__btn
+    font-size: 14px
+    
+
+
+
+.box-wrapper
+  border: 1px solid rgba($orange, 0.6)
+  +padding(null 40px)
+
+  li.noDot:before
+    opacity: 0
+
+  ul.dot
+    // list-style-image: url("./images/dot.svg")
+    li
+      padding-left: 18px
+
+    li:before
+      content: ''
+      display: inline-block
+      +size(12px)
+      background-image: url("./images/dot.png")
+      background-size: cover
+      opacity: 0.8
+      margin-right: 8px
+
+
++max(350)
+  .dashboard__main      
+    a
+      +padding(null 0px) 
+
++max(767)
+  .box-wrapper
+    +padding(null 20px)
+    font-size: 15px
+
++max(350)
+  .box-wrapper
+    +padding(null 12px)
+    font-size: 14px
+
+  // .list
+  //   span
+  //     transform: scale(0.7)
+  //     display: inline-block
+  //     transform-origin: 0 50% 
+  //   li
+  //     text-indent: 12px
+
+
+.register__doctor
+  +fc(flex-start)
+  background-color: $orange-light
+  +padding(16px)   // height: 80px 
+  border-radius: 8px
+  
+  .icon-5
+    font-size: 40px
+    color: $orange
+    line-height: 1
+
+  .f20
+    margin-right: 25px
+    letter-spacing: 2px
+    white-space: nowrap
+
+  .wrapper
+    max-width: 500px
+    +size(100%,48px)
+    position: relative
+
+  .wrapper.select
+    margin-right: 10px
+    margin-left: auto
+
+  .wrapper.input
+    margin-right: 15px
+
+  select,
+  input
+    +size(100%)
+    color: #777
+    border: 0
+    
+  button
+    width: 100px
+    color: #fff
+    background-color: $orange
+
+
+
+.department__doctor,
+.register__doctor
+
+  .wrapper.input
+    > div 
+      height: 100%
+
+  .easy-autocomplete-container
+    z-index: 1
+    position: relative
+    box-shadow: 0px -20px 20px -25px rgba(black, 0.3),
+    0px 22px 15px -20px rgba(black, 0.2), 
+    -20px 0px 15px -22px rgba(black, 0.2),
+    20px 0px 15px -22px rgba(black, 0.2)
+    transform: translateY(8px)
+
+
+    ul
+      margin: 0
+      padding: 0
+      +padding(12px 22px 36px)
+      display: none
+      // +f
+      // flex-wrap: wrap
+      background-color: #fff
+    li
+      display: inline-block
+      list-style: none
+      font-size: 15px
+      margin-right: 23px
+      line-height: 1.8
+      color: #555
+      +hoverText($orange)
+      cursor: pointer
+    
+  
+
+    
+// .autocomplete
+//   +position(absolute, null 0 -8px null )
+//   width: 100%
+//   min-width: 220px
+//   transform: translateY(100%)
+//   +padding(12px 22px 36px)
+//   background-color: #fff
+//   z-index: 1
+//   +f
+//   flex-wrap: wrap
+
+//   li
+//     font-size: 15px
+//     margin-right: 23px
+//     line-height: 1.8
+//     a
+//       color: #555
+
+//   li.active a,
+//   li:hover a
+//     color: $orange
+
+//   &.hide
+//     display: none
+
+//   box-shadow: 0px -20px 20px -25px rgba(black, 0.3),
+//   0px 22px 15px -20px rgba(black, 0.2), 
+//   -20px 0px 15px -22px rgba(black, 0.2),
+//   20px 0px 15px -22px rgba(black, 0.2)
+
+//   +max(400)
+//     right: auto
+//     left: 0
+//     width: calc(100vw - 68px)
+    
+
+.register__doctor
+
+  +max(767)
+    flex-wrap: wrap
+
+    .wrapper
+      max-width: 100%
+    
+    .wrapper.select
+      +margin(null 0 10px null)
+      width: 100%
+
+    .wrapper.input
+      width: calc(100% - 90px)
+      margin-right: 10px
+
+    button
+      width: 80px
+
+    .icon-5
+      font-size: 28px
+      margin-bottom: 12px
+    .f20
+      margin-bottom: 12px
+
+  +max(400)
+    button,
+    .wrapper
+      font-size: 15px
+      height: 40px
+
+
+
+// .register-index
+
+.block__title
+  margin-bottom: 10px
+  color: #333
+
+.register__block
+  margin-bottom: 22px
+  background-color: #fff
+  +f
+  flex-wrap: wrap
+  // align-items: stretch
+
+  
+  +padding(30px 45px 22px)
+  
+  li
+    +margin(null 7px 8px)
+    width: calc((100% - 70px)/5)
+    
+  a
+    +fc
+    border-radius: 6px
+    white-space: normal
+    border: 1px solid #cccccc
+    +size(100%)
+    +padding(10px 5px)
+    color: #555
+    line-height: 1.8
+    text-align: center
+    transition: 0.3s background-color, 0.3s color, 0.3s border-color
+
+  a:hover
+    transition: 0.3s background-color, 0.3s color, 0.3s border-color
+    background-color: $orange
+    color: #fff
+    border-color: $orange
+
+.register__block
+  +max(1366)
+    +padding(null 20px null )
+    a
+      font-size: 15px
+
+  +max(1200)
+    li
+      width: calc((100% - 56px)/4)
+      &.tow_unit
+        width: calc((100% - 28px)/2)
+
+  +max(767)
+    li
+      width: calc((100% - 16px)/2)
+      +margin(null 4px null)
+      &.tow_unit
+        width: calc(100% - 8px)
+
+  +max(480)
+    a
+      line-height: 1.2
+    li
+      // width: calc(100% - 8px)
+      width: 100%
+      +margin(null 0px null)
+      &.tow_unit
+        width: 100%
+
+
+
+
+.register__block 
+  li
+    transition: 0.5s opacity
+
+  .more
+    display: none
+    background-color: #f9f9f9
+    text-indent: 23px
+
+.register__block.cut
+  li:nth-child(4) ~ li
+    height: 0
+    margin: 0
+    opacity: 0
+    overflow: hidden
+    transition: 0.5s opacity
+
+  li:last-child.more
+    height: 0
+    opacity: 1
+    display: flex
+    height: auto

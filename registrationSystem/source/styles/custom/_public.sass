@@ -1,0 +1,143 @@
+
+main
+  opacity: 0
+  transition: opacity 0.5s
+  &.show
+    opacity: 1
+
+$orange-light: #fdecda
+// $orange: #F58729
+$orange: rgb(242, 147, 5)
+$orange-dark: #de5a12
+
+$green: #93B74B
+$blue: #0016F3
+$blue-ligh: #0071CC
+$footer: #423F3C
+$gray-bgc: #f7f7f7
+$red: #FF1010
+
+
+$defaultcolor: #333333 !default  
+
+
+body
+  // font-size: 16px
+  // color: $defaultcolor 
+  // font-family: 'Lato',"Open Sans", Verdana, Heiti TC, "微軟正黑體" , Microsoft JhengHei
+  // font-family: "微軟正黑體" , Microsoft JhengHei, sans-serif, Verdana, Heiti TC, 
+  font-family: 'Noto Sans TC', sans-serif, Verdana, Heiti TC, "微軟正黑體" , Microsoft JhengHei
+  
+.default
+  color: $defaultcolor
+
+.orange
+  color: $orange
+  
+.red
+  color: $red
+
+.blue
+  color: $blue
+
+.b
+  font-weight: bold
+  // font-weight: 500
+  
+.under
+  text-decoration: underline
+  
+.tc
+  text-align: center
+
+
+
+.en
+  font-family: 'Philosopher'
+
+.wp
+  background-color: #fff
+
+a
+  color: $defaultcolor
+  transition: color .30s ease-in-out
+
+  
+
+select,
+input,
+button
+  +padding(null 20px)
+  background-color: #fff
+
+  +max(768)
+    +padding(null 12px)
+
+  +max(450)
+    +padding(null 8px)
+
+
+.std
+  height: 45px
+  border: 1px solid #ccc
+
+  &::placeholder
+    color: #999
+
+  &:hover,
+  &:focus
+    border-color: $orange-dark
+
+  +max(768)
+    height: 40px
+    font-size: 15px
+    
+
+.w100
+  width: 100%
+
+.row
+  +fc(flex-start)
+
+.row.fc
+  justify-content: center
+
+.btn-main
+  border: 1px solid $orange
+  background-color: #fff
+  color: $orange
+  
+  min-width: 100px
+  +padding(null 15px)
+  +min(768)
+    min-width: 190px
+  
+  
+  +hoverBgc($orange)
+  +hoverText(#fff)
+
+
+.btn
+  // color: $defaultcolor
+  height: 45px
+  +fc
+  display: inline-flex
+  border-radius: 5px
+  font-size: 18px
+
+
+  +max(500)
+    font-size: 16px
+
+
+.section.gray
+  background-color: $gray-bgc
+
+  
+// .box-indent
+//   +max(767)
+//     +padding(null 0 )
+
+.md-noPadding
+  +max(768)
+    +padding(null 0 )

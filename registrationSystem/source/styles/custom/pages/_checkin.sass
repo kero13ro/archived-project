@@ -1,0 +1,432 @@
+
+  
+.checkin
+  color: #555
+
+.checkin__wrapper
+  background-color: #fff
+  // +padding(null 25px)
+
+
+.checkin__info
+  background-color: $orange-light
+  +padding(16px 25px)
+  span
+    margin-right: 38px
+    white-space: 
+    display: inline-block
+
+  +max(767)
+    display: flex
+    flex-direction: column
+    +padding(12px 20px)
+    span 
+      margin-right: 0
+
+.check-step1
+  .row.radio
+    +padding(16px null)
+    line-height: 1.8
+    flex-wrap: wrap
+
+  .radio_unit
+    margin-right: 15px
+
+  
+.g-recaptcha
+  margin-right: auto
+
++max(1200)
+  .row.submit
+    width: 100%
+    flex-wrap: wrap
+    justify-content: center
+    
+  .g-recaptcha
+    // +margin(null auto)
+    margin-right: 0
+    margin-bottom: 25px
+    // flex: 0 0 auto
+
+  .g-recaptcha + div
+    width: 100%
+    +fc
+
+
++max(767)
+  .check-step1
+    .btn-main
+      width: 110px
++max(350)
+  .g-recaptcha
+    transform: scale(0.85)
+    transform-origin: 50%
+
+.step1-result
+  border-bottom: 1px solid #cccccc
+  width: 100%
+  color: #777
+  +f
+  flex-wrap: wrap
+  .row
+    width: 50%
+    padding-left: 110px
+    position: relative
+
+  span:first-child
+    width: 110px
+    text-align: justify
+    +position(absolute, 0 null null 0)
+
+    &:after
+      content: ""
+      display: inline-block
+      width: 100%
+    
+  +max(767)
+    padding-right: 0
+    .row
+      width: 100%
+      font-size: 15px
+      padding-left: 90px
+    span:first-child
+      width: 90px
+
+
+.check-step2
+  +padding(30px null null)
+
+  .line
+    padding-left: 80px
+    position: relative
+  
+  &, select,input
+    color: #555
+
+  .sub
+    position: absolute
+    left: 0
+    font-size: 15px
+    letter-spacing: 1px
+    color: #999
+
+  .tel
+    select,input
+      max-width: 200px
+      width: 100%
+    span
+      font-size: 15px
+      +margin(null 15px)
+    span.xl
+      white-space: nowrap
+      +min(1366)
+        margin-left: 20px
+
+  .addr
+    white-space: nowrap
+
+    >*:nth-child(2)
+      width: 160px
+    >*:nth-child(3)
+      width: 200px
+    >*:nth-child(4)
+      width: 250px
+    >*:nth-child(4) ~ input
+      width: 60px
+    >*
+      margin-right: 10px
+
+    +max(1365)
+      flex-wrap: wrap 
+      .sub
+        align-self: flex-start
+        line-height: 45px
+
+      >*
+        margin-bottom: 12px
+
+    +max(768)
+      >*:nth-child(2),
+      >*:nth-child(3)
+        width: calc(50% - 10px)
+      >*:nth-child(4)
+        width: calc(100% - 10px)
+
+    +max(500)
+      >*:nth-child(2),
+      >*:nth-child(3),
+      >*:nth-child(4)
+        width: 100%
+        margin-right: 0
+      >*:nth-child(4) ~ input
+        width: calc(50% - 52px)
+    
+  .review .orange
+    +max(768)
+      font-size: 16px
+      margin-bottom: 15px
+
+  .birth 
+    color: #777
+    .std
+      max-width: 810px
+      margin-right: 20px
+
+    +min(768)
+      .f16
+        white-space: nowrap
+    
+    +max(767)
+      flex-wrap: wrap
+      .std
+        +margin(null 0 10px null)
+
+  .contact
+    display: inline-flex
+    align-items: flex-start
+    position: relative
+    line-height: 45px
+
+    > .f15
+      color: #777
+
+    .radio_wrapper
+
+
+    label
+      display: block
+      margin-bottom: -10px
+
+
+    .radio_text
+      input
+        width: 265px
+
+      +min(991)
+        +position(absolute, 0 0 null null )
+        white-space: nowrap
+        transform: translateX(100%)        
+
+      +max(990)
+        display: none
+        // &.show
+        //   display: block
+
+    +max(767)
+      flex-wrap: wrap
+      .title
+        display: block
+        width: 100%
+        margin-left: 0
+        margin-top: 10px
+
+      .radio_text
+        padding-left: 22px
+        font-size: 15px
+        line-height: 35px
+        input
+          // width: auto
+          width: 100%
+          max-width: 200px
+
+      .dot
+        display: none
+
+
+  .row.fc
+    +max(767)
+      > *
+        width: 100px
+
+
+.check-step2
+  
+  +max(990)
+    .md-noPadding
+      +padding(null 0)
+
+  +max(767)
+
+    .line
+      +padding(25px null null 0)
+
+    .ps
+      padding-top: 0px
+      justify-content: flex-end
+      margin-bottom: 30px
+
+    .sub
+      top: 0
+      color: #111
+      font-weight: bold
+    
+    .sub, .addr .sub
+      line-height: 1
+
+    .tel
+      flex-wrap: wrap
+      
+      span
+        +margin(null 6px)
+
+      select
+        width: 65px
+        
+      input.main
+        width: calc(100% - 83px)
+
+      span.xl
+        +margin(null 10px)
+        text-align: center
+        width: 30px
+
+      input
+        width: calc(100% - 50px)
+        max-width: calc(100%)
+        
+      >*:not(:last-child):not(:nth-last-child(2))
+        margin-bottom: 10px
+
+
+.check__privacy
+  background-color: $orange-light
+  +padding(15px 22px)
+
+  +max(1023)
+    align-items: flex-start
+    .title, 
+    .red
+      white-space: nowrap
+      height: 35px
+      +fc(flex-start)
+    .f15
+      label
+        display: block
+        height: 35px
+  +max(767)
+    flex-wrap: wrap
+    .title, 
+    .red
+      width: 100%
+      height: 25px
+    .f15
+      padding-left: 35px
+    
+    .title + .f15
+      margin-top: 8px 
+
+
+
+
+#modal-privacy
+  background-color: #fff
+  width: 1000px
+  max-width: 90vw
+  color: #555
+  border-radius: 10px
+  .b
+    color: #222
+  span
+    display: block
+
+  .btn
+    +margin(null auto)
+    display: block
+  .scroll-wrapper
+    height: 450px
+    overflow-x: hidden
+    width: 100%
+    
+    max-height: 50vh
+
+  +max(767)
+    border-radius: 5px
+
+
+#modal-cancel,
+#modal-cross
+  background-color: #fff
+  max-width: 600px
+  width: 90vw
+  color: #555
+  border-radius: 6px
+  overflow: hidden
+  
+  .cross_bottom
+    border-top: 1px solid #ccc
+    +fc
+
+  .cross_head
+    background-color: $orange
+    +padding(17px 25px)
+
+  .text
+    max-height: 40vh
+    overflow-y: auto
+
+    line-height: 1.6
+    +max(400)
+      font-size: 15px
+
+  .btn
+    min-width: 0
+    width: 150px
+
+
+#modal-privacy
+  .simplebar-scrollbar
+    right: 0
+    &:before
+      opacity: 0.4
+
+  .simplebar-vertical
+    background-color: rgba(black,0.1)
+    border-radius: 99px
+    width: 7px
+    right: 5px
+
+
+
+
+// complete
+.title-division
+  span 
+    color: #555
+
+  
+
+  +max(1100)
+    flex-wrap: wrap
+    .orange
+      padding-left: 0
+
+    &:after
+      order: 1
+      content: ""
+      display: block
+      margin-right: 100%
+
+    span
+      order: 2
+      margin-top: 12px
+  +max(767)
+    .curve
+      width: auto
+      +padding(null 20px)
+
+  +max(350)
+    &.two_row
+      .f24
+        margin-right: 100%
+        white-space: nowrap
+
+      .curve
+        +margin(5px 0 null auto)
+    
+.complete
+  .border
+    border-bottom: 1px solid #ccc
+  .row.between
+    justify-content: space-between
+    +max(500)
+      margin-top: 25px

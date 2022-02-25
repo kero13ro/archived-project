@@ -1,0 +1,147 @@
+
+.title-play
+  img
+    width: 22px
+    +margin(null 20px)
+  
+.reference 
+  .landing
+    background: center / cover
+
+  .table
+    thead
+      background-color: $orange
+      color: #fff
+      text-align: center
+      font-size: 18px
+      th
+        width: 400px
+        border: 2px solid #f5f5f5
+
+    .sub
+      display: none
+
+    tbody
+      color: #111
+      td,th
+        +padding(20px 40px)
+        border: 2px solid #f5f5f5
+      th
+        font-size: 20px
+        text-align: center
+        vertical-align: middle
+        letter-spacing: 2px
+      td
+        font-size: 18px
+        letter-spacing: 1px
+        color: #666
+        transition: 0.2s color
+
+      tr:nth-child(odd)
+        background-color: #fff
+      tr:nth-child(even)
+        background-color: #fff9f1
+
+      tr:hover
+        background-color: #fdecda
+        td
+          transition: 0.2s color
+          color: #111111
+
+  .table
+    +max(1200)
+      thead
+        th
+          width: 35%
+
+      tbody
+        td,th
+          +padding(12px 20px)
+        th
+          font-size: 18px
+        td
+          font-size: 16px
+
+    +max(500)
+      tbody, thead
+        &, tr, th, td
+          display: block
+          
+      .sub
+        font-size: 15px
+        display: block
+        font-weight: normal
+
+      thead 
+        td
+          display: none
+
+        th
+          width: 100%
+          border: 0
+      tbody
+        th
+          font-size: 15px
+          letter-spacing: 0px
+        td
+          font-size: 14px
+          letter-spacing: 0px
+          display: none
+
+      
+    +max(350)
+      tbody
+        td,th
+          +padding(null 16px)
+
+
+.reference_card
+  +f
+  flex-wrap: wrap
+
+  .card
+    width: calc(25% - 20px)
+    height: 150px
+    +margin(null 10px 20px )
+    background: center / cover
+    color: #fff
+    +fc
+    border-radius: 5px
+    position: relative
+    transform: perspective(1px) translateZ(0)
+    overflow: hidden
+    // letter-spacing: 1px
+    // font-weight: 100
+    &:before
+      opacity: 0
+      content: ""
+      z-index: -1
+      display: block
+      background-color: rgba($orange, 0.5)
+      +position(absolute, 0 0 0 0)
+      transition: 0.3s opacity
+
+    &:hover
+      &:before
+        transition: 0.3s opacity
+        opacity: 1
+        
+  +max(1365)
+    .card
+      width: calc(33% - 12px)
+      +margin(null 6px 15px)
+      height: 100px
+
+  +max(600)
+    .card
+      width: calc(50% - 8px)
+      +margin(null 4px 10px)
+      height: 80px
+
+  +max(350)
+    .card
+      height: 70px
+
+
+
+

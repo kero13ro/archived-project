@@ -1,0 +1,182 @@
+
+.fullscreen
+  opacity: 0
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond')
+html,
+body,
+main
+  height: 100%
+  overflow: hidden
+
+main
+  background-color: #f3f3f3
+
+.all
+  height: 60%
+  position: absolute
+  top: 45%
+  left: 50%
+  transform: translate(-50%, -50%)
+  opacity: 0.3
+  z-index: 0
+
+#drop,
+#donut,
+#hex
+  visibility: hidden
+
+.title
+  z-index: 3
+  font-size: 10rem
+  font-family: 'EB Garamond', serif
+  font-weight: normal
+  transform: translateY(-10%)
+  +position(absolute, 45% null null 26% )
+  // +position(absolute, 50% null null 50% )
+  transform: translate(0, -50%)
+  // transform: translate(-50%, -50%)
+  letter-spacing: 0.5rem
+  white-space: nowrap
+  text-align: center
+  span 
+    position: relative
+
+  [class^='align_']
+    position: absolute
+    +size(10px)
+    background-color: #000
+    z-index: 100
+    left: 50%
+
+button
+  +size(215px, 70px)
+  +position(absolute, null null 15vh 50%)
+  transform: translateX(-50%)
+  z-index: 2
+  display: block
+  color: #fff
+  font-family: 'Noto Sans TC', sans-serif, Verdana, Heiti TC, "微軟正黑體" , Microsoft JhengHei
+  font-size: 16px
+  background-color: rgb(197, 214, 123)
+  
+
+  .bgc
+    +size(100%)
+    +position(absolute, 0 0 null null )
+    // background-color: rgb(197, 214, 123)
+    background-color: rgb(127, 168, 248)
+    z-index: -1
+
+
+
+.section
+  +size(100vw, 100vh)
+  +position(absolute, 0 null null 0)
+
+.relative_wrapper
+  +size(100%, 100vh)
+  +fc
+  position: relative
+  > img
+    position: absolute
+    z-index: 1
+    
+.title
+  color: #fff
+  z-index: 1
+.title_g
+  color: rgb(197, 214, 123)
+
+
+.green_pat
+  top: 3vh
+  right: 15vw
+  
+.green_bottle
+  bottom: 5vh
+  right: -4vw
+  
+.green_leaf
+  top: 40vh
+  left: 20vw
+  width: 15vw
+  transform: translate(-50%, -50%)
+
+.green_box
+  bottom: -20vh
+  left: 4vw
+
+
+.blue_box1
+  top: -2vh
+  right: 15vw
+  transform: rotate(20deg)
+
+.blue_box2
+  left: 15vw
+  bottom: 10vh
+  transform: rotate(-40deg)
+  width: 24vw
+
+.blue_coconut
+  right: -12vw
+  bottom: 20vh
+  transform: rotate(-30deg)
+
+.blue_bottle
+  right: 30vw
+  bottom: -5vh
+  width: 8vw
+  transform: rotate(-30deg)
+
+
+.red_bee1
+  top: 22vh
+  right: 45vw  
+.red_bee2
+  top: 60vh
+  right: 15vw  
+.red_box
+  bottom: -10vh
+  right: 25vw
+  transform: rotate(20deg)
+.red_stick1
+  top: 30vh
+  left: 1vw
+.red_stick2
+  top: -20vh
+  right: 20vw
+  transform: rotate(90deg)
+
+
+
+.yellow_flower
+  top: 30vh
+  left: -1vw
+  transform:  translateY(-50%)
+
+.yellow_pat
+  top: 2vh
+  right: 30vw
+  transform: translateX(50%) rotate(-12deg)
+
+.yellow_bottle
+  bottom: 10vh
+  right: 16vw
+  transform: translateX(50%) rotate(15deg)
+  width: 20vw
+  
+.yellow_box
+  bottom: -10vh
+  left: 10vw
+  transform:  rotate(-10deg)
+
+
+
+
+.progress
+  +position(absolute, null null 0 null )
+  z-index: 10
+  // width: 100%
+  height: 15px
+  background-color: #fff

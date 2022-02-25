@@ -1,0 +1,264 @@
+
+
+ul.list
+  max-width: 1300px
+  +margin(null auto)
+  color: #4D4D4D
+  a
+    white-space: normal
+    word-break: break-all
+
+  > li
+    +circle( 8px )
+    // &:before
+    //   margin-bottom: 2px
+
+    padding-left: 19px
+    position: relative
+    &:before
+      +position(absolute, 13px null null 0)
+
+    &:nth-child(odd):before
+      background-color: $orange-dark
+
+    &:nth-child(even):before
+      background-color: $green
+
+
+.link
+  +hover-tint($blue)
+
+    
+.index__landing
+  // min-height: 800px
+  background: top 20% right 50%  / cover
+
+
+  .title
+    letter-spacing: 4px
+    text-align: center
+
+
+  .flow
+    text-align: center
+    border-bottom: 1px solid #ddd
+    padding-bottom: 70px
+
+    svg
+      max-width: 990px
+      width: 100%
+    text
+      font-weight: 500
+      font-family: 'Noto Sans TC' !important
+      letter-spacing: 2px
+      transition: 0.5s fill
+
+    [class^="circle"]
+      text
+        transition: 0.5s fill
+
+    .circle1.color text
+      fill: rgb(105,173,215) !important
+    .circle2.color text
+      fill: rgb(65,188,196) !important
+    .circle3.color text
+      fill: rgb(147,183,75) !important
+    .circle4.color text
+      fill: rgb(223,181,115) !important
+    .circle5.color text
+      fill: rgb(245,135,41) !important
+
+
+
+
+.index__catalog
+  background-color: #f6f6f6
+
+.index__filter
+  // font-weight: bold
+  font-weight: 500
+  +fc(flex-start)
+  span 
+    font-size: 20px
+    +margin(null 20px)
+
+  .btn
+    width: 150px
+    margin-right: 12px
+    border: 1px solid $orange
+    background-color: #fff
+
+    &:hover,
+    &.active
+      background-color: $orange
+      color: #fff
+
+  +max(767)
+    flex-wrap: wrap
+
+    span 
+      // display: block
+      width: 100%
+      +margin(null null 15px 0)
+
+    .btn
+      width: calc(33% - 8px)
+    .btn:last-child
+      margin-right: 0
+      
+
+.card-wrapper
+  +f
+  align-items: stretch
+  flex-wrap: wrap
+  +margin(null -7px )
+
+  .card 
+    width: calc(25% - 14px)
+    +margin(null 7px 14px)
+    +padding(22px 8px)
+    +fc
+    flex-direction: column
+    background-color: #fff
+    position: relative
+    font-weight: 500
+    img
+      max-width: 70%
+      flex-shrink: 0
+
+  .title
+    font-size: 24px
+    margin-top: 16px
+    letter-spacing: 1px
+    transition: 0.3s color
+    margin-bottom: auto
+    text-align: center
+
+  .card:hover .title
+    color: $orange
+    transition: 0.3s color
+
+  .toggle
+    background-color: #fff
+    +position(absolute, null 0 0 null )
+    transform: translateY(100%)
+    z-index: 1
+    +fc
+    flex-direction: column
+    +size(100%, 0)
+    overflow: hidden
+    
+  .btn
+    opacity: 0
+    background-color: #fff
+    width: 260px
+    max-width: 80%
+    margin-bottom: 8px
+    &:hover
+      background-color: $orange
+      color: #ffffff
+
+
+  +max(1365)
+    .title
+      font-size: 20px
+
+  +max(991)
+    .card 
+      width: calc(33% - 14px)
+
+  +max(767)
+    +margin(null -5px )
+    .title
+      font-size: 16px
+
+    .card 
+      width: calc(33% - 10px)
+      +margin(null 5px 10px)
+      +padding(12px null 14px)
+      img
+        max-width: 80%
+    .toggle
+      +padding(null 12px)
+    .btn
+      font-size: 15px
+      height: 40px
+      max-width: 100%
+      border-radius: 2px
+
+  +max(450)
+    .card 
+      width: calc(50% - 14px)
+
+  +max(350)
+    .title
+      font-size: 14px
+      margin-top: 10px
+    .btn
+      font-size: 13px
+
+
+.flow
+  .hide
+    opacity: 0
+
+  .c1_sun path
+    opacity: 0
+
+  +max(767)
+    display: none
+
+
+    
+.flow-mobile
+  +min(768)
+    display: none
+
+  position: relative
+  +margin(0px null 30px)
+  padding-right: 20px
+
+  .flow_line
+    width: 100%
+    margin-bottom: 20px
+    text-align: center
+    font-size: 17px
+    letter-spacing: 1px
+    white-space: nowrap
+    
+  img
+    margin-right: 12px
+    width: 45px
+  span
+    white-space: nowrap
+    position: relative
+
+  .icon-down
+    +position(absolute,  0 50% null null)
+    transform: translate(0, -120%) 
+    color: #ccc
+    font-size: 20px
+
+
+  // +max(430)
+  //   height: 170px
+  //   margin-top: -10px
+
+  //   .flow_line
+  //     font-size: 15px
+  //     margin-bottom: 15px
+  //   img
+  //     margin-right: 8px
+  //     width: 38px
+  //   .icon-down
+  //     font-size: 14px
+  //     transform: translate(30%, -120%)
+
+  // +max(350)
+  //   height: 140px
+  //   .flow_line
+  //     font-size: 14px
+  //   img
+  //     margin-right: 4px
+  //     width: 30px
+  

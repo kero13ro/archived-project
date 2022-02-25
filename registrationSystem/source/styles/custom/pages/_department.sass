@@ -1,0 +1,177 @@
+
+
+
+.curve
+  width: 160px
+  line-height: 45px
+  text-align: center
+  background-color: $orange
+  color: #fff
+  margin-left: 20px
+  border-radius: 99px
+
+
+.department__doctor
+  +f
+  align-items: center
+  border-radius: 8px
+  margin-bottom: 20px
+
+  .f20
+    +margin(null 35px null 25px)
+    white-space: nowrap
+    // font-family: sans serif
+    // letter-spacing: 2px
+    
+  .wrapper
+    +size(100%)
+    height: 45px
+    max-width: 335px
+    position: relative
+
+  .wrapper.select
+    margin-right: 10px
+
+  .wrapper.input
+    margin-right: 15px
+
+
+  select,
+  input,
+  button
+    border: 0
+  //   +padding(null 20px)
+
+  select,
+  input
+    +size(100%)
+    color: #777
+    
+  button
+    color: #fff
+    width: 100px
+    height: 45px
+    background-color: $orange
+
+
+  +max(767)
+    flex-wrap: wrap
+    .wrapper.select
+      max-width: 100%
+      +margin(null 0 12px null)
+    .wrapper.input
+      max-width: calc(100% - 115px)
+
+    .f20
+      +margin(null null 12px 0)
+
+.department-table
+  width: 100%
+  border-collapse: collapse
+  background-color: #fff
+  font-size: 18px
+
+  th,td
+    border-right: 3px solid #f7f7f7
+    padding: 0.75rem
+    font-weight: normal
+    
+  td
+    vertical-align: top
+
+  tr:nth-child(even)
+    background-color: #f2f2f2
+
+  tr.test
+    th, td
+      background-color: rgba($orange, 0.5)
+      border-right-width: 0px
+      +padding(3px null)
+
+
+  thead
+    background-color: $orange
+    color: #ffffff
+    text-align: center
+    
+  tbody 
+    tr
+      +hoverBgc($orange-light)
+    th
+      color: #555
+      text-align: center
+    td
+      padding-left: 35px
+
+  a
+    display: block
+    color: #737373
+    +hoverText($orange)
+
+  .state-full
+    pointer-events: none
+
+  .full
+    color: $red
+  .teach,
+  .first
+    color: $blue-ligh
+
+
+  +min(991)
+    .toggle .f14
+      display: none
+
+  +max(990)
+    &, tbody, thead, td, th
+      display: block
+    &
+      position: relative
+    thead
+      +position(absolute, 0 null null 0)
+      width: 100%
+      cursor: pointer
+      th
+        +fc
+
+    // thead.fixed
+    //   position: fixed
+
+  +max(990)
+    tr
+      +f
+
+    th
+      width: 40%
+    td
+      width: 60%
+
+    td.small
+      width: 0
+      overflow: hidden
+      +padding(null 0)
+      border: 0
+
+    thead tr > *
+      height: 75px
+      white-space: nowrap
+
+  +max(500)
+    font-size: 16px
+
+  +max(400)
+    font-size: 14px
+    thead tr > *
+      height: 56px
+      
+    th
+      width: 30%
+    td
+      width: 70%
+
+    th,td
+      border-right: 1px solid #f7f7f7
+      +padding(8px 10px)
+
+    tbody td 
+      line-height: 2

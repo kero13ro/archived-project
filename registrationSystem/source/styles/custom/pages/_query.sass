@@ -1,0 +1,70 @@
+
+  
+.table.query
+  th,
+  td
+    +padding(12px null )
+    white-space: nowrap
+  td
+    vertical-align: middle
+
+  .cancel
+    +padding(null 40px)
+    height: 40px
+    background-color: $red
+    color: #ffffff
+    border-radius: 99px
+    +hoverBgc(shade($red, 20%))
+    
+  +min(1366)
+    td.lg
+      width: 18%
+    td.sm    
+      width: 240px
+
+
+// .table.progress,
+.table.query
+  +max(990)
+    th,
+    td
+      +padding(8px 6px )
+      font-size: 16px
+      width: 100%
+    .cancel
+      +padding(null 20px)
+      height: 40px
+      font-size: 15px
+
+  +max(767)
+    tbody, thead, tr, th, td
+      display: block
+
+    &
+      +f
+      align-items: stretch
+      position: relative
+
+    th:not(:last-child)
+      border-bottom: 1px solid rgba(#fff, 0.5)
+      border-right-width: 0px
+
+    td
+      border-bottom-width: 0px
+      
+    td:last-child
+      border-bottom: 1px solid #ccc
+
+    thead
+      width: 40%
+    tbody
+      width: 60%
+      td:nth-child(even)
+        background-color: #f6f6f6
+
+
+  +max(400)
+    thead,tbody
+      width: 50%
+    td,th
+      font-size: 15px
