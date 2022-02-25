@@ -1,0 +1,738 @@
+
++min(769)
+  .logo_animation ~ #nav
+    .nav__logo
+      &:before
+        content: ""
+        display: block
+        +position(absolute, 0 0 null null )
+        background: linear-gradient(to right, rgba(240,240,240,0) 0%,rgba(240,240,240,1) 49%,rgba(240,240,240,1) 100%)
+        +size(200%, 100%)
+        transition: 4s right
+
+      &.show:before
+        right: -200%
+
+
+// [class*="icon"]:before
+//   color: $green
+$icon: $green !default
+
+[class^="icon"]
+  color: $icon
+  &:before
+    width: auto
+    
+
++min(769)
+  #nav a
+    +hoverText($green)
+
+
+
++min(769)
+  .menu__logo
+    display: none
+
+  .grayBar,
+  .fixedBar
+    width: 100%
+    background-color: #f0f0f0
+    box-shadow: 0 2px 6px rgba(black,0.1)
+    z-index: 1
+
+  .nav__cover,
+  .grayInner,
+  .fixedInner
+    max-width: 1420px
+    +margin(null auto)
+    +f(flex-start, center)
+    +size(100%)
+
+  .nav__cover 
+    // justify-content: flex-end
+    // justify-content: flex-start //IE
+
+    .scan
+      margin-left: auto
+    
+    [class*="icon"]
+      font-size: 1.4rem
+      margin-right: 12px
+
+    .nav__external ~ *
+      position: relative
+      height: 50px
+      +padding(null 24px )
+      +fc
+      color: #777
+
+      &:not(:last-child):before
+        content: ""
+        display: block
+        +position(absolute, 16px 0 null null )
+        height: 20px
+        border-right: 1px solid #ccc
+
+  .nav__external
+    +fc
+    margin-right: auto
+  
+    a:first-child,  
+    a:nth-child(2)  
+      +padding(null 12px )
+      color: #777
+
+    a:first-child
+      line-height: 18px
+      border-right: 1px solid #ccc
+
+    +max(1300)
+      display: none
+
+
+  .nav__logo
+    margin-right: auto
+    padding-right: 20px
+    max-width: 35vw
+    position: relative
+    overflow: hidden
+
+
+  .nav__favorite,
+  .nav__strict 
+    +size(300px, 90px)
+    color: $green
+    background-color: #fff
+    border-radius: 999px
+    +fc
+    font-weight: bold
+    box-shadow: 0 5px 5px rgba(black,0.1)
+    margin-right: 20px
+
+    [class*="icon"]:before
+      font-size: 2.8rem
+      // width: auto
+      
+    .inner
+      margin-left: 16px
+
+  .grayBar
+    +padding(20px)
+    .main
+      font-size: 22px
+      & + div 
+        font-size: 16px
+
+  
+  .fixedBar
+    +size(100%, 70px)
+    +padding(null 20px)
+    z-index: 10
+
+    .nav__strict ~ a
+      height: 50px
+      position: relative
+      +fc
+      +padding(null 12px null)
+      color: #777
+
+      [class*="icon"]
+        font-size: 1.4rem
+        & + span
+          display: none
+
+    .icon-cart
+      +margin(null 12px)
+
+    .icon-service
+      +margin(null 12px null null)
+
+    .icon-scan
+      +margin(null null null 12px)
+
+    .nav__cart:before
+      content: ""
+      display: block
+      +position(absolute, 16px null null 0 )
+      height: 20px
+      border-left: 1px solid #ccc
+
+    .nav__strict,
+    .nav__favorite
+      +size(200px, 40px)
+      box-shadow: 0 3px 3px rgba(black,0.1)
+
+      .main
+        font-size: 18px
+        & + div 
+          display: none
+        .inner
+          margin-left: 12px
+
+
+      [class*="icon"]:before
+        font-size: 1.3rem
+
+    .nav__logo
+      width: 240px
+
+
+    +position(fixed, -70px 0 null null )
+    opacity: 0
+    &.show
+      opacity: 1
+      top: 0
+      transition: 0.3s
+
+
+  +max(1300)
+    .nav__external
+      display: none
+
+    .fixedBar
+      .nav__strict,
+      .nav__favorite
+        width: 160px
+
+  +max(1000)
+
+    .nav__favorite,
+    .nav__strict 
+      +size(220px, 70px)
+      margin-right: 12px
+
+      .inner
+        margin-left: 10px
+
+      .main
+        font-size: 18px
+        & + div 
+          font-size: 13px
+
+      [class*="icon"]:before
+        font-size: 2rem
+        
+    .fixedBar
+      .nav__strict,
+      .nav__favorite
+        width: 50px
+        flex-shrink: 0
+        +fc
+        .inner
+          display: none
+
+    .nav__strict ~ a
+      +padding(null 8px null)
+
+
+
++max(768)
+
+
+  .nav__toggle
+    z-index: 12
+
+    .one, .two, .three
+      +size(20px, 2px)
+      background-color: $green
+      margin: 4px auto
+      backface-visibility: hidden
+      // transition: 0.3s transform
+      z-index: 12
+      position: relative
+
+  .nav__logo
+    margin-right: auto
+    max-width: 220px
+    padding-right: 20px
+    width: 100%
+
+  #nav
+    +position(fixed, 0 null null null )
+    width: 100% 
+    +fc(flex-start)
+    +padding(null 12px)
+    z-index: 10
+    background-color: rgb(240, 240, 240)
+    box-shadow: 0 1px 4px rgba(black,0.1)
+
+
+    [class*="icon"]
+      font-size: 1.4rem
+
+  .nav__cart    
+    .text
+      display: none
+
+    .cart__num
+      +size(16px)
+      background-color: $green
+      +fc
+      color: #fff
+      border-radius: 50%
+      font-size: 12px
+      margin-bottom: 15px
+      margin-left: 3px        
+  
+  .navPad
+    height: 65px
+
+  .moblie
+    position: relative
+    height: 65px
+    +fc
+    margin-right: 25px
+
+    .main
+      color: $green
+      margin-left: 6px
+    .main + div
+      display: none
+
+  .nav__cover
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding-bottom: 70px
+
+    +size(100%, 100vh )
+    +position(fixed, 0 0 null null)
+    z-index: 11
+    +padding(null 30px)
+    visibility: hidden
+
+  .menu__logo
+    +position(absolute, 30px null null 20px)
+    max-width: 45vw
+
+  .nav__bgc
+    +position(absolute, 0 0 0 0 )
+    +size(100%)
+    z-index: -1
+
+    li
+      .before,
+      .after
+        content: ""
+        display: block
+        +size(100%, 34vh)
+        position: absolute
+
+      .before
+        background-color: #fff
+        left: 0
+      .after
+        background-color: $green
+        right: 0
+      
+    li:nth-child(2) > div
+      top: 34%
+    li:nth-child(3) > div
+      top: 68%
+
+  .nav__cover a
+    color: #fff
+
+  .nav__external ~ a
+    +padding(20px 40px 20px 50px)
+    letter-spacing: 7px
+    font-size: 24px
+
+    [class*="icon"]
+      display: none
+      
+
+  .nav__external
+    +position(absolute, null 0 0 null)
+    +padding(null 20px)
+    +margin(null null 20px null )
+    order: 1
+    text-align: right
+
+    a:not([class*="icon"])
+      display: block
+      height: 30px
+
+    [class*="icon"]
+      +margin(10px 15px)
+      font-size: 30px
+      margin-left: 22px
+
+
+
+  +max(500)
+    // .nav__cover
+    //   top: 50px
+
+    .nav__external ~ a
+      +padding(12px 20px 12px 40px)
+      font-size: 22px
+
+    .navPad,
+    .moblie
+      margin-right: 20px
+      height: 50px
+
+    #nav
+      .inner > div
+        display: none
+
+      .main //還要綁JS
+        opacity: 0
+        z-index: 12
+        +position(absolute, 100% null null 50%)
+        transform: translateX(-50%)
+        width: 40px
+        +padding(10px 6px)
+        white-space: normal
+        line-height: 1.2
+        text-align: center
+        background-color: $green
+        border: 1px solid #ddd
+        color: #fff
+
+        
+
+
+#dashboard
+  +position(fixed, 0 -560px null null )
+  +size(560px, 100vh)
+  z-index: 10
+  background-color: #fff
+  box-shadow: 0 5px 5px rgba(black,0.1)
+  +fcl
+  transition: right 0.8s ease-in-out
+  a.text
+    white-space: normal
+    
+
+  &.expend
+    transition: right 0.8s ease-in-out
+    right: 0
+    .foot
+      right: 0
+      transition: right 0.8s ease-in-out
+
+  
+  > *
+    +padding(null 30px)
+
+  .title
+    +size(100%, 120px)
+    background-color: rgb(239, 239, 239)
+    +fc(space-between)
+    flex-shrink: 0
+
+  .content
+    margin-bottom: auto
+    +padding(30px 15px 30px 30px)
+    +size(100%, calc(100% - 185px))
+    
+  .scrollbarY
+    +size(100%)
+
+  .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+    background-color: #999
+    width: 6px
+    border-radius: 3px
+
+  .icon-cart:before
+    margin-right: 10px
+    font-size: 24px
+
+  .icon-right
+    +size(60px)
+    font-size: 35px
+    background-color: #fff
+    border-radius: 50%
+    +fc
+    cursor: pointer
+    transition: box-shadow 0.3s
+    &:hover
+      transition: box-shadow 0.3s
+      box-shadow: 0 3px 6px rgba(black,0.1)
+
+  .block
+    border-bottom: 1px solid #ccc
+    +fc
+    +padding(20px null)
+    line-height: 1.8
+    color: #555
+    &:first-child
+      padding-top: 0
+
+
+    span
+      font-family: roboto
+      +margin(null 2px)
+
+    img
+      margin-right: 25px
+
+    .text
+      margin-right: auto
+      
+  .delete
+    +size(25px)
+    // cursor: pointer
+    +margin(null 10px null 30px)
+    
+    &:after,
+    &:before
+      +size(12px, 2px)
+
+  .foot
+    +size(100%, 65px)
+    // +position(absolute, null null 0 null )
+    transition: right 0.8s ease-in-out
+    +position(fixed, null -560px 0 null )
+    width: 560px
+
+      
+    
+    background-color: $green
+    color: #fff
+    +fc(space-between)
+
+  .price-total 
+    font-family: roboto
+    font-weight: bold
+
+  .price-total + span 
+    margin-left: 10px
+    font-size: 15px
+    white-space: nowrap
+
+
+  .btn
+    background-color: #fff
+    color: $green
+    +padding(null 22px)
+    font-weight: bold
+    
+
+
+#dashboard
+  +max(768)
+    right: -450px
+    width: 100%
+    max-width: 450px
+
+    > *
+      +padding(null 30px)
+
+    .title
+      height: 65px
+
+    .icon-right
+      +size(35px)
+      font-size: 22px
+
+    .content
+      +padding(20px 20px 20px 20px)
+      height: calc(100% - 135px)
+
+    .block
+      font-size: 15px
+      +padding(15px null)
+      img
+        width: 100px
+        margin-right: 15px
+
+    .delete
+      +margin(null null null 15px)
+
+    .foot
+      // width: 450px
+      width: 100%
+      max-width: 450px
+      right: -450px
+
+  +max(420)
+
+    .block
+      font-size: 14px
+      img
+        max-width: 20vw
+        margin-right: 10px
+
+
+    .delete
+      align-self: flex-start
+      +size(18px)
+      +margin(5px 0px null 10px)
+      background-color: #bbb
+      &:after,
+      &:before
+        +size(8px, 1px)
+        
+    .foot
+      height: 80px
+      
+    .price-total
+      text-align: right
+      display: block
+
+    .price-total + span 
+      font-size: 13px
+      display: block
+
+    .btn
+      +padding(null 16px)
+      font-size: 15px
+
+  +max(350)
+    .block
+      font-size: 12px
+    // .foot
+    //   position: fixed
+    //   bottom: 0
+
+
+
+
+
+.wp
+  position: relative
+  
+.nav__search
+  +position(fixed, 50px 0 null null )
+  transition: 0.3s top
+  &.fixedType
+    top: 70px
+    transition: 0.3s top
+
+  +padding(40px null )
+  width: 100%
+  background-color: #fff
+  z-index: 10
+  box-shadow: 0 0 20px rgba(black, 0.3)
+  // box-shadow: 0 0 10px rgba(black, 0.3)
+  display: none
+    
+  .container
+    +fc
+
+
+  .searchBar
+    height: 60px
+    width: 100%
+
+    background-color: rgb(239, 239, 239)
+    border-width: 0
+    border-top-left-radius: 999px
+    border-bottom-left-radius: 999px
+    
+    +padding(null 25px)
+
+  .icon-scan
+    height: 60px
+    +padding(null 40px null 75px)
+    white-space: nowrap
+    background-color: $green
+    color: #fff
+    border-width: 0
+    border-top-right-radius: 999px
+    border-bottom-right-radius: 999px
+    cursor: pointer
+    +hoverBgc($greenL)
+    &:before
+      margin-right: 12px
+      font-size: 24px
+
+  .icon-scan2
+    +hoverBgc($greenL)
+    color: #fff
+    +padding(null 40px)
+    margin-right: 35px
+    flex-shrink: 0
+    &:before
+      font-size: 24px
+      margin-right: 12px
+
+  .search-close
+    +size(60px)
+    position: relative
+    +hoverBgc(#eee)
+    border-radius: 50%
+    flex-shrink: 0
+    
+    &:before,
+    &:after
+      content: ""
+      display: inline-block
+      +size(30px, 2px)
+      background-color: $green
+      +position(absolute, 50% null null 50%)
+      transform-origin: 50% 50% 
+      
+    &:before
+      transform: translateX(-50%) rotate(45deg)
+    &:after
+      transform: translateX(-50%) rotate(-45deg)
+
+
+.nav__search
+  +max(768)
+    +padding(30px null )
+    top: 65px
+    font-size: 16px
+    .icon-scan
+      +padding(null 30px)
+
+    .icon-scan2
+      color: #fff
+      +padding(null 30px)
+      margin-right: 5px
+
+  +max(600)
+    +padding(40px null null)
+    .searchBar
+      margin-bottom: 18px
+
+    .searchBar,
+    .icon-scan,
+    .icon-scan2
+      height: 50px
+      border-radius: 999px
+
+    .icon-scan,
+    .icon-scan2
+      width: calc(50% - 6px)
+      margin: 0
+
+    .icon-scan
+      margin-right: auto
+
+    .container
+      flex-wrap: wrap
+    
+    .search-close
+      +position(absolute, 0 0 null null )
+      +size(40px)
+
+      &:before,
+      &:after
+      
+        +size(20px, 2px)
+        background-color: rgba($green, 0.8)
+
+  +max(500)
+    top: 50px
+
+  +max(350)
+    .icon-scan,
+    .icon-scan2
+      &:before
+        font-size: 18px
+        margin-right: 8px
+
+    .searchBar
+      margin-bottom: 12px
+
+
+.search-result
+  color: #999
+  margin-left: 30px

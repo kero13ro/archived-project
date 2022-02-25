@@ -1,0 +1,519 @@
+
+.index_landing
+  height: 40vw
+  min-height: 400px
+  background: center / cover
+  +f(center, flex-end)
+  position: relative
+
+  a
+    // +size(380px, 185px)
+    +padding(38px 54px)
+    +margin(null 15.6vw 4.2vw )
+    background: linear-gradient(to right, rgba(190,190,190,1) 0%,rgba(255,253,254,1) 40%,rgba(255,253,254,1) 60%,rgba(190,190,190,1) 100%)
+
+    color: $green
+    border-radius: 999px
+    +fc
+    flex-shrink: 0
+    font-weight: bold
+    box-shadow: 0 10px 6px rgba(black,0.2)
+    z-index: 1
+
+
+  [class*="icon"]
+    flex-shrink: 0
+    font-size: 4.5rem
+    &:before
+      width: auto
+      margin-right: 0.2em
+
+
+  .main
+    font-size: 40px
+    & + div 
+      font-size: 20px
+
+  [class^="man"]
+    position: absolute
+    bottom: 0
+    z-index: 5
+
+  .man-m
+    left: 45%
+    transform: translateX(-50%)
+    width: 17.7vw
+  .man-f
+    width: 14.2vw
+    right: 45%
+    transform: translateX(50%)
+
+  [class^="plus"]
+    >div
+      transform: rotate(90deg)
+      +size(30px, 10px)
+
+  .plus-1
+    +size(30px, 10px)
+    +position(absolute, null 49% 120px null )
+    &, >div
+      background-color: rgb(56, 175, 59)
+      
+  .plus-2
+    +size(30px, 10px)
+    +position(absolute, null 38% 130px null )
+    &, >div
+      background-color: #51c34d
+
+  .plus-3
+    +size(30px, 10px)
+    +position(absolute, null 65% 60px null )
+    &, >div
+      background-color: #62b664
+
+  .plus-4
+    +size(30px, 10px)
+    +position(absolute, null 60% 190px null )
+    &, >div
+      background-color: #62b664
+
+
+
+  +max(1440)
+    a
+      +padding(25px 40px)
+
+  +max(1366)
+    a
+      +padding(24px 30px)
+
+    [class*="icon"]
+      font-size: 3rem
+
+    .main
+      font-size: 30px
+      & + div 
+        font-size: 16px
+
+  +max(991)
+    height: 60vw
+    
+    a
+      // +margin(null 3vw 40px)
+      +margin(null 12vw 8vw )
+      +padding(20px 30px)
+
+    
+    .man-m
+      width: 25vw
+    
+    .man-f
+      width: 20vw
+      right: 41%
+    
+  
+  
+  +min(769)
+    .pointer
+      display: none
+  +max(768)
+
+    .pointer
+      width: 30px
+      +position(absolute, null 0 null null )
+      z-index: 3
+      opacity: 0
+
+
+  +max(767)
+
+
+    +f(flex-end, center, column)
+    a
+      +padding(15px 25px 80px)
+      margin-bottom: 30px
+      position: relative
+      border-radius: 60px
+
+      overflow: hidden
+    .love
+      border-bottom-right-radius: 0
+
+    .strict
+      border-bottom-left-radius: 0
+
+
+    [class*="icon"]
+      font-size: 2.5rem
+
+    .main
+      font-size: 18px
+      & + div 
+        font-size: 15px
+
+    .man-m
+      // width: 36vw
+      width: auto
+      height: 82px
+
+      left: auto
+      right: -5%
+      transform: translateX(0%)
+
+    .man-f
+      // width: 30vw
+      width: auto
+      height: 82px
+      left: 0
+      // right: -5%
+      transform: translateX(0%)
+      
+
+
++min(769)
+
+
+  #nav .grayInner .moblie,
+  .index_landing a
+    transition: 0.3s box-shadow , 0.3s transform
+
+  #nav .grayInner .moblie,
+  .index_landing a
+    &:hover 
+      transition: 0.3s box-shadow
+      
+      [class*="icon"]:before
+        animation: hrv 1s
+
+  .index_landing a:hover 
+    box-shadow: 0 0px 6px rgba(black,0.2)
+    
+    
+  @keyframes hrv
+    16.65%
+      transform: translateY(4px)
+    33.3%
+      transform: translateY(-3px)
+    49.95%
+      transform: translateY(3px)
+    66.6%
+      transform: translateY(-1.5px)
+    83.25%
+      transform: translateY(0.5px)
+    100%
+      transform: translateY(0)
+
+
+
+//=======================================================
+//=======================================================
+
+.index_search
+  position: relative
+
+  .searchbar
+    +fc
+    position: relative
+
+  .dot
+    +size(20px)
+    background-color: $blue
+    border-radius: 50%
+    margin-right: 20px
+  
+  .dot ~ *
+    +padding(20px 28px)
+    font-size: 20px
+    height: 70px
+
+  input[type="search"] 
+    width: 30vw
+    border: 1px solid $green
+    border-radius: 10px 0 0 10px
+    font-weight: bold
+    +hoverBgc(tint($green, 95%))
+    
+    &, &::placeholder
+      color: $blue
+    
+    &:focus 
+      border-width: 2px
+
+
+  .search,
+  .advanced
+    +fc
+    color: #fff
+    background-color: $green
+    +hoverBgc(tint($green, 20%))
+    
+    &:before
+      font-size: 25px
+      margin-right: 10px
+
+  .search
+    width: 140px
+    border-radius: 0 10px 10px 0
+    border-width: 0px
+    margin-right: 16px
+    cursor: pointer
+
+  .advanced
+    width: 180px
+    border-radius: 10px
+
+  .tips
+    // padding-bottom: 50px
+    font-size: 20px
+    color: $green
+    +fcl
+    font-weight: bold
+
+  .multi
+    +fc
+    margin-bottom: 20px
+
+  .circle
+    +size(75px)
+    border-radius: 50%
+    +fc
+    color: #FFF
+    +margin(null 12px)
+    
+    &:first-child
+      background-color: $blue
+    &:last-child
+      background-color: $orange
+
+  // [class*="icon"]:before
+  //   color: #fff
+
+  +max(1365)    
+    .dot ~ *
+      +padding(15px 20px)
+      font-size: 18px
+      height: 60px
+
+    input[type="search"] 
+      +padding(null 10px)
+      font-weight: normal
+    
+    .search,
+    .advanced
+      width: auto
+      &:before
+        font-size: 18px
+
+    .tips
+      font-size: 18px
+
+    .circle
+      +margin(null 6px)
+
+  +max(767)
+    
+    +padding(null 20px)
+    .dot
+      display: none
+
+    .searchbar
+      max-width: 400px
+      +margin(null auto)
+      flex-wrap: wrap
+      justify-content: flex-end
+      
+    .dot ~ *
+      +padding(0px 10px)
+      font-size: 16px
+      height: 55px
+      
+
+    input[type="search"] 
+      font-size: 15px
+      +padding(null 5px)
+      font-weight: normal
+      -webkit-appearance: none
+      width: 60%
+    
+    .search, .advanced
+      width: 40%
+      margin-right: 0
+
+    .advanced
+      margin-top: 15px
+      width: 100%
+
+    .tips
+      font-size: 15px
+
+    .multi
+      flex-wrap: wrap
+      font-weight: normal
+
+    .circle
+      +size(auto)
+      +margin(null 3px)
+      
+      &:first-child
+        color: $blue
+        background-color: transparent
+      &:last-child
+        color: $orange
+        background-color: transparent
+      &:before
+        content: attr(data-inline)
+      span 
+        display: none
+
+//=======================================================
+//=======================================================
+
+
+.division
+  +f
+  flex-wrap: wrap
+  align-items: stretch
+
+  .block
+    +margin(null 12px 24px 12px )
+    width: calc(20% - 24px)
+    +padding(30px 25px)
+    +fcl
+    display: inline-flex
+    border-radius: 8%
+    background-color: #fff
+    transition: box-shadow 0.3s
+    img
+      flex-shrink: 0
+    
+    &:hover
+      box-shadow: 0 0 1px 1px $green
+      transition: box-shadow 0.3s
+
+  .title
+    margin-top: 8px
+    text-align: center
+
+    &::before
+      +size(18px)
+      content: ""
+      display: inline-block
+      background-color: $orange
+      margin-right: 15px
+      border-radius: 50%
+
+
+
+  +max(1365)
+    .block
+      font-size: 18px
+
+    .title:before
+      +size(12px)
+      margin-right: 10px
+
+  +max(1100)
+    .block
+      +margin(null 8px 16px 8px )
+      width: calc(25% - 16px)
+      +padding(20px 20px)
+
+
+  +max(991)
+    .title:before
+      display: none
+
+  +max(767)
+    .block
+      width: calc(33% - 10px)
+      +margin(null 5px 10px 5px)
+    .title
+      margin-top: 0
+      span
+        display: block
+
+  +max(500)
+    +padding(20px 12px)
+    .block
+      font-size: 14px
+      +padding(8px 15px)
+
+
+//=======================================================
+//=======================================================
+
+
+
+.subdivision
+  background-color: #fff
+
+.subdivision__land
+  +f
+  img
+    width: 260px
+  .text
+    max-width: 530px
+
+  +max(600)
+    flex-direction: column
+    align-items: center
+    img
+      max-width: 250px
+      width: 80%
+      margin-right: 0
+
+      
+    .text
+      max-width: 400px
+      .f24
+        margin-top: 20px
+
+.subdivision__list
+  border-top: 1px solid #ccc
+
+  a
+    width: calc(20% - 36px)
+    +margin(null 18px)
+    border-bottom: 1px dashed #ccc
+    +padding(20px null)
+
+    &:before
+      +size(14px)
+      content: ""
+      display: inline-block
+      background-color: $green
+      margin-right: 20px
+      border-radius: 50%
+
+    +hoverText($red)
+
+  +max(1024)
+    a
+      width: calc(25% - 36px)
+      +padding(15px null)
+      &:before
+        +size(12px)
+        margin-right: 15px
+
+  +max(700)
+    a
+      width: calc(33% - 36px)
+      +padding(12px null)
+      font-size: 15px
+      &:before
+        +size(8px)
+        margin-right: 6px
+
+  +max(420)
+    +margin(null -5px null -10px)
+    a
+      font-size: 14px
+      &:before
+        display: none
+
+
+#catalog-anchor
+  position: absolute
+  +size(1px)
+  top: -70px
+

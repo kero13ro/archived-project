@@ -1,0 +1,91 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  include ./include/component.pug
+
+
+  //- #favorite
+  .breadcrumb
+    
+    ul.container.nostyle
+      li.title
+        span.icon-strict.f24.mr20.plusCircle
+        span.f28 熱銷推薦
+      li 首頁
+      h2.icon-right 熱銷推薦
+
+
+  form(action="").pt56.pb56
+    h3.pb56.f32.tc 新品推薦、熱門好物
+
+    .favorite_filter.f16
+      .toggle 
+        .bar
+      a 口服OTC藥
+      a 外用OTC藥
+      a 醫材用品
+      a 保健食品
+      a 奶粉
+      a 紙尿褲
+      a 營養飲品
+      a 嬰幼兒食品
+      a 健康照護
+      a 婦嬰用品
+      
+
+
+    .cards.container
+
+      .filter_droup
+        .filter_title.f28.b.mb40 
+          span 口服OTC藥
+
+        +card(1)
+        +card(2)
+        +card(3)
+        +card(4)
+        +card(2)
+        +card(2)
+        +card(4)
+      
+      .filter_droup
+        .filter_title.f28.b.mb40 
+          span 外用OTC藥
+        +card(1)
+        +card(3)
+        +card(1)
+        
+        +card(1)
+        +card(3)
+        +card(4)
+        +card(2)
+        +card(4)
+
+        //- .card__pad.push
+        //- .card__pad.push
+        //- .card__pad.push
+        //- .card__pad.push
+      .filter_droup
+        .filter_title.f28.b.mb40 
+          span 營養飲品
+
+        +card(2)
+        +card(4)
+        +card(1)
+        +card(3)
+        +card(1)
+
+
+
+    .pages.pb32
+      a(href="#").icon-page-1
+      a(href="#").icon-page-2
+      a(href="#").active 1
+      a(href="#") 2
+      a(href="#") 3 
+      a(href="#") 4
+      a(href="#") 5
+      a(href="#").icon-page-3
+      a(href="#").icon-page-4  

@@ -1,0 +1,62 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  include ./include/component.pug
+
+
+  //- #result
+  .breadcrumb
+    ul.container.nostyle
+      li.title
+        span.icon-catogory.f24.mr20.plusCircle
+        span.f28 商品搜尋
+      li 首頁
+      h2.icon-right 商品專區
+      h3.icon-right 商品搜尋
+
+
+  form(action="").pt56.pb56
+
+    .container
+      h3.pb32.f28 關鍵字搜尋
+        span.search-result.f16 / &nbsp;	&nbsp;	15 項搜尋結果，關於「維生素」.
+
+
+    .cards.container.mb24
+      +card(1)
+      +card(2)
+      +card(3)
+      +card(4)
+      +card(3)
+      
+      +card(2).disabled
+      +card(4).replenish
+      +card(1)
+      +card(3)
+      +card(2)
+      
+      +card(1)
+      +card(3)
+      +card(4)
+      +card(2)
+      +card(4)
+
+      .card__pad.push
+      .card__pad.push
+      .card__pad.push
+      .card__pad.push
+
+    .container
+
+      .pages.pb32
+        a(href="#").icon-page-1
+        a(href="#").icon-page-2
+        a(href="#").active 1
+        a(href="#") 2
+        a(href="#") 3 
+        a(href="#") 4
+        a(href="#") 5
+        a(href="#").icon-page-3
+        a(href="#").icon-page-4  

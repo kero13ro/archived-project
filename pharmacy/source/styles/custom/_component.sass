@@ -1,0 +1,330 @@
+
+
+
+.pages
+  +f(center, center)
+  a
+    display: block
+    font-family: Roboto
+    margin: 0 5px
+    +f(center, center)
+    +size(35px)
+    color: #777
+    border-radius: 50%
+    
+    flex-shrink: 0
+    &:not([class^="icon"])
+      background-color: #eee
+      
+
+    &:hover,
+    &.active
+      background-color: $green
+      color: #fff
+      &:before
+        color: #fff
+
+  +max(400)
+    a
+      margin: 0 3px
+      font-size: 14px
+      +size(30px)
+
+    [class^="icon"]
+      margin: 0
+
+
+=afterline($height, $color: rgb(199,199,199))
+  line-height: $height
+  position: relative
+  &:after
+    content: ""
+    display: block
+    border-right: 1px solid $color
+    +position(absolute, 0 0 null null )
+    height: $height
+
+
+.breadcrumb
+  background-color: $grayBgc
+  white-space: nowrap
+
+  ul
+    +padding(25px null)
+    border-top: 1px dashed #ccc
+    // +f(flex-start, center)
+
+  ul > *
+    height: 50px
+    +fc
+    display: inline-flex
+    // height: 100%
+    vertical-align: middle
+    color: #999
+    font-weight: bolder
+    margin-bottom: 0
+    font-size: 16px
+
+    &:last-child
+      color: #000
+
+  .title
+    position: relative
+    padding-right: 25px
+    margin-right: 25px
+    color: #000
+
+    &:after
+      content: ""
+      display: block
+      height: 60%
+      border-right: 1px solid #ccc
+      +position(absolute, 10px 0 null null )
+
+  // .icon-user3
+  .hadCircle
+    font-size: 50px
+
+  // .icon-cart
+  .plusCircle
+    +size(50px)
+    border-radius: 50%
+    background-color: $green
+    +fc
+    font-size: 25px
+    color: #fff
+
+
+  .icon-right::before
+    margin: 0 12px
+    color: $green
+  
+  +max(850)  
+    ul > *:nth-child(6)
+      display: flex
+      justify-content: flex-start    
+      height: 40px
+
+      
+  +max(768)
+    ul
+      +padding(12px null)
+
+    .hadCircle
+      font-size: 40px
+
+    .plusCircle
+      +size(40px)
+      font-size: 20px
+  
+  +max(550)
+
+    .title
+      margin-right: 0
+      padding-right: 5px
+      span
+        margin-right: 0
+
+      &::after,
+      span.f28
+        display: none
+        
+    .hadCircle
+      font-size: 27px
+
+    .plusCircle
+      +size(27px)
+      font-size: 14px
+
+    .icon-right::before
+      +margin(null 6px)
+      font-size: 12px
+
+    ul > *
+      height: 30px
+      font-size: 15px
+  
+  +max(350)
+    ul > *
+      font-size: 14px
+
+
+.footGray
+  background-color: #f0f0f0
+
+.footGray + footer
+  background-color: #f0f0f0
+  
+
+.tel
+  font-family: 'Roboto'
+
+
+
+footer
+  position: relative
+  padding-top: 120px
+  +fcl(flex-end)
+  letter-spacing: 1px
+
+  .icon-up
+    +size(60px)
+    background-color: rgb(239, 239, 239)
+    color: $green
+    position: absolute
+    top: 30px
+    right: 35px
+    border: 1px solid $green
+    border-radius: 50%
+    +fc
+    font-size: 32px
+
+  svg 
+    +position(absolute, null 0 0 null)
+
+  &,a
+    color: #fff
+    transition: 0.3s text-shadow
+
+
+
+  .sitemap,
+  address
+    a:hover
+      transition: 0.3s text-shadow
+      text-shadow: 0 0 10px rgb(12, 102, 13) , 0 0 20px #fff
+
+  
+
+  .copyright
+    +fc
+    border-top: 1px solid rgba(#fff,0.3)
+    width: 100%
+    z-index: 1
+    min-height: 60px
+    +padding(15px)
+    // .slash
+    //   +margin(null 10px)
+
+
+  .wrapper
+    +f(space-around, flex-start)
+    // max-width: 800px
+    margin-bottom: 20px
+    z-index: 1
+    
+  address
+    +fcl
+    padding-right: 20px
+    align-items: flex-start
+    li
+      padding-bottom: 8px
+
+  .media
+    +f(flex-end)
+
+    // +fcl
+    // margin-left: 30px
+    margin-top: 30px
+
+  .icon-facebook,
+  .icon-line
+    +size(60px)
+    font-size: 30px
+    background-color: #fff
+    border-radius: 50%
+    color: $green
+    +fc
+    +margin(null 8px 16px)
+
+  .sitemap
+    font-size: 20px
+    font-weight: bold
+    a:not(:last-child)
+      +padding(null 15px null)
+      margin-right: 15px
+      border-right: 1px solid rgba(#fff, 0.5)
+
+
+  // .sitemap
+  //   +f(center, flex-start)
+  //   flex-shrink: 0
+
+  //   .title
+  //     font-size: 20px
+  //     padding-bottom: 10px
+  //     margin-bottom: 12px
+  //     border-bottom: 1px solid rgba(#fff, 0.3)
+  //     font-weight: bold
+
+  // .block:not(:last-child)
+  //   margin-right: 50px
+
+  // .block.tri ul
+  //   padding-right: 20px
+  //   max-width: 420px
+  //   +f(space-between,center, row, wrap)
+
+  //   li:nth-child(3n+1)
+  //     width: 25%
+  //   li:nth-child(3n+2)
+  //     width: 35%
+  //   li:nth-child(3n+3)
+  //     width: 33%
+
+
+footer
+
+  +max(768)
+    padding-top: 70px
+
+    .sitemap
+      font-size: 16px
+      margin-top: 10px
+      
+
+    .wrapper
+      +f(space-around, flex-start)
+      flex-direction: column
+      align-items: center
+
+    .media
+      justify-content: center
+      margin-top: 20px
+      
+
+    [class^="icon"]
+      margin-bottom: 0
+      +size(43px)
+      font-size: 22px
+
+    address
+      +padding(null 0 0px 20px)
+
+  +max(768)
+  
+
+  
+    .icon-up  
+      top: -10px
+    .copyright
+      flex-direction: column
+      span
+        margin-bottom: 5px
+        text-align: center
+
+    // .slash
+    //   display: none
+
+  +max(350)
+    address
+      +padding(null null null 0)
+
+    .sitemap
+      a:not(:last-child)
+        +padding(null 10px null)
+        margin-right: 10px
+
+    // [class^="icon"]
+    //   +size(45px)
+      // font-size: 20px
