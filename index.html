@@ -11,19 +11,36 @@
       media="screen"
     />
     <style>
+      img {
+        border: 1px solid #ccc;
+      }
       .tow-column {
         display: flex;
         margin: 0 -10px;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
       }
       .tow-column > * {
         width: 50%;
         margin: 0 10px;
       }
+      .tow-column > .info {
+        position: relative;
+      }
+      .tags {
+        color: #777;
+        bottom: 0;
+        position: absolute;
+        left: 0;
+      }
+
+      small {
+        margin-right: 10px;
+      }
     </style>
   </head>
   <body>
     <div>
+      <h1>Web UI Projects</h1>
       <h2>
         <a href="./chainDialog/dist/" target="_blank">closure Dialog</a>
       </h2>
@@ -72,9 +89,8 @@
       </h2>
       <div class="tow-column">
         <img src="./static/register01.png" alt="" srcset="" />
-        Using GSAP (Greensock) and multiple timelines to build Landing Page
-        animation. <br />
-        Including scroll-triggered animations, SVG transform.
+        使用 GSAP 建立 SVG 動畫特效、顯示掛號流程。 熟悉各類大型表格 RWD
+        切版，如：反轉類型、絕對定位、偽元素。
       </div>
     </div>
 
@@ -86,23 +102,8 @@
       </h2>
       <div class="tow-column">
         <img src="./static/pharmact01.png" alt="" srcset="" />
-        Using GSAP (Greensock) and multiple timelines to build Landing Page
-        animation. <br />
-        Including scroll-triggered animations, SVG transform.
-      </div>
-    </div>
-
-    <div>
-      <h2>
-        <a href="./confinementMall/public/" target="_blank"
-          >Confinement Commerce Website</a
-        >
-      </h2>
-      <div class="tow-column">
-        <img src="./static/confine02.png" alt="" srcset="" />
-        Using GSAP (Greensock) and multiple timelines to build Landing Page
-        animation. <br />
-        Including scroll-triggered animations, SVG transform.
+        全頁面 RWD 切版。熟悉運用 flex、Sass 切版各種尺寸畫面。 並使用 GSAP
+        建立多層次時間軸之開闔選單動畫。
       </div>
     </div>
 
@@ -114,9 +115,34 @@
       </h2>
       <div class="tow-column">
         <img src="./static/confine01.png" alt="" srcset="" />
-        Using GSAP (Greensock) and multiple timelines to build Landing Page
-        animation. <br />
-        Including scroll-triggered animations, SVG transform.
+        <div class="info">
+          熟悉運用 Pug、Sass 預處理器，快速切版 RWD 頁面。 使用 Gulp.js
+          自動化工具，編譯工具、打包、壓縮圖片等。
+
+          <div class="tags">
+            <small># PUG</small>
+            <small># Sass</small>
+            <small># Gulp</small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          <a href="./confinementMall/public/" target="_blank"
+            >Confinement Commerce Website</a
+          >
+        </h2>
+        <div class="tow-column">
+          <img src="./static/confine02.png" alt="" srcset="" />
+          全頁面 RWD 切版。 習慣閱讀及調整第三方工具，如 google
+          Map、Lity、Slick、SplitText、ScrollMagic 等等。
+        </div>
+        <div class="tags">
+          <small># PUG</small>
+          <small># Sass</small>
+          <small># Gulp</small>
+        </div>
       </div>
     </div>
   </body>
