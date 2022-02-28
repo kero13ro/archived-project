@@ -11,8 +11,12 @@
       media="screen"
     />
     <style>
+      body {
+        background-color: #fafafa;
+      }
       img {
         border: 1px solid #ccc;
+        align-self: start;
       }
       .tow-column {
         display: flex;
@@ -35,51 +39,13 @@
 
       small {
         margin-right: 10px;
+        font-size: 15px;
       }
     </style>
   </head>
   <body>
-    <div>
-      <h1>Web UI Projects</h1>
-      <h2>
-        <a href="./chainDialog/dist/" target="_blank">closure Dialog</a>
-      </h2>
-      <div class="tow-column">
-        <img src="./static/countdown.png" alt="" />
-        aa
-      </div>
-    </div>
-    <div>
-      <h2>
-        <a href="./countdown/dist/" target="_blank">countdown</a>
-      </h2>
-      <div class="tow-column">
-        <img src="./static/countdown.png" alt="" />
-        aa
-      </div>
-    </div>
-    <div>
-      <h2>
-        <a href="./scrollAnimation/public" target="_blank">Landing Page</a>
-      </h2>
-      <div class="tow-column">
-        <img src="./static/scrollAnimation01.png" alt="" srcset="" />
-        Using GSAP (Greensock) and multiple timelines to build Landing Page
-        animation. <br />
-        Including scroll-triggered animations, SVG transform.
-      </div>
-    </div>
-    <div>
-      <h2>
-        <a href="./fireworkAnimation/" target="_blank">Firework Animation</a>
-      </h2>
-      <div class="tow-column">
-        <img src="./static/scrollAnimation01.png" alt="" srcset="" />
-        Using GSAP (Greensock) and multiple timelines to build Landing Page
-        animation. <br />
-        Including scroll-triggered animations, SVG transform.
-      </div>
-    </div>
+    <h1>Web UI Projects</h1>
+    <!-- <hr /> -->
 
     <div>
       <h2>
@@ -89,21 +55,15 @@
       </h2>
       <div class="tow-column">
         <img src="./static/register01.png" alt="" srcset="" />
-        使用 GSAP 建立 SVG 動畫特效、顯示掛號流程。 熟悉各類大型表格 RWD
-        切版，如：反轉類型、絕對定位、偽元素。
-      </div>
-    </div>
-
-    <div>
-      <h2>
-        <a href="./pharmacy/public/" target="_blank"
-          >Pharmacy Commerce Website</a
-        >
-      </h2>
-      <div class="tow-column">
-        <img src="./static/pharmact01.png" alt="" srcset="" />
-        全頁面 RWD 切版。熟悉運用 flex、Sass 切版各種尺寸畫面。 並使用 GSAP
-        建立多層次時間軸之開闔選單動畫。
+        <div class="info">
+          總計 15 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。<br />
+          與團隊討論及引入各自動化工具 Gulp, Webpack
+          等，編譯工具、打包、壓縮圖片等。
+          <div class="tags">
+            <small># Gulp</small>
+            <small># Webpack</small>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -116,13 +76,12 @@
       <div class="tow-column">
         <img src="./static/confine01.png" alt="" srcset="" />
         <div class="info">
-          熟悉運用 Pug、Sass 預處理器，快速切版 RWD 頁面。 使用 Gulp.js
-          自動化工具，編譯工具、打包、壓縮圖片等。
-
+          總計 32 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。<br />
+          熟悉運用 Pug, Sass, BEM 建置各元件，抽離樣式變數及管理。
           <div class="tags">
-            <small># PUG</small>
+            <small># Pug</small>
             <small># Sass</small>
-            <small># Gulp</small>
+            <small># BEM</small>
           </div>
         </div>
       </div>
@@ -135,15 +94,115 @@
         </h2>
         <div class="tow-column">
           <img src="./static/confine02.png" alt="" srcset="" />
-          全頁面 RWD 切版。 習慣閱讀及調整第三方工具，如 google
-          Map、Lity、Slick、SplitText、ScrollMagic 等等。
-        </div>
-        <div class="tags">
-          <small># PUG</small>
-          <small># Sass</small>
-          <small># Gulp</small>
+          <div class="info">
+            總計 32 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。<br />
+            閱讀第三方文件及引入各工具，如 google Map、Slick、ScrollMagic 等等。
+            <div class="tags">
+              <small># Google Map</small>
+              <small># Advanced English</small>
+            </div>
+          </div>
         </div>
       </div>
+
+      <div>
+        <h2>
+          <a href="./pharmacy/public/" target="_blank"
+            >Pharmacy Commerce Website</a
+          >
+        </h2>
+        <div class="tow-column">
+          <img src="./static/pharmact01.png" alt="" srcset="" />
+          <div class="info">
+            總計 32 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。<br />
+            使用 GreenSock 製作 SVG 變形動畫特效。
+            <div class="tags">
+              <small># GreenSock</small>
+              <small># RWD</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          <a href="./scrollAnimation/public" target="_blank">Landing Page</a>
+        </h2>
+        <div class="tow-column">
+          <img src="./static/scrollAnimation01.png" alt="" srcset="" />
+          <div class="info">
+            使用 GSAP (Greensock) 製作多重時間軸的進場特效。<br />
+            包含滾動互動、SVG 變形動畫等。
+            <!-- Using GSAP (Greensock) and multiple timelines to build Landing Page
+            animation. <br />
+            Including scroll-triggered animations, SVG transform. -->
+            <div class="tags">
+              <small># GreenSock</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          <a href="./countdown/dist/" target="_blank">Countdown Animation</a>
+        </h2>
+        <div class="tow-column">
+          <img src="./static/countdown.png" alt="" />
+          <div class="info">
+            使用 Vue 建置倒數動畫，透過 transform-style: preserve-3d
+            模擬翻頁效果。
+            <br />
+            並能在部署時傳入參數，控制倒數日時、時間。
+            <div class="tags">
+              <small># CSS 3D</small>
+              <small># Vue</small>
+              <small># Docker</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          <a href="./fireworkAnimation/" target="_blank">Firework Animation</a>
+        </h2>
+        <div class="tow-column">
+          <img src="./static/firework.png" alt="" srcset="" />
+          <div class="info">
+            運用 Create.js 製作 Canvas 動畫<br />
+            並模擬重力加速度，製作爆炸粒子動畫
+            <div class="tags">
+              <small># Canvas</small>
+              <small># Create.js</small>
+              <small># WebGL</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          <a href="./chainDialog/dist/" target="_blank">Chain Dialog</a>
+        </h2>
+        <div class="tow-column">
+          <img src="./static/closure.png" alt="" />
+          <div class="info">
+            建立一個彈窗功能，並能具有 promise chain
+            功能，非同步呼叫後續的函數。
+            <pre>
+  this.$dialog()
+    .onCancel(() => { // do.. })
+    .onOK(() => { // do.. })</pre
+            >
+            <div class="tags">
+              <small># Vue</small>
+              <small># Closure</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <hr /> -->
     </div>
   </body>
 </html>
