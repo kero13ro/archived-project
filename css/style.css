@@ -7,26 +7,27 @@ img {
   align-self: start;
 }
 
-.tow-column {
-  display: flex;
-  margin: 0 -10px;
-  margin-bottom: 40px;
-}
-
-.tow-column > * {
-  width: 50%;
-  margin: 0 10px;
+@media (min-width: 600px) {
+  .tow-column {
+    display: flex;
+    margin: 0 -10px;
+    margin-bottom: 40px;
+  }
+  .tow-column > * {
+    width: 50%;
+    margin: 0 10px;
+  }
 }
 
 .tow-column > .info {
   position: relative;
+  display: flex;
+        flex-direction: column;
 }
 
 .tags {
   color: #777;
-  bottom: 0;
-  position: absolute;
-  left: 0;
+  margin-top: auto;
 }
 
 small {
