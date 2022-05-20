@@ -1,0 +1,38 @@
+body {
+  background-color: #fafafa;
+}
+
+img {
+  border: 1px solid #ccc;
+  align-self: start;
+}
+
+@media (min-width: 600px) {
+  .tow-column {
+    display: flex;
+    margin: 0 -10px;
+    margin-bottom: 40px;
+  }
+  .tow-column > * {
+    width: 50%;
+    margin: 0 10px;
+  }
+}
+
+.tow-column > .info {
+  position: relative;
+  display: flex;
+        flex-direction: column;
+}
+
+.tags {
+  color: #777;
+  margin-top: auto;
+}
+
+small {
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */

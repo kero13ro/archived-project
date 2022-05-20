@@ -10,40 +10,7 @@
       href="https://unpkg.com/sakura.css/css/sakura.css"
       media="screen"
     />
-    <style>
-      body {
-        background-color: #fafafa;
-      }
-      img {
-        border: 1px solid #ccc;
-        align-self: start;
-      }
-      @media (min-width: 600px) {
-        .tow-column {
-          display: flex;
-          margin: 0 -10px;
-          margin-bottom: 40px;
-        }
-        .tow-column > * {
-          width: 50%;
-          margin: 0 10px;
-        }
-      }
-      .tow-column > .info {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-      }
-      .tags {
-        color: #777;
-        margin-top: auto;
-      }
-
-      small {
-        margin-right: 10px;
-        font-size: 15px;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <h1>Web UI Projects</h1>
@@ -223,6 +190,25 @@
             <div class="tags">
               <small># Vue</small>
               <small># Closure</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>P2P通話應用程式</h2>
+        <div class="tow-column">
+          <img src="./static/P2P01.png" alt="" />
+          <div class="info">
+            <!-- - tailwind CSS / tailwind-config-viewer
+            - electron / vue-cli-plugin-electron-builder
+            - Axios / socket.io / Vuex
+            - WebRTC / RTCPeerConnection /  getUserMedia
+            - tensorflow / body-pix
+            - Golang / MongoDB / Docker / Redis -->
+            <div class="tags">
+              <small># Electron</small>
+              <small># WebRTC</small>
             </div>
           </div>
         </div>
