@@ -11,46 +11,92 @@
       media="screen"
     />
     <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      body {
+        max-width: 42em;
+      }
+      a {
+        display: flex-inline;
+        align-items: center;
+      }
+      a span {
+        margin-left: 4px;
+      }
+      .material-symbols-rounded {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 40;
+      }
+    </style>
   </head>
   <body>
     <h1>Web UI Projects</h1>
     <!-- <hr /> -->
     <blockquote>Early projects, web UI, practice demo.</blockquote>
+
     <div>
-      <h2>
+      <h4>
         <a href="https://sheet1218.web.app/" target="_blank"
-          >POS 庫存管理系統</a
-        >
-      </h2>
+          >POS 庫存管理系統
+          <span class="material-symbols-rounded"> link </span>
+        </a>
+      </h4>
       <div class="tow-column">
         <img src="./static/achievement_img1.webp" alt="" srcset="" />
         <div class="info">
-          建置庫存管理、進貨、出貨、即期品登錄等功能。<br />
-          使用 serverless 服務建置後端服務，串接 Google Sheet。<br />
-          <!-- 使用 Redux 管理狀態。並運用 AbortController 減少撈取 API。Firebase
-          Auth 管理登入權限。<br /> -->
+          <ul>
+            <li>庫存管理系統：進貨、出貨、即期品登錄。並可從 Google Sheet 查看庫存、編輯品項。</li>
+            <li>使用 GCP serverless 服務建置後端服務，串接 Google Sheet。</li>
+          </ul>
           <div class="tags">
-            <!-- <small># React</small> -->
             <small># Redux</small>
             <small># Ant Design</small>
-            <small># Google Cloud Function</small>
+            <small># Cloud Function</small>
           </div>
         </div>
       </div>
     </div>
 
     <div>
-      <h2>
+      <h4>
+        <a href="https://sheet1218.web.app/" target="_blank"
+          >筆記分享平台 UI 設計
+          <span class="material-symbols-rounded"> link </span>
+        </a>
+      </h4>
+      <div class="tow-column">
+        <img src="./static/note.png" alt="" srcset="" />
+        <div class="info">
+          <ul>
+            <li>設計各頁面 UI，建置筆記分享平台。</li>
+            <li>使用 Firebase 建置會員註冊、登入。</li>
+            <li>使用 GCP, Nginx, PM2 等部署網站。</li>
+          </ul>
+          <div class="tags">
+            <small># Vue</small>
+            <small># Nuxt</small>
+            <small># Firebase</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h4>
         <a href="./registrationSystem/public/" target="_blank"
-          >Registration System</a
-        >
-      </h2>
+          >Registration System
+          <span class="material-symbols-rounded"> link </span>
+        </a>
+      </h4>
       <div class="tow-column">
         <img src="./static/register01.png" alt="" srcset="" />
         <div class="info">
-          總計 15 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。<br />
-          與團隊討論及引入各自動化工具 Gulp, Webpack
-          等，編譯工具、打包、壓縮圖片等。
+          <ul>
+            <li>總計 15 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。</li>
+            <li>與團隊討論及引入各自動化工具 Gulp, Webpack 等，編譯工具、打包、壓縮圖片等。</li>
+          </ul>
           <div class="tags">
             <small># Gulp</small>
             <small># Webpack</small>
@@ -60,16 +106,19 @@
     </div>
 
     <div>
-      <h2>
+      <h4>
         <a href="https://www.tasteforlife.com.tw/" target="_blank"
-          >Confinement Official</a
-        >
-      </h2>
+          >Confinement Official
+          <span class="material-symbols-rounded"> link </span>
+        </a>
+      </h4>
       <div class="tow-column">
         <img src="./static/confine01.png" alt="" srcset="" />
         <div class="info">
-          總計 32 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。<br />
-          熟悉運用 Pug, Sass, BEM 建置各元件，抽離樣式變數及管理。
+          <ul>
+            <li>總計 32 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。</li>
+            <li>熟悉運用 Pug, Sass, BEM 建置各元件，抽離樣式變數及管理。</li>
+          </ul>
           <div class="tags">
             <small># Pug</small>
             <small># Sass</small>
@@ -79,16 +128,19 @@
       </div>
 
       <div>
-        <h2>
+        <h4>
           <a href="./confinementMall/public/" target="_blank"
-            >Confinement Commerce Website</a
-          >
-        </h2>
+            >Confinement Commerce Website
+            <span class="material-symbols-rounded"> link </span>
+          </a>
+        </h4>
         <div class="tow-column">
           <img src="./static/confine02.png" alt="" srcset="" />
           <div class="info">
-            總計 32 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。<br />
-            閱讀第三方文件及引入各工具，如 google Map、Slick、ScrollMagic 等等。
+            <ul>
+              <li>總計 32 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。</li>
+              <li>閱讀第三方文件及引入各工具，如 google Map、Slick、ScrollMagic 等等。</li>
+            </ul>
             <div class="tags">
               <small># Google Map</small>
               <small># Advanced English</small>
@@ -98,16 +150,19 @@
       </div>
 
       <div>
-        <h2>
+        <h4>
           <a href="./pharmacy/public/" target="_blank"
-            >Pharmacy Commerce Website</a
-          >
-        </h2>
+            >Pharmacy Commerce Website
+            <span class="material-symbols-rounded"> link </span>
+          </a>
+        </h4>
         <div class="tow-column">
           <img src="./static/pharmact01.png" alt="" srcset="" />
           <div class="info">
-            總計 32 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。<br />
-            使用 GreenSock 製作 SVG 變形動畫特效。
+            <ul>
+              <li>總計 32 頁面。包含 RWD、瀏覽器兼容性、無障礙、SEO。</li>
+              <li>使用 GreenSock 製作 SVG 變形動畫特效。</li>
+            </ul>
             <div class="tags">
               <small># GreenSock</small>
               <small># RWD</small>
@@ -117,9 +172,12 @@
       </div>
 
       <div>
-        <h2>
-          <a href="./scrollAnimation/public" target="_blank">Landing Page</a>
-        </h2>
+        <h4>
+          <a href="./scrollAnimation/public" target="_blank"
+            >Landing Page
+            <span class="material-symbols-rounded"> link </span>
+          </a>
+        </h4>
         <div class="tow-column">
           <img src="./static/scrollAnimation01.png" alt="" srcset="" />
           <div class="info">
@@ -136,9 +194,12 @@
       </div>
 
       <div>
-        <h2>
-          <a href="./countdown/dist/" target="_blank">Countdown Animation</a>
-        </h2>
+        <h4>
+          <a href="./countdown/dist/" target="_blank"
+            >Countdown Animation
+            <span class="material-symbols-rounded"> link </span>
+          </a>
+        </h4>
         <div class="tow-column">
           <img src="./static/countdown.png" alt="" />
           <div class="info">
@@ -156,9 +217,12 @@
       </div>
 
       <div>
-        <h2>
-          <a href="./fireworkAnimation/" target="_blank">Firework Animation</a>
-        </h2>
+        <h4>
+          <a href="./fireworkAnimation/" target="_blank"
+            >Firework Animation
+            <span class="material-symbols-rounded"> link </span>
+          </a>
+        </h4>
         <div class="tow-column">
           <img src="./static/firework.png" alt="" srcset="" />
           <div class="info">
@@ -174,9 +238,12 @@
       </div>
 
       <div>
-        <h2>
-          <a href="./chainDialog/dist/" target="_blank">Chain Dialog</a>
-        </h2>
+        <h4>
+          <a href="./chainDialog/dist/" target="_blank"
+            >Chain Dialog
+            <span class="material-symbols-rounded"> link </span>
+          </a>
+        </h4>
         <div class="tow-column">
           <img src="./static/closure.png" alt="" />
           <div class="info">
@@ -190,25 +257,6 @@
             <div class="tags">
               <small># Vue</small>
               <small># Closure</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h2>P2P通話應用程式</h2>
-        <div class="tow-column">
-          <img src="./static/P2P01.png" alt="" />
-          <div class="info">
-            <!-- - tailwind CSS / tailwind-config-viewer
-            - electron / vue-cli-plugin-electron-builder
-            - Axios / socket.io / Vuex
-            - WebRTC / RTCPeerConnection /  getUserMedia
-            - tensorflow / body-pix
-            - Golang / MongoDB / Docker / Redis -->
-            <div class="tags">
-              <small># Electron</small>
-              <small># WebRTC</small>
             </div>
           </div>
         </div>
