@@ -1,6 +1,11 @@
 <template lang="pug">
   .container
-    div 目標：使用 this.$dialog() 呼叫彈窗，並可以串連不同按鈕 onOk, onCancel 等回呼函數。
+    h5 目標：
+    div 使用
+      code this.$dialog()
+      | 呼叫彈窗，並可以串連不同按鈕  
+      code onOk, onCancel
+      | 等回呼函數。
 
     div 透過類似 jQuery 之閉包封裝作用域，以達到非同步執行不同結果。
     .bg(v-highlight)
@@ -49,13 +54,13 @@ export default {
 <style lang="scss">
 .container {
   font-size: 16px;
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
 .bg {
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: rgba(238, 238, 238, 0.034);
-  padding: 10px;
+  /* background-color: rgba(238, 238, 238, 0.034); */
+  /* padding: 10px; */
 }
 </style>

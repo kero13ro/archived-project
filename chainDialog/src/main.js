@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import  './plugin/message.js'
+import 'sakura.css'
 
 // https://www.npmjs.com/package/vue-hljs
 import vueHljs from "vue-hljs";

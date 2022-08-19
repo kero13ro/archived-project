@@ -1,6 +1,6 @@
 <template lang="pug">
   #dialog
-    h1 彈窗標題
+    h5 彈窗標題
     .row
       Button(@click="$emit('ok')") 確認
       Button(@click="$emit('cancel')") 取消
