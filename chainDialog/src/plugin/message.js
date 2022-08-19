@@ -52,3 +52,23 @@ function render(okFns, cancelFns) {
 }
 
 Vue.prototype.$dialog = openDialog;
+
+// Vue.prototype.$dialog = function() {
+//   const okFns = [];
+//   const cancelFns = [];
+//   const API = {
+//     onOk(fn) {
+//       console.log({ fn });
+//       okFns.push(fn);
+//       return API;
+//     },
+//     onCancel(fn2) {
+//       cancelFns.push(fn2);
+//       console.log({ fn2 });
+//       return API;
+//     },
+//   };
+
+//   render(okFns, cancelFns);
+//   return API;
+// };

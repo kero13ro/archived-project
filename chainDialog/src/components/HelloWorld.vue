@@ -1,10 +1,12 @@
 <template lang="pug">
   .container
-    .title 使用 this.$dialog() 呼叫彈窗，並可以串連不同按鈕之回乎函數
-    div 透過閉包封裝回乎函式，串連 非同步函數呼叫
+    div 目標：使用 this.$dialog() 呼叫彈窗，並可以串連不同按鈕 onOk, onCancel 等回呼函數。
+
+    div 透過類似 jQuery 之閉包封裝作用域，以達到非同步執行不同結果。
     .bg(v-highlight)
       pre
         code(class="javascript") {{code}}
+
 
     Button(@click="ShowDailog") 顯示彈窗
 
@@ -25,7 +27,7 @@ export default {
 `
     };
   },
-  mounted(){
+  mounted() {
     setTimeout(() => {
       this.ShowDailog()
     }, 1000);
@@ -46,9 +48,10 @@ export default {
 
 <style lang="scss">
 .container {
-  font-size: 20px;
-  max-width: 550px;
+  font-size: 16px;
+  max-width: 500px;
 }
+
 .bg {
   margin-top: 20px;
   margin-bottom: 20px;
