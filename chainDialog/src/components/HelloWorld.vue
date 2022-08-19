@@ -6,14 +6,17 @@
       | 呼叫彈窗，並可以串連不同按鈕  
       code onOk, onCancel
       | 等回呼函數。
-
-    div 透過類似 jQuery 之閉包封裝作用域，以達到非同步執行不同結果。
     .bg(v-highlight)
       pre
         code(class="javascript") {{code}}
+    ul
+      li 透過類似 jQuery 之閉包封裝作用域，以達到非同步執行不同結果。
+      li 使用 Vue Render Functions 渲染彈窗，不用要在 data 內控制顯示狀態。
 
 
     Button(@click="ShowDailog") 顯示彈窗
+
+    h4 {{resp}}
 
 
 </template>
@@ -22,13 +25,10 @@
 export default {
   data() {
     return {
+      resp: "",
       code: `this.$dialog()
-  .onOk(() => {
-    alert("點擊了確認按鈕");
-  })
-  .onCancel(() => {
-    alert("點擊了取消按鈕");
-  });
+  .onOk(() => { ... })
+  .onCancel(() => { ... });
 `
     };
   },
@@ -39,12 +39,13 @@ export default {
   },
   methods: {
     ShowDailog() {
+      this.resp = ""
       this.$dialog()
         .onOk(() => {
-          alert("點擊了確認");
+          this.resp = "點擊了確認"
         })
         .onCancel(() => {
-          alert("點擊了取消");
+          this.resp = "點擊了取消"
         });
     }
   }
