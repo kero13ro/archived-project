@@ -1,0 +1,22 @@
+header .header-top {
+  background-color: #3c73a8 !important;
+}
+
+.main-content {
+  background-color: #f5f8fb !important;
+}
+
+.mobile-app header .top-box {
+  background-color: #3c73a8 !important;
+}
+
+.mobile-app .footer-wrapper-mob {
+  background: #3c73a8 !important;
+  background-image: none;
+}
+
+@media (max-width: 600px) { 
+  body {
+    background-color: #f5f8fb !important;
+  }
+}
