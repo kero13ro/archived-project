@@ -9,7 +9,7 @@ import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/archived-project/xing-official/dist/',
   server: {
     host: '0.0.0.0',
     port: 5901,

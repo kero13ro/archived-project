@@ -6,7 +6,7 @@ import PageService from '@/page/PageService.vue'
 import PageCareer from '@/page/PageCareer.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.VITE_BASE_URL),
+  history: createWebHistory('/archived-project/xing-official/dist/'),
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }
   },
