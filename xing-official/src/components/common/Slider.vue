@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import Splide from '@splidejs/splide'
 const arr = [
-  { label: '地處於台中七期市政核心', img: '/img/about/s1.png' },
-  { label: '國際頂級商辦大樓', img: '/img/about/s2.png' },
-  { label: '寬敞明亮的辦公空間', img: '/img/about/s3.png' },
-  { label: '多功能會議室', img: '/img/about/s4.png' },
-  { label: '遠眺市容', img: '/img/about/s5.png' },
-  { label: '星翰空間', img: '/img/about/s6.png' },
-  { label: '辦公室入口', img: '/img/about/s7.png' },
+  { label: '地處於台中七期市政核心', img: '/archived-project/xing-official/dist/img/about/s1.png' },
+  { label: '國際頂級商辦大樓', img: '/archived-project/xing-official/dist/img/about/s2.png' },
+  { label: '寬敞明亮的辦公空間', img: '/archived-project/xing-official/dist/img/about/s3.png' },
+  { label: '多功能會議室', img: '/archived-project/xing-official/dist/img/about/s4.png' },
+  { label: '遠眺市容', img: '/archived-project/xing-official/dist/img/about/s5.png' },
+  { label: '星翰空間', img: '/archived-project/xing-official/dist/img/about/s6.png' },
+  { label: '辦公室入口', img: '/archived-project/xing-official/dist/img/about/s7.png' },
 ]
 
 onMounted(() => {

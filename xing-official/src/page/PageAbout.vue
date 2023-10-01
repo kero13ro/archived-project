@@ -11,7 +11,7 @@ useMouseAnimate(mouseRoot2, bgMouse2)
 <template>
   <div id="PageAbout">
     <Landing
-      path="/img/banner_pic_02.png"
+      path="/archived-project/xing-official/dist/img/banner_pic_02.png"
       title="About Us"
       subtitle="關於星翰"
       class="relative z-[1]"

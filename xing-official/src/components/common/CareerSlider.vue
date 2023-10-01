@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import Splide from '@splidejs/splide'
 const arr = [
-  { label: '小提琴社團活動', img: '/img/welfare_p01.jpg' },
-  { label: '羽毛球休閒活動', img: '/img/welfare_p02.jpg' },
-  { label: '電影欣賞', img: '/img/welfare_p03.jpg' },
-  { label: '不定期員工聚餐', img: '/img/welfare_p04.jpg' },
-  { label: '健康檢查補助', img: '/img/welfare_p05健康檢查補助.jpg' },
-  { label: '豐富的教育課程', img: '/img/welfare_p06豐富的教育課程.jpg' },
+  { label: '小提琴社團活動', img: '/archived-project/xing-official/dist/img/welfare_p01.jpg' },
+  { label: '羽毛球休閒活動', img: '/archived-project/xing-official/dist/img/welfare_p02.jpg' },
+  { label: '電影欣賞', img: '/archived-project/xing-official/dist/img/welfare_p03.jpg' },
+  { label: '不定期員工聚餐', img: '/archived-project/xing-official/dist/img/welfare_p04.jpg' },
+  { label: '健康檢查補助', img: '/archived-project/xing-official/dist/img/welfare_p05健康檢查補助.jpg' },
+  { label: '豐富的教育課程', img: '/archived-project/xing-official/dist/img/welfare_p06豐富的教育課程.jpg' },
 ]
 
 onMounted(() => {

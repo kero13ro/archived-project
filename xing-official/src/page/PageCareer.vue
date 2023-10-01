@@ -7,7 +7,7 @@ useMouseAnimate(mouseRoot, bgMouse)
 <template>
   <div>
     <Landing
-      path="/img/banner_pic_04.png"
+      path="/archived-project/xing-official/dist/img/banner_pic_04.png"
       title="Career"
       subtitle="成為星翰人"
     />
