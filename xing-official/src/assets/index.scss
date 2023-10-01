@@ -1,0 +1,9 @@
+@import './tailwind.scss';
+@import './base.scss';
+
+@import './animation.scss';
+@import './utilities.scss';
+@import '@splidejs/splide/css';
+// 原先的 @import "@/assets/tools.scss"; 使用 vite 加載  scss 函式
+
+

@@ -1,0 +1,35 @@
+@tailwind base;
+/* include normalize */
+@tailwind components;
+@tailwind utilities;
+
+/* @layer 權重 會在一般 class 之前編譯 */
+@layer components {
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .center-col {
+    @apply flex flex-col items-center justify-center;
+  }
+}
+
+.root-container {
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+  max-width: calc(90rem + 5rem);
+  margin-right: auto;
+  margin-left: auto;
+
+  @include max(1920) {
+    padding-right: 40px;
+    padding-left: 40px;
+    max-width: calc(1440px + 80px);
+  }
+
+  @include max(768) {
+    // 30px
+    padding-right: 1.88rem;
+    padding-left: 1.88rem;
+  }
+}

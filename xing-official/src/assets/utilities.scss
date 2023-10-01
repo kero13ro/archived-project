@@ -1,0 +1,35 @@
+// 客製化 滾動條樣式
+.mac-scrollbar {
+  ::-webkit-scrollbar {
+    width: 22px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #3E3E3E33;
+    border-radius: 16px;
+    border: 8px solid #ffffff;
+  }
+}
+
+.space-sm {
+  @apply tracking-[0.5px];
+}
+
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fixed-full {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

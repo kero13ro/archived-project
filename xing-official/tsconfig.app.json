@@ -1,0 +1,32 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "files": ["auto-imports.d.ts", "components.d.ts"],
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "src/**/*.json",
+    "src/utils/*.ts",
+    "public/**/*.js"
+  ],
+  "exclude": [
+    "src/**/__tests__/*",
+    "node_modules",
+    "dist",
+  ],
+  "compilerOptions": {
+    "outDir": "dist",
+    "allowJs": true,
+    "checkJs": true,
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "~/*": [
+        "./*"
+      ]
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.build_template:
+  stage: build
+  image: docker:19.03.12
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ''
+    DEPLOY_ENV: dev
+    WEB_BUILDER_NAME: games-lobby-builder
+  script:
+    - |
+      mkdir -p dist
+      echo TAG $CI_COMMIT_TAG
+      if [ -z ${CI_COMMIT_TAG+x} ]
+      then
+        VERSION=$CI_COMMIT_BRANCH
+      else
+        VERSION=$CI_COMMIT_TAG
+      fi
+      echo "Show my VERSION $VERSION"
+      cp ./env/.env.$DEPLOY_ENV ./.env
+      echo "" >> ./.env
+      echo "VUE_APP_VERSION=$VERSION" >> ./.env
+      cat ./.env
+      docker build --build-arg DEPLOY_ENV=$DEPLOY_ENV --rm --cache-from node/node:18.15.0 -t $WEB_BUILDER_NAME .
+      docker run --name $WEB_BUILDER_NAME $WEB_BUILDER_NAME
+      docker cp -a $WEB_BUILDER_NAME:/home/node/app/dist/. dist/
+      docker rm -f $WEB_BUILDER_NAME
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /(develop|feature)/'
+      when: manual
+
+  artifacts:
+    paths:
+      - dist/*
+
+.deploy_template:
+  image: kroniak/ssh-client
+  stage: deploy
+  variables:
+    DEPLOY_SSH_USER: ubuntu
+    DEPLOY_SSH_PORT: 22
+    DEPLOY_SSH_HOST: target-server
+    DEPLOY_SSH_PRIVATE_KEY: private-key-for-target-server
+    DEPLOY_PATH: /home/ubuntu/games/lobby
+    WEB_BUILDER_NAME: games-lobby-builder
+  before_script:
+    - env
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - echo "$DEPLOY_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+  script:
+    - scp -r -P $DEPLOY_SSH_PORT dist/* $DEPLOY_SSH_USER@$DEPLOY_SSH_HOST:$DEPLOY_PATH/
+    - |
+      ssh -p $DEPLOY_SSH_PORT -l $DEPLOY_SSH_USER $DEPLOY_SSH_HOST <<-EOF
+        sudo chown -R ubuntu:ubuntu $DEPLOY_PATH/*
+  rules:
+    - if: '$CI_COMMIT_SHA != null'
+      when: never
+  allow_failure: false
+
+services:
+  - name: docker:19.03.12-dind
+    alias: docker
+    command: ['--mtu=1440']
+
+stages:
+  - build
+  - deploy
+
+#####. 以下為 tw-slot-dev_develop #####
+build_tw-dev:
+  extends: .build_template
+  variables:
+    DEPLOY_ENV: dev
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /(develop|feature)/'
+      when: manual
+
+deploy_tw-dev:
+  extends: .deploy_template
+  variables:
+    DEPLOY_ENV: dev
+    DEPLOY_SSH_HOST: $HOST_slot_game_Test2
+    DEPLOY_SSH_PRIVATE_KEY: $KEY_slot_game_Test2
+    DEPLOY_PATH: /home/ubuntu/games/lobby
+  script:
+    - scp -r -P $DEPLOY_SSH_PORT dist/* $DEPLOY_SSH_USER@$DEPLOY_SSH_HOST:$DEPLOY_PATH/
+    - |
+      ssh -p $DEPLOY_SSH_PORT -l $DEPLOY_SSH_USER $DEPLOY_SSH_HOST <<-EOF
+        sudo chown -R ubuntu:ubuntu $DEPLOY_PATH/*
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /(develop|feature)/'
+  dependencies:
+    - build_tw-dev
+  needs: ['build_tw-dev']
+
+#####. 以下為 AWS PROD RNG #####
+build_aws_games_lobby:
+  extends: .build_template
+  variables:
+    DEPLOY_ENV: atg
+    WEB_BUILDER_NAME: games-lobby-builder
+  rules:
+    - if: '$CI_COMMIT_TAG != null'
+      when: manual
+
+deploy_aws_games_lobby:
+  extends: .deploy_template
+  variables:
+    DEPLOY_ENV: atg
+    DEPLOY_SSH_HOST: $HOST_aws_rgs_socket
+    DEPLOY_SSH_PRIVATE_KEY: $KEY_prod_aws_rgs_socket
+    DEPLOY_PATH: /home/ubuntu/games/lobby
+
+  script:
+    - scp -r -P $DEPLOY_SSH_PORT dist/* $DEPLOY_SSH_USER@$DEPLOY_SSH_HOST:$DEPLOY_PATH/
+  rules:
+    - if: '$CI_COMMIT_TAG != null'
+  dependencies:
+    - build_aws_games_lobby
+  needs: ['build_aws_games_lobby']

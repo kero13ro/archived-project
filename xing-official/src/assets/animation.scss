@@ -1,0 +1,135 @@
+.menu-enter-active,
+.menu-leave-active {
+  transition: all 0.3s;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+  opacity: 0;
+}
+
+// fade-enter
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// fade2
+.fade2-enter-active,
+.fade2-leave-active {
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.fade2-enter-from,
+.fade2-leave-to {
+  opacity: 0 !important;
+  transform: translateY(100px);
+}
+
+// fade-top-enter
+.fadeTop-enter-active,
+.fadeTop-leave-active {
+  transition: all 0.3s;
+}
+
+.fadeTop-enter-from,
+.fadeTop-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+// slide-left
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-left-enter-from,
+.slide-left-leave-to {
+  transform: translateX(60%);
+  opacity: 0;
+}
+
+// page-enter
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s ease-out;
+}
+
+.page-enter-from,
+.page-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+// loading 
+.skeleton {
+  background-color: #292929;
+  position: relative;
+
+  &:after {
+    display: block;
+    content: '';
+    height: 100%;
+    animation: placeholderSkeleton 8s infinite linear;
+    background: linear-gradient(90deg, #292929 0%, #2c2c2c 20%, #292929 40%, #292929 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@keyframes placeholderSkeleton {
+  0% {
+    background-position: -50vw 0;
+  }
+
+  100% {
+    background-position: 70vw 0;
+  }
+}
+
+// floating 
+@keyframes floating {
+
+  0%,
+  100% {
+    transform: translate(0, 0px);
+  }
+
+  50% {
+    transform: translate(0, var(--floating-range));
+  }
+}
+
+.floating-lg {
+  --floating-range: 30px;
+  animation: floating 6s infinite 1s;
+}
+
+.floating-md {
+  --floating-range: 15px;
+  animation: floating 3s infinite;
+}
+
+.floating-sm {
+  --floating-range: 10px;
+  animation: floating 4s infinite 2s;
+}
+
+.popup-enter-active {
+  transition: all 0.5s ease-out;
+}
+.popup-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.popup-enter-from,
+.popup-leave-to {
+  transform: translateY(40px);
+  opacity: 0;
+}
